@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Medias Cadi</title>
+
+<style>
+body {font-family: Arial; text-align: center; background:#f5f5f5;}
+.container {background:white; padding:20px; border-radius:10px; width:300px; margin:auto;}
+img {width:100%; border-radius:10px;}
+button {margin:5px; padding:10px; border:none; border-radius:20px; cursor:pointer;}
+.active {background:black; color:white;}
+.whatsapp {background:#25D366; color:white; width:100%;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h3>Sport Classic</h3>
+<p>Taloneras para hombre</p>
+
+<img src="https://via.placeholder.com/300">
+
+<p>Selecciona cantidad:</p>
+
+<button onclick="setPack(this,4)">4 pares</button>
+<button onclick="setPack(this,8)">8 pares</button>
+<button onclick="setPack(this,12)">12 pares</button>
+
+<br><br>
+
+<button class="whatsapp" onclick="comprar()">📲 Pedir Ahora</button>
+</div>
+
+<script>
+let pack = "";
+
+function setPack(el, p){
+ document.querySelectorAll("button").forEach(b=>b.classList.remove("active"));
+ el.classList.add("active");
+ pack = p;
+}
+
+function comprar(){
+ if(!pack){alert("Selecciona cantidad"); return;}
+ let msg = "Hola, quiero "+pack+" pares de Sport Classic";
+ let url = "https://wa.me/51930967608?text="+encodeURIComponent(msg);
+ window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
