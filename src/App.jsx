@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { createRoot } from "react-dom/client";
 import { motion } from "framer-motion";
 
 const I = ({ type, className = "h-5 w-5" }) => {
@@ -141,3 +142,7 @@ export default function LandingMediasMayoristas() {
     </div>
   );
 }
+
+createRoot(document.getElementById("root")).render(
+  <LandingMediasMayoristas />
+);
