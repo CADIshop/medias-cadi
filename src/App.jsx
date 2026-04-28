@@ -99,26 +99,42 @@ const models = [
     name: "Taloneras",
     tag: "Uso casual",
     text: "Formato discreto, fresco y de alta rotación para líneas urbanas y venta diaria.",
-    image: "/taloneras.jpg",
+    images: [
+  "/taloneras-1.jpg",
+  "/taloneras-2.jpg",
+  "/taloneras-3.jpg",
+  "/taloneras-4.jpg",
   },
   {
     name: "Tobilleras",
     tag: "Mayorista",
     text: "Versátiles para empresas, colegios, promociones y negocios de distribución.",
-    image: "/tobilleras.jpg",
-  },
+    images: [
+  "/tobilleras-1.jpg",
+  "/tobilleras-2.jpg",
+  "/tobilleras-3.jpg",
+  "/tobilleras-4.jpg",
+],
   {
     name: "3/4",
     tag: "Institucional",
     text: "Mayor cobertura para uniformes, campañas corporativas y pedidos especiales.",
-    image: "/medias-3-4.jpg",
-  },
+    images: [
+  "/medias-3-4-1.jpg",
+  "/medias-3-4-2.jpg",
+  "/medias-3-4-3.jpg",
+  "/medias-3-4-4.jpg",
+],
   {
     name: "Futsal",
     tag: "Deportivo",
     text: "Pensadas para movimiento intenso, equipos, academias y entrenamientos.",
-    image: "/futsal.jpg",
-  },
+    images: [
+  "/futsal-1.jpg",
+  "/futsal-2.jpg",
+  "/futsal-3.jpg",
+  "/futsal-4.jpg",
+],
 ];
 
 const services = [
