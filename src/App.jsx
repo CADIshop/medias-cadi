@@ -36,10 +36,34 @@ const fadeUp = {
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.11 } } };
 
 const models = [
-  { name: "Taloneras", tag: "Uso casual", text: "Formato discreto, fresco y de alta rotación para líneas urbanas y venta diaria.", shape: "h-16 w-32 rounded-full" },
-  { name: "Tobilleras", tag: "Mayorista", text: "Versátiles para empresas, colegios, promociones y negocios de distribución.", shape: "h-24 w-32 rounded-b-3xl rounded-t-xl" },
-  { name: "3/4", tag: "Institucional", text: "Mayor cobertura para uniformes, campañas corporativas y pedidos especiales.", shape: "h-36 w-28 rounded-b-3xl rounded-t-xl" },
-  { name: "Futsal", tag: "Deportivo", text: "Pensadas para movimiento intenso, equipos, academias y entrenamientos.", shape: "h-44 w-28 rounded-b-3xl rounded-t-xl" },
+  {
+    name: "Taloneras",
+    tag: "Uso casual",
+    text: "Formato discreto, fresco y de alta rotación para líneas urbanas y venta diaria.",
+    shape: "h-16 w-32 rounded-full",
+    video: "/taloneras.mp4",
+  },
+  {
+    name: "Tobilleras",
+    tag: "Mayorista",
+    text: "Versátiles para empresas, colegios, promociones y negocios de distribución.",
+    shape: "h-24 w-32 rounded-b-3xl rounded-t-xl",
+    video: "/tobilleras.mp4",
+  },
+  {
+    name: "3/4",
+    tag: "Institucional",
+    text: "Mayor cobertura para uniformes, campañas corporativas y pedidos especiales.",
+    shape: "h-36 w-28 rounded-b-3xl rounded-t-xl",
+    video: "/medias-3-4.mp4",
+  },
+  {
+    name: "Futsal",
+    tag: "Deportivo",
+    text: "Pensadas para movimiento intenso, equipos, academias y entrenamientos.",
+    shape: "h-44 w-28 rounded-b-3xl rounded-t-xl",
+    video: "/futsal.mp4",
+  },
 ];
 
 const services = [
