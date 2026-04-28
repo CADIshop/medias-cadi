@@ -100,41 +100,45 @@ const models = [
     tag: "Uso casual",
     text: "Formato discreto, fresco y de alta rotación para líneas urbanas y venta diaria.",
     images: [
-  "/taloneras-1.jpg",
-  "/taloneras-2.jpg",
-  "/taloneras-3.jpg",
-  "/taloneras-4.jpg",
+      "/taloneras-1.jpg",
+      "/taloneras-2.jpg",
+      "/taloneras-3.jpg",
+      "/taloneras-4.jpg",
+    ],
   },
   {
     name: "Tobilleras",
     tag: "Mayorista",
     text: "Versátiles para empresas, colegios, promociones y negocios de distribución.",
     images: [
-  "/tobilleras-1.jpg",
-  "/tobilleras-2.jpg",
-  "/tobilleras-3.jpg",
-  "/tobilleras-4.jpg",
-],
+      "/tobilleras-1.jpg",
+      "/tobilleras-2.jpg",
+      "/tobilleras-3.jpg",
+      "/tobilleras-4.jpg",
+    ],
+  },
   {
     name: "3/4",
     tag: "Institucional",
     text: "Mayor cobertura para uniformes, campañas corporativas y pedidos especiales.",
     images: [
-  "/medias-3-4-1.jpg",
-  "/medias-3-4-2.jpg",
-  "/medias-3-4-3.jpg",
-  "/medias-3-4-4.jpg",
-],
+      "/medias-3-4-1.jpg",
+      "/medias-3-4-2.jpg",
+      "/medias-3-4-3.jpg",
+      "/medias-3-4-4.jpg",
+    ],
+  },
   {
     name: "Futsal",
     tag: "Deportivo",
     text: "Pensadas para movimiento intenso, equipos, academias y entrenamientos.",
     images: [
-  "/futsal-1.jpg",
-  "/futsal-2.jpg",
-  "/futsal-3.jpg",
-  "/futsal-4.jpg",
-],
+      "/futsal-1.jpg",
+      "/futsal-2.jpg",
+      "/futsal-3.jpg",
+      "/futsal-4.jpg",
+    ],
+  },
 ];
 
 const services = [
@@ -388,8 +392,8 @@ export default function LandingMediasMayoristas() {
 
                 <div className="relative overflow-hidden rounded-[2rem] bg-white/10">
                   <motion.img
-                    key={models[activeSlide].image}
-                    src={models[activeSlide].image}
+                    key={models[activeSlide].images[0]}
+                    src={models[activeSlide].images[0]}
                     alt={models[activeSlide].name}
                     initial={{ opacity: 0, scale: 1.05 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -596,7 +600,7 @@ export default function LandingMediasMayoristas() {
               >
                 <div className="mb-6 h-52 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-cyan-50 to-slate-100">
                   <img
-                    src={item.image}
+                    src={item.images[0]}
                     alt={item.name}
                     className="h-full w-full object-cover transition duration-500 hover:scale-110"
                   />
