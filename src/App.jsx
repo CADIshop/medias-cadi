@@ -271,7 +271,7 @@ export default function LandingMediasMayoristas() {
 />
             </div>
             <div>
-              <p className="text-lg font-black tracking-tight">Medias Cadi</p>
+              <p className="text-lg font-black tracking-tight">Cadi</p>
               <p className="text-xs font-medium text-slate-500">
                 Fabricación textil al por mayor
               </p>
@@ -327,7 +327,7 @@ export default function LandingMediasMayoristas() {
                 tu marca.
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-600">
-                En Medias Cadi fabricamos medias y calcetines para empresas,
+                En Cadi fabricamos medias y calcetines para empresas,
                 instituciones, distribuidores y marcas que buscan un producto
                 cómodo, resistente y con presentación profesional.
               </p>
@@ -382,7 +382,7 @@ export default function LandingMediasMayoristas() {
                     Producción mayorista
                   </p>
                   <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-bold">
-                    Medias Cadi
+                    Cadi
                   </span>
                 </div>
 
@@ -793,7 +793,7 @@ export default function LandingMediasMayoristas() {
       <footer className="border-t border-slate-200 bg-white px-5 py-10 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3 md:items-center">
           <div>
-            <p className="text-2xl font-black">Medias Cadi</p>
+            <p className="text-2xl font-black">Cadi</p>
             <p className="mt-2 text-slate-500">
               Fabricación de medias y calcetines al por mayor.
             </p>
@@ -815,7 +815,7 @@ export default function LandingMediasMayoristas() {
           </div>
 
           <div className="text-sm text-slate-500 md:text-right">
-            © 2026 Medias Cadi. Todos los derechos reservados.
+            © 2026 CORPORACION TEXIL CADI S.A.C. Todos los derechos reservados.
           </div>
         </div>
       </footer>
