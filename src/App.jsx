@@ -264,7 +264,11 @@ export default function LandingMediasMayoristas() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
           <div className="flex items-center gap-3">
             <div className="grid h-12 w-12 place-items-center rounded-2xl bg-slate-950 text-white shadow-xl shadow-slate-300">
-              <I type="shirt" className="h-6 w-6" />
+              <img
+  src="/logo-medias-cadi.png"
+  alt="Logo Medias Cadi"
+  className="h-8 w-8 object-contain"
+/>
             </div>
             <div>
               <p className="text-lg font-black tracking-tight">Medias Cadi</p>
