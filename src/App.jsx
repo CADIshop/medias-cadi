@@ -41,28 +41,28 @@ const models = [
     tag: "Uso casual",
     text: "Formato discreto, fresco y de alta rotación para líneas urbanas y venta diaria.",
     shape: "h-16 w-32 rounded-full",
-    video: "/taloneras.mp4",
+    image: "/taloneras.jpg",
   },
   {
     name: "Tobilleras",
     tag: "Mayorista",
     text: "Versátiles para empresas, colegios, promociones y negocios de distribución.",
     shape: "h-24 w-32 rounded-b-3xl rounded-t-xl",
-    video: "/tobilleras.mp4",
+    image: "/tobilleras.jpg",
   },
   {
     name: "3/4",
     tag: "Institucional",
     text: "Mayor cobertura para uniformes, campañas corporativas y pedidos especiales.",
     shape: "h-36 w-28 rounded-b-3xl rounded-t-xl",
-    video: "/medias-3-4.mp4",
+    image: "/medias-3-4.jpg",
   },
   {
     name: "Futsal",
     tag: "Deportivo",
     text: "Pensadas para movimiento intenso, equipos, academias y entrenamientos.",
     shape: "h-44 w-28 rounded-b-3xl rounded-t-xl",
-    video: "/futsal.mp4",
+    image: "/futsal.jpg",
   },
 ];
 
