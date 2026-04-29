@@ -785,24 +785,22 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                   <label className="grid gap-2">
   <span className="text-sm font-black">Cantidad aprox.</span>
 
-  <div className="grid grid-cols-[1fr_120px] gap-3">
-    <input
-      value={cantidad}
-      onChange={(e) => setCantidad(e.target.value)}
-      placeholder="500"
-      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-    />
+<div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_105px]">
+  <input
+    value={cantidad}
+    onChange={(e) => setCantidad(e.target.value)}
+    placeholder="500"
+    className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+  />
 
-    <select
-      value={unidadCantidad}
-      onChange={(e) => setUnidadCantidad(e.target.value)}
-      className="rounded-2xl border border-slate-200 bg-slate-50 px-3 py-4 font-semibold outline-none transition focus:border-cyan-500"
-    >
-      <option value="pares">Pares</option>
-      <option value="docenas">Docenas</option>
-    </select>
-  </div>
-</label>
+  <select
+    value={unidadCantidad}
+    onChange={(e) => setUnidadCantidad(e.target.value)}
+    className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-3 py-4 font-semibold outline-none transition focus:border-cyan-500"
+  >
+    <option value="pares">Pares</option>
+    <option value="docenas">Docenas</option>
+  </select>
 </div>
                 <a
                   href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
