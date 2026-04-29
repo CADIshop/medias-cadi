@@ -803,7 +803,6 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
     </select>
   </div>
 </label>
-</div>
 
                 <a
                   href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
