@@ -867,6 +867,13 @@ Cantidad aproximada: ${cantidad} pares`
         </a>
 
         <a
+  href="/politica-de-privacidad.html"
+  className="text-slate-300 transition hover:text-cyan-300"
+>
+  Política de privacidad
+</a>
+        
+        <a
           href="#cotizacion"
           className="text-slate-300 transition hover:text-cyan-300"
         >
