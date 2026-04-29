@@ -247,14 +247,17 @@ export default function LandingMediasMayoristas() {
   }, []);
 
   const whatsappText = useMemo(
-    () =>
-      encodeURIComponent(
-        `Hola, quiero cotizar medias al por mayor.%0AModelo: ${modelo}%0ACantidad aproximada: ${cantidad} pares%0ANombre/empresa: ${
-          nombre || "Por completar"
-        }%0ATeléfono: ${telefono || "Por completar"}`
-      ),
-    [cantidad, modelo, nombre, telefono]
-  );
+  () =>
+    encodeURIComponent(
+      `Hola, quiero cotizar medias al por mayor.
+
+Nombre o empresa: ${nombre || "Por completar"}
+Teléfono: ${telefono || "Por completar"}
+Modelo: ${modelo}
+Cantidad aproximada: ${cantidad} pares`
+    ),
+  [cantidad, modelo, nombre, telefono]
+);
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f7f8fb] text-slate-950">
