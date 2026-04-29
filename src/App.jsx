@@ -794,64 +794,90 @@ export default function LandingMediasMayoristas() {
         </section>
       </main>
 
-      <footer className="border-t border-slate-200 bg-white px-5 py-10 md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3 md:items-center">
-          <div>
-            <p className="text-2xl font-black">Cadi</p>
-            <p className="mt-2 text-slate-500">
-              Fabricación de medias y calcetines al por mayor.
-            </p>
-          </div>
+     <footer className="relative overflow-hidden border-t border-slate-200 bg-slate-950 px-5 py-14 text-white md:px-8">
+  <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl" />
+  <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl" />
 
-          <div className="grid gap-2 text-sm text-slate-700">
-            <span className="flex items-center gap-2">
-              <I type="phone" className="h-4 w-4 text-cyan-700" />
-              +51 930 967 608
-            </span>
-            <span className="flex items-center gap-2">
-              <I type="mail" className="h-4 w-4 text-cyan-700" />
-              ventas@mediascadi.com
-            </span>
-            <span className="flex items-center gap-2">
-              <I type="pin" className="h-4 w-4 text-cyan-700" />
-              Perú
-            </span>
-          </div>
-
-          <div className="grid gap-2 text-sm text-slate-700">
-  <span className="flex items-center gap-2">
-    <I type="phone" className="h-4 w-4 text-cyan-700" />
-    +51 930 967 608
-  </span>
-  <span className="flex items-center gap-2">
-    <I type="mail" className="h-4 w-4 text-cyan-700" />
-    ventas@mediascadi.com
-  </span>
-  <span className="flex items-center gap-2">
-    <I type="pin" className="h-4 w-4 text-cyan-700" />
-    Perú
-  </span>
-
-  <a
-    href="/politica-de-envios.html"
-    className="font-semibold text-slate-700 hover:text-cyan-700"
-  >
-    Política de envíos
-  </a>
-
-  <a
-    href="/politica-de-devoluciones.html"
-    className="font-semibold text-slate-700 hover:text-cyan-700"
-  >
-    Política de devoluciones
-  </a>
-</div>
-          
-          <div className="text-sm text-slate-500 md:text-right">
-            © 2026 CORPORACION TEXIL CADI S.A.C. Todos los derechos reservados.
-          </div>
+  <div className="relative mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.1fr_0.9fr_0.9fr] md:items-start">
+    <div>
+      <div className="flex items-center gap-3">
+        <img
+          src="/logo-medias-cadi.png"
+          alt="Logo Cadi"
+          className="h-12 w-12 rounded-xl object-contain"
+        />
+        <div>
+          <p className="text-2xl font-black">Cadi</p>
+          <p className="text-sm text-slate-400">
+            Fabricación textil al por mayor
+          </p>
         </div>
-      </footer>
+      </div>
+
+      <p className="mt-6 max-w-sm leading-7 text-slate-300">
+        Fabricamos medias y calcetines para empresas, colegios, instituciones,
+        marcas, distribuidores y clientes corporativos.
+      </p>
+    </div>
+
+    <div>
+      <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
+        Contacto
+      </p>
+
+      <div className="grid gap-3 text-sm text-slate-300">
+        <span className="flex items-center gap-3">
+          <I type="phone" className="h-4 w-4 shrink-0 text-cyan-300" />
+          +51 930 967 608
+        </span>
+
+        <span className="flex items-center gap-3">
+          <I type="mail" className="h-4 w-4 shrink-0 text-cyan-300" />
+          ventas@mediascadi.com
+        </span>
+
+        <span className="flex items-center gap-3">
+          <I type="pin" className="h-4 w-4 shrink-0 text-cyan-300" />
+          Perú
+        </span>
+      </div>
+    </div>
+
+    <div>
+      <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
+        Información
+      </p>
+
+      <div className="grid gap-3 text-sm">
+        <a
+          href="/politica-de-envios.html"
+          className="text-slate-300 transition hover:text-cyan-300"
+        >
+          Política de envíos
+        </a>
+
+        <a
+          href="/politica-de-devoluciones.html"
+          className="text-slate-300 transition hover:text-cyan-300"
+        >
+          Política de devoluciones
+        </a>
+
+        <a
+          href="#cotizacion"
+          className="text-slate-300 transition hover:text-cyan-300"
+        >
+          Solicitar cotización
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div className="relative mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
+    <p>© 2026 CORPORACION TEXTIL CADI S.A.C. Todos los derechos reservados.</p>
+    <p>Medias al por mayor en Perú</p>
+  </div>
+</footer>
 
       <motion.a
         initial={{ scale: 0, opacity: 0 }}
