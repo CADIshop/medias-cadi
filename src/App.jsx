@@ -195,7 +195,7 @@ const process = [
   {
     icon: "chat",
     title: "1. Requerimiento",
-    text: "Nos cuentas modelo, cantidad, tallas, colores y objetivo del pedido.",
+    text: "Nos comentas del modelo, cantidad, tallas, colores y objetivo del pedido.",
   },
   {
     icon: "spark",
