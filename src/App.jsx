@@ -804,15 +804,16 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
     </div>
   </label>
 </div>
-                <a
-                  href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-2xl bg-cyan-600 px-6 py-4 font-black text-white transition hover:bg-cyan-700"
-                >
-                  <I type="chat" className="mr-2 h-5 w-5" />
-                  Enviar solicitud por WhatsApp
-                </a>
+                
+<a
+  href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
+  target="_blank"
+  rel="noreferrer"
+  className="inline-flex items-center justify-center rounded-2xl bg-cyan-600 px-6 py-4 font-black text-white transition hover:bg-cyan-700"
+>
+  <I type="chat" className="mr-2 h-5 w-5" />
+  Enviar solicitud por WhatsApp
+</a>
 
                 <p className="text-center text-xs leading-6 text-slate-500">
                   Te responderemos con una propuesta según tu necesidad de
