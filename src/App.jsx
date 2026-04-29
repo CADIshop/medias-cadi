@@ -234,6 +234,7 @@ export default function LandingMediasMayoristas() {
   const [modelo, setModelo] = useState("Tobilleras");
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
+  const [mensaje, setMensaje] = useState("");
   const [activeSlide, setActiveSlide] = useState(0);
 
   const whatsappNumber = "51930967608";
@@ -254,9 +255,10 @@ export default function LandingMediasMayoristas() {
 Nombre o empresa: ${nombre || "Por completar"}
 Teléfono: ${telefono || "Por completar"}
 Modelo: ${modelo}
-Cantidad aproximada: ${cantidad} pares`
+Cantidad aproximada: ${cantidad} pares
+Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
     ),
-  [cantidad, modelo, nombre, telefono]
+  [cantidad, modelo, nombre, telefono, mensaje]
 );
 
   return (
