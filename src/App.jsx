@@ -337,9 +337,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                 tu marca.
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-600">
-                En Cadi fabricamos medias y calcetines para empresas,
-                instituciones, distribuidores y marcas que buscan un producto
-                cómodo, resistente y con presentación profesional.
+                En Cadi desarrollamos y fabricamos medias y calcetines por volumen para empresas, colegios, instituciones, distribuidores y marcas que buscan calidad, continuidad de producción y presentación profesional.
               </p>
             </motion.div>
 
@@ -351,7 +349,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                 href="#cotizacion"
                 className="inline-flex items-center justify-center rounded-full bg-cyan-600 px-8 py-4 font-black text-white shadow-xl shadow-cyan-200 transition hover:-translate-y-1 hover:bg-cyan-700"
               >
-                Solicitar cotización
+                Cotizar por WhatsApp
                 <I type="arrow" className="ml-2 h-5 w-5" />
               </a>
               <a
@@ -437,6 +435,51 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </motion.div>
         </section>
 
+        <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
+  <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.25 }}
+    className="mb-10 max-w-3xl"
+  >
+    <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
+      Ideal para
+    </p>
+    <h2 className="text-4xl font-black tracking-tight md:text-5xl">
+      Producción textil para negocios que necesitan vender, uniformar o abastecer.
+    </h2>
+  </motion.div>
+
+  <motion.div
+    variants={stagger}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.2 }}
+    className="grid gap-4 md:grid-cols-3"
+  >
+    {[
+      "Empresas y uniformes corporativos",
+      "Colegios e instituciones",
+      "Distribuidores mayoristas",
+      "Marcas propias y marca blanca",
+      "Licitaciones y campañas",
+      "Academias y equipos deportivos",
+    ].map((item) => (
+      <motion.div
+        variants={fadeUp}
+        key={item}
+        className="rounded-[1.75rem] border border-white bg-white/85 p-5 shadow-sm backdrop-blur"
+      >
+        <div className="mb-4 grid h-10 w-10 place-items-center rounded-full bg-cyan-100 text-cyan-700">
+          <I type="check" className="h-5 w-5" />
+        </div>
+        <p className="font-black text-slate-900">{item}</p>
+      </motion.div>
+    ))}
+  </motion.div>
+</section>
+        
         <section id="servicios" className="bg-white py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <motion.div
@@ -531,6 +574,38 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </motion.div>
         </section>
 
+        <section className="mx-auto max-w-7xl px-5 py-10 md:px-8">
+  <div className="grid gap-4 rounded-[2.5rem] bg-white p-6 shadow-xl shadow-slate-100 md:grid-cols-4 md:p-8">
+    {[
+      {
+        title: "Atención directa",
+        text: "Coordinación rápida por WhatsApp para cotizaciones y pedidos.",
+      },
+      {
+        title: "Producción por volumen",
+        text: "Fabricación pensada para empresas, campañas y distribución.",
+      },
+      {
+        title: "Marca blanca",
+        text: "Producto listo para presentarse con identidad comercial propia.",
+      },
+      {
+        title: "Despacho coordinado",
+        text: "Envíos y entregas según destino, volumen y requerimiento.",
+      },
+    ].map((item) => (
+      <motion.div
+        key={item.title}
+        whileHover={{ y: -6 }}
+        className="rounded-[1.75rem] bg-slate-50 p-5"
+      >
+        <h3 className="text-lg font-black text-slate-950">{item.title}</h3>
+        <p className="mt-2 text-sm leading-6 text-slate-600">{item.text}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
+        
         <section className="bg-slate-950 py-24 text-white">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <motion.div
@@ -691,6 +766,36 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </div>
         </section>
 
+        <section className="bg-white py-20">
+  <div className="mx-auto grid max-w-7xl gap-8 px-5 md:grid-cols-[0.9fr_1.1fr] md:items-center md:px-8">
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.25 }}
+    >
+      <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
+        Cobertura
+      </p>
+      <h2 className="text-4xl font-black tracking-tight md:text-5xl">
+        Atendemos pedidos mayoristas en Perú.
+      </h2>
+    </motion.div>
+
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.25 }}
+      className="rounded-[2rem] bg-slate-50 p-7 leading-8 text-slate-600"
+    >
+      Coordinamos producción, presentación y despacho según el requerimiento del cliente.
+      Trabajamos con empresas, colegios, instituciones, distribuidores, marcas y clientes
+      corporativos que necesitan fabricar medias o calcetines por volumen.
+    </motion.div>
+  </div>
+</section>
+
         <section id="cotizacion" className="bg-slate-950 py-24 text-white">
           <div className="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-[0.9fr_1.1fr] md:px-8">
             <motion.div
@@ -707,8 +812,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                 Cuéntanos qué necesitas producir.
               </h2>
               <p className="text-lg leading-8 text-slate-300">
-                Envíanos tu requerimiento y te responderemos con una propuesta
-                según modelo, cantidad, presentación y finalidad del pedido.
+                Completa tus datos y te responderemos por WhatsApp con una propuesta según modelo, cantidad, presentación y objetivo del pedido.
               </p>
 
               <div className="grid gap-3 text-slate-300">
@@ -812,7 +916,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
   className="inline-flex items-center justify-center rounded-2xl bg-cyan-600 px-6 py-4 font-black text-white transition hover:bg-cyan-700"
 >
   <I type="chat" className="mr-2 h-5 w-5" />
-  Enviar solicitud por WhatsApp
+  Cotizar por WhatsApp
 </a>
 
                 <p className="text-center text-xs leading-6 text-slate-500">
