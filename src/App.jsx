@@ -818,6 +818,35 @@ export default function LandingMediasMayoristas() {
             </span>
           </div>
 
+          <div className="grid gap-2 text-sm text-slate-700">
+  <span className="flex items-center gap-2">
+    <I type="phone" className="h-4 w-4 text-cyan-700" />
+    +51 930 967 608
+  </span>
+  <span className="flex items-center gap-2">
+    <I type="mail" className="h-4 w-4 text-cyan-700" />
+    ventas@mediascadi.com
+  </span>
+  <span className="flex items-center gap-2">
+    <I type="pin" className="h-4 w-4 text-cyan-700" />
+    Perú
+  </span>
+
+  <a
+    href="/politica-de-envios.html"
+    className="font-semibold text-slate-700 hover:text-cyan-700"
+  >
+    Política de envíos
+  </a>
+
+  <a
+    href="/politica-de-devoluciones.html"
+    className="font-semibold text-slate-700 hover:text-cyan-700"
+  >
+    Política de devoluciones
+  </a>
+</div>
+          
           <div className="text-sm text-slate-500 md:text-right">
             © 2026 CORPORACION TEXIL CADI S.A.C. Todos los derechos reservados.
           </div>
