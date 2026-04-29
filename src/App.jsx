@@ -753,7 +753,20 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                     className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
                   />
                 </label>
-
+                
+<label className="grid gap-2">
+  <span className="text-sm font-black">
+    Mensaje <span className="font-medium text-slate-400">(opcional)</span>
+  </span>
+  <textarea
+    value={mensaje}
+    onChange={(e) => setMensaje(e.target.value)}
+    placeholder="Ej. Quiero cotizar con logo, etiqueta o empaque personalizado."
+    rows="4"
+    className="resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+  />
+</label>
+                
                 <div className="grid gap-5 md:grid-cols-2">
                   <label className="grid gap-2">
                     <span className="text-sm font-black">Modelo</span>
