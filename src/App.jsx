@@ -79,18 +79,18 @@ const I = ({ type, className = "h-5 w-5" }) => {
 };
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
+  hidden: { opacity: 0, y: 28 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: "easeOut" },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
 const stagger = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.11 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -195,7 +195,7 @@ const process = [
   {
     icon: "chat",
     title: "1. Requerimiento",
-    text: "Nos comentas del modelo, cantidad, tallas, colores y objetivo del pedido.",
+    text: "Nos comentas el modelo, cantidad, tallas, colores y objetivo del pedido.",
   },
   {
     icon: "spark",
@@ -249,37 +249,37 @@ export default function LandingMediasMayoristas() {
   }, []);
 
   const whatsappText = useMemo(
-  () =>
-    encodeURIComponent(
-      `Hola, quiero cotizar medias al por mayor.
+    () =>
+      encodeURIComponent(
+        `Hola, quiero cotizar medias al por mayor.
 
 Nombre o empresa: ${nombre || "Por completar"}
 Teléfono: ${telefono || "Por completar"}
 Modelo: ${modelo}
 Cantidad aproximada: ${cantidad} ${unidadCantidad}
 Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
-    ),
-  [cantidad, unidadCantidad, modelo, nombre, telefono, mensaje]
-);
+      ),
+    [cantidad, unidadCantidad, modelo, nombre, telefono, mensaje]
+  );
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f7f8fb] text-slate-950">
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute -top-28 -left-28 h-96 w-96 rounded-full bg-cyan-200/60 blur-3xl" />
+      <div className="pointer-events-none fixed inset-0">
+        <div className="absolute -left-28 -top-28 h-96 w-96 rounded-full bg-cyan-200/60 blur-3xl" />
         <div className="absolute right-0 top-24 h-[28rem] w-[28rem] rounded-full bg-blue-200/50 blur-3xl" />
         <div className="absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-slate-300/40 blur-3xl" />
       </div>
 
-      <header className="sticky top-0 z-40 border-b border-white/80 bg-white/75 backdrop-blur-2xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+      <header className="sticky top-0 z-40 border-b border-white/80 bg-white/80 backdrop-blur-2xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 md:px-8 md:py-4">
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center">
-  <img
-    src="/logo-medias-cadi.png"
-    alt="Logo Medias Cadi"
-    className="h-12 w-12 rounded-xl object-contain"
-  />
-</div>
+            <div className="flex h-11 w-11 items-center justify-center md:h-12 md:w-12">
+              <img
+                src="/logo-medias-cadi.png"
+                alt="Logo Cadi"
+                className="h-11 w-11 rounded-xl object-contain md:h-12 md:w-12"
+              />
+            </div>
             <div>
               <p className="text-lg font-black tracking-tight">Cadi</p>
               <p className="text-xs font-medium text-slate-500">
@@ -308,7 +308,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
 
           <a
             href="#cotizacion"
-            className="rounded-full bg-slate-950 px-5 py-3 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-cyan-700"
+            className="rounded-full bg-slate-950 px-4 py-3 text-xs font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-cyan-700 md:px-5 md:text-sm"
           >
             Cotizar ahora
           </a>
@@ -316,28 +316,31 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
       </header>
 
       <main className="relative z-10">
-        <section className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 pt-14 md:grid-cols-[1.05fr_0.95fr] md:px-8 md:pt-24">
+        <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-12 pt-10 md:grid-cols-[1.05fr_0.95fr] md:px-8 md:pb-20 md:pt-24">
           <motion.div
             variants={stagger}
             initial="hidden"
             animate="show"
-            className="space-y-8"
+            className="space-y-6 md:space-y-8"
           >
             <motion.div
               variants={fadeUp}
-              className="inline-flex items-center gap-2 rounded-full border border-cyan-100 bg-white px-4 py-2 text-sm font-bold text-slate-700 shadow-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-cyan-100 bg-white px-4 py-2 text-xs font-bold text-slate-700 shadow-sm md:text-sm"
             >
               <I type="spark" className="h-4 w-4 text-cyan-700" />
-              Desarrollo, fabricación y presentación para tu marca
+              Fabricación para marcas, empresas y distribuidores
             </motion.div>
 
-            <motion.div variants={fadeUp} className="space-y-6">
-              <h1 className="text-5xl font-black leading-[0.94] tracking-tight md:text-7xl">
-                Medias al por mayor listas para vender, distribuir o representar
-                tu marca.
+            <motion.div variants={fadeUp} className="space-y-5 md:space-y-6">
+              <h1 className="text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-7xl">
+                Fabricamos medias al por mayor para vender, uniformar y
+                abastecer.
               </h1>
-              <p className="max-w-2xl text-lg leading-8 text-slate-600">
-                En Cadi desarrollamos y fabricamos medias y calcetines por volumen para empresas, colegios, instituciones, distribuidores y marcas que buscan calidad, continuidad de producción y presentación profesional.
+              <p className="max-w-2xl text-base leading-7 text-slate-600 md:text-lg md:leading-8">
+                En Cadi desarrollamos y fabricamos medias y calcetines por
+                volumen para empresas, colegios, instituciones, distribuidores y
+                marcas que buscan calidad, continuidad de producción y
+                presentación profesional.
               </p>
             </motion.div>
 
@@ -347,14 +350,14 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
             >
               <a
                 href="#cotizacion"
-                className="inline-flex items-center justify-center rounded-full bg-cyan-600 px-8 py-4 font-black text-white shadow-xl shadow-cyan-200 transition hover:-translate-y-1 hover:bg-cyan-700"
+                className="inline-flex items-center justify-center rounded-full bg-cyan-600 px-7 py-4 font-black text-white shadow-xl shadow-cyan-200 transition hover:-translate-y-1 hover:bg-cyan-700"
               >
                 Cotizar por WhatsApp
                 <I type="arrow" className="ml-2 h-5 w-5" />
               </a>
               <a
                 href="#servicios"
-                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-4 font-black text-slate-900 shadow-sm transition hover:-translate-y-1 hover:bg-slate-50"
+                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-7 py-4 font-black text-slate-900 shadow-sm transition hover:-translate-y-1 hover:bg-slate-50"
               >
                 Ver servicios
               </a>
@@ -362,14 +365,16 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
 
             <motion.div
               variants={fadeUp}
-              className="grid max-w-2xl grid-cols-3 gap-3"
+              className="grid max-w-2xl grid-cols-3 gap-2 md:gap-3"
             >
               {["85% algodón", "10% spandex", "5% elástico"].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-white bg-white/80 p-4 text-center shadow-sm"
+                  className="rounded-2xl border border-white bg-white/80 p-3 text-center shadow-sm md:p-4"
                 >
-                  <p className="text-sm font-black text-slate-800">{item}</p>
+                  <p className="text-xs font-black text-slate-800 md:text-sm">
+                    {item}
+                  </p>
                 </div>
               ))}
             </motion.div>
@@ -383,9 +388,9 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           >
             <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-cyan-200 via-white to-blue-200 blur-2xl" />
 
-            <div className="relative rounded-[3rem] border border-white bg-white/85 p-5 shadow-2xl shadow-slate-200 backdrop-blur-xl">
-              <div className="rounded-[2.5rem] bg-gradient-to-br from-slate-950 to-slate-800 p-6 text-white">
-                <div className="mb-8 flex items-center justify-between">
+            <div className="relative rounded-[2.25rem] border border-white bg-white/85 p-4 shadow-2xl shadow-slate-200 backdrop-blur-xl md:rounded-[3rem] md:p-5">
+              <div className="rounded-[2rem] bg-gradient-to-br from-slate-950 to-slate-800 p-4 text-white md:rounded-[2.5rem] md:p-6">
+                <div className="mb-4 flex items-center justify-between md:mb-8">
                   <p className="text-sm font-bold text-cyan-200">
                     Producción mayorista
                   </p>
@@ -394,7 +399,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                   </span>
                 </div>
 
-                <div className="relative overflow-hidden rounded-[2rem] bg-white/10">
+                <div className="relative overflow-hidden rounded-[1.5rem] bg-white/10 md:rounded-[2rem]">
                   <motion.img
                     key={models[activeSlide].images[0]}
                     src={models[activeSlide].images[0]}
@@ -402,17 +407,17 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                     initial={{ opacity: 0, scale: 1.05 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.7 }}
-                    className="h-[420px] w-full object-cover"
+                    className="h-[300px] w-full object-cover md:h-[420px]"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-6">
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-5 md:p-6">
                     <p className="text-sm font-bold text-cyan-200">
                       {models[activeSlide].tag}
                     </p>
-                    <h3 className="text-3xl font-black text-white">
+                    <h3 className="text-2xl font-black text-white md:text-3xl">
                       {models[activeSlide].name}
                     </h3>
-                    <p className="mt-2 max-w-sm text-sm leading-6 text-slate-200">
+                    <p className="mt-2 max-w-sm text-xs leading-5 text-slate-200 md:text-sm md:leading-6">
                       {models[activeSlide].text}
                     </p>
                   </div>
@@ -435,64 +440,57 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </motion.div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
-  <motion.div
-    variants={fadeUp}
-    initial="hidden"
-    whileInView="show"
-    viewport={{ once: true, amount: 0.25 }}
-    className="mb-10 max-w-3xl"
-  >
-    <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
-      Ideal para
-    </p>
-    <h2 className="text-4xl font-black tracking-tight md:text-5xl">
-      Producción textil para negocios que necesitan vender, uniformar o abastecer.
-    </h2>
-  </motion.div>
+        <section className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-16">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.25 }}
+            className="mb-6 max-w-3xl md:mb-10"
+          >
+            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
+              Ideal para
+            </p>
+            <h2 className="text-3xl font-black tracking-tight md:text-5xl">
+              Producción para negocios que necesitan vender, uniformar o
+              abastecer.
+            </h2>
+          </motion.div>
 
-  <motion.div
-    variants={stagger}
-    initial="hidden"
-    whileInView="show"
-    viewport={{ once: true, amount: 0.2 }}
-    className="grid gap-4 md:grid-cols-3"
-  >
-    {[
-      "Empresas y uniformes corporativos",
-      "Colegios e instituciones",
-      "Distribuidores mayoristas",
-      "Marcas propias y marca blanca",
-      "Licitaciones y campañas",
-      "Academias y equipos deportivos",
-    ].map((item) => (
-      <motion.div
-        variants={fadeUp}
-        key={item}
-        className="rounded-[1.75rem] border border-white bg-white/85 p-5 shadow-sm backdrop-blur"
-      >
-        <div className="mb-4 grid h-10 w-10 place-items-center rounded-full bg-cyan-100 text-cyan-700">
-          <I type="check" className="h-5 w-5" />
-        </div>
-        <p className="font-black text-slate-900">{item}</p>
-      </motion.div>
-    ))}
-  </motion.div>
-</section>
-        
-        <section id="servicios" className="bg-white py-24">
+          <div className="flex flex-wrap gap-3">
+            {[
+              "Empresas",
+              "Colegios",
+              "Instituciones",
+              "Distribuidores",
+              "Marca blanca",
+              "Licitaciones",
+              "Academias deportivas",
+              "Campañas corporativas",
+            ].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-cyan-100 bg-white px-4 py-2 text-sm font-black text-slate-800 shadow-sm"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        <section id="servicios" className="bg-white py-14 md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <motion.div
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.25 }}
-              className="mb-12 max-w-3xl"
+              className="mb-8 max-w-3xl md:mb-12"
             >
               <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
                 Nuestros servicios
               </p>
-              <h2 className="text-4xl font-black tracking-tight md:text-6xl">
+              <h2 className="text-3xl font-black tracking-tight md:text-6xl">
                 Te ayudamos a crear un producto textil con identidad, calidad y
                 salida comercial.
               </h2>
@@ -503,20 +501,22 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
-              className="grid gap-5 md:grid-cols-3"
+              className="flex gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible md:pb-0"
             >
               {services.map((service) => (
                 <motion.div
                   variants={fadeUp}
                   whileHover={{ y: -8 }}
                   key={service.title}
-                  className="rounded-[2.25rem] border border-slate-100 bg-slate-50 p-7 shadow-sm transition"
+                  className="min-w-[82%] rounded-[2rem] border border-slate-100 bg-slate-50 p-6 shadow-sm transition md:min-w-0 md:rounded-[2.25rem] md:p-7"
                 >
-                  <div className="mb-6 grid h-14 w-14 place-items-center rounded-2xl bg-slate-950 text-white">
-                    <I type={service.icon} className="h-7 w-7" />
+                  <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-slate-950 text-white md:mb-6 md:h-14 md:w-14">
+                    <I type={service.icon} className="h-6 w-6 md:h-7 md:w-7" />
                   </div>
-                  <h3 className="text-2xl font-black">{service.title}</h3>
-                  <p className="mt-4 leading-8 text-slate-600">
+                  <h3 className="text-xl font-black md:text-2xl">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600 md:mt-4 md:text-base md:leading-8">
                     {service.text}
                   </p>
                 </motion.div>
@@ -527,25 +527,25 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
 
         <section
           id="fabricamos"
-          className="mx-auto max-w-7xl px-5 py-24 md:px-8"
+          className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-24"
         >
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
-            className="mb-12 grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-end"
+            className="mb-8 grid gap-5 md:mb-12 md:grid-cols-[0.9fr_1.1fr] md:items-end"
           >
             <div>
               <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
                 ¿Qué fabricamos?
               </p>
-              <h2 className="text-4xl font-black tracking-tight md:text-6xl">
+              <h2 className="text-3xl font-black tracking-tight md:text-6xl">
                 Soluciones para empresas, instituciones y marcas que necesitan
                 producir a escala.
               </h2>
             </div>
-            <p className="text-lg leading-8 text-slate-600">
+            <p className="text-base leading-7 text-slate-600 md:text-lg md:leading-8">
               No solo entregamos medias: desarrollamos productos textiles
               pensados para campañas, uniformes, venta mayorista, licitaciones y
               líneas de marca propia.
@@ -557,16 +557,16 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="grid gap-4 md:grid-cols-2"
+            className="grid gap-3 md:grid-cols-2 md:gap-4"
           >
             {products.map((item) => (
               <motion.div
                 variants={fadeUp}
                 key={item}
-                className="flex items-start gap-4 rounded-[1.75rem] border border-white bg-white/85 p-5 shadow-sm backdrop-blur"
+                className="flex items-start gap-3 rounded-[1.5rem] border border-white bg-white/85 p-4 text-sm shadow-sm backdrop-blur md:gap-4 md:rounded-[1.75rem] md:p-5 md:text-base"
               >
                 <div className="mt-1 rounded-full bg-cyan-100 p-2 text-cyan-700">
-                  <I type="check" className="h-5 w-5" />
+                  <I type="check" className="h-4 w-4 md:h-5 md:w-5" />
                 </div>
                 <p className="leading-7 text-slate-700">{item}</p>
               </motion.div>
@@ -574,51 +574,55 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </motion.div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-10 md:px-8">
-  <div className="grid gap-4 rounded-[2.5rem] bg-white p-6 shadow-xl shadow-slate-100 md:grid-cols-4 md:p-8">
-    {[
-      {
-        title: "Atención directa",
-        text: "Coordinación rápida por WhatsApp para cotizaciones y pedidos.",
-      },
-      {
-        title: "Producción por volumen",
-        text: "Fabricación pensada para empresas, campañas y distribución.",
-      },
-      {
-        title: "Marca blanca",
-        text: "Producto listo para presentarse con identidad comercial propia.",
-      },
-      {
-        title: "Despacho coordinado",
-        text: "Envíos y entregas según destino, volumen y requerimiento.",
-      },
-    ].map((item) => (
-      <motion.div
-        key={item.title}
-        whileHover={{ y: -6 }}
-        className="rounded-[1.75rem] bg-slate-50 p-5"
-      >
-        <h3 className="text-lg font-black text-slate-950">{item.title}</h3>
-        <p className="mt-2 text-sm leading-6 text-slate-600">{item.text}</p>
-      </motion.div>
-    ))}
-  </div>
-</section>
-        
-        <section className="bg-slate-950 py-24 text-white">
+        <section className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-10">
+          <div className="grid gap-3 rounded-[2rem] bg-white p-5 shadow-xl shadow-slate-100 md:grid-cols-4 md:gap-4 md:rounded-[2.5rem] md:p-8">
+            {[
+              {
+                title: "Atención directa",
+                text: "Coordinación rápida por WhatsApp para cotizaciones y pedidos.",
+              },
+              {
+                title: "Producción por volumen",
+                text: "Fabricación pensada para empresas, campañas y distribución.",
+              },
+              {
+                title: "Marca blanca",
+                text: "Producto listo para presentarse con identidad comercial propia.",
+              },
+              {
+                title: "Despacho coordinado",
+                text: "Envíos y entregas según destino, volumen y requerimiento.",
+              },
+            ].map((item) => (
+              <motion.div
+                key={item.title}
+                whileHover={{ y: -6 }}
+                className="rounded-[1.5rem] bg-slate-50 p-4 md:rounded-[1.75rem] md:p-5"
+              >
+                <h3 className="text-base font-black text-slate-950 md:text-lg">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  {item.text}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-slate-950 py-14 text-white md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <motion.div
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.25 }}
-              className="mb-12 max-w-3xl"
+              className="mb-8 max-w-3xl md:mb-12"
             >
               <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
                 Por qué elegirnos
               </p>
-              <h2 className="text-4xl font-black tracking-tight md:text-6xl">
+              <h2 className="text-3xl font-black tracking-tight md:text-6xl">
                 Una fabricación pensada para que tu producto se vea mejor y se
                 venda mejor.
               </h2>
@@ -629,38 +633,45 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
-              className="grid gap-5 md:grid-cols-4"
+              className="flex gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible md:pb-0"
             >
               {advantages.map((item) => (
                 <motion.div
                   variants={fadeUp}
                   whileHover={{ y: -8 }}
                   key={item.title}
-                  className="rounded-[2rem] border border-white/10 bg-white/10 p-6 backdrop-blur"
+                  className="min-w-[78%] rounded-[2rem] border border-white/10 bg-white/10 p-5 backdrop-blur md:min-w-0 md:p-6"
                 >
-                  <div className="mb-6 grid h-12 w-12 place-items-center rounded-2xl bg-cyan-300 text-slate-950">
+                  <div className="mb-5 grid h-11 w-11 place-items-center rounded-2xl bg-cyan-300 text-slate-950 md:mb-6 md:h-12 md:w-12">
                     <I type={item.icon} className="h-5 w-5" />
                   </div>
-                  <h3 className="text-xl font-black">{item.title}</h3>
-                  <p className="mt-3 leading-7 text-slate-300">{item.text}</p>
+                  <h3 className="text-lg font-black md:text-xl">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-300 md:text-base">
+                    {item.text}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
           </div>
         </section>
 
-        <section id="modelos" className="mx-auto max-w-7xl px-5 py-24 md:px-8">
+        <section
+          id="modelos"
+          className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-24"
+        >
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
-            className="mb-12 max-w-2xl"
+            className="mb-8 max-w-2xl md:mb-12"
           >
             <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
               Modelos disponibles
             </p>
-            <h2 className="text-4xl font-black tracking-tight md:text-6xl">
+            <h2 className="text-3xl font-black tracking-tight md:text-6xl">
               Elige el formato ideal para tu mercado.
             </h2>
           </motion.div>
@@ -670,16 +681,16 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="grid gap-5 md:grid-cols-4"
+            className="flex gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible md:pb-0"
           >
             {models.map((item) => (
               <motion.div
                 variants={fadeUp}
                 whileHover={{ y: -10, scale: 1.02 }}
                 key={item.name}
-                className="rounded-[2.25rem] border border-white bg-white p-6 shadow-lg shadow-slate-100"
+                className="min-w-[78%] rounded-[2rem] border border-white bg-white p-5 shadow-lg shadow-slate-100 md:min-w-0 md:rounded-[2.25rem] md:p-6"
               >
-                <div className="mb-6 h-52 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-cyan-50 to-slate-100">
+                <div className="mb-5 h-48 overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-cyan-50 to-slate-100 md:mb-6 md:h-52 md:rounded-[1.75rem]">
                   <img
                     src={item.images[0]}
                     alt={item.name}
@@ -690,25 +701,27 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                   {item.tag}
                 </div>
                 <h3 className="text-2xl font-black">{item.name}</h3>
-                <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
+                  {item.text}
+                </p>
               </motion.div>
             ))}
           </motion.div>
         </section>
 
-        <section id="proceso" className="bg-white py-24">
+        <section id="proceso" className="bg-white py-14 md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <motion.div
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.25 }}
-              className="mb-12 max-w-3xl"
+              className="mb-8 max-w-3xl md:mb-12"
             >
               <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
                 Proceso de trabajo
               </p>
-              <h2 className="text-4xl font-black tracking-tight md:text-6xl">
+              <h2 className="text-3xl font-black tracking-tight md:text-6xl">
                 De la cotización al producto final, con una ruta clara.
               </h2>
             </motion.div>
@@ -718,26 +731,30 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
-              className="grid gap-5 md:grid-cols-4"
+              className="flex gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible md:pb-0"
             >
               {process.map((step) => (
                 <motion.div
                   variants={fadeUp}
                   key={step.title}
-                  className="rounded-[2rem] border border-slate-100 bg-slate-50 p-6"
+                  className="min-w-[78%] rounded-[2rem] border border-slate-100 bg-slate-50 p-5 md:min-w-0 md:p-6"
                 >
-                  <div className="mb-6 grid h-14 w-14 place-items-center rounded-2xl bg-slate-950 text-white">
-                    <I type={step.icon} className="h-7 w-7" />
+                  <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-slate-950 text-white md:mb-6 md:h-14 md:w-14">
+                    <I type={step.icon} className="h-6 w-6 md:h-7 md:w-7" />
                   </div>
-                  <h3 className="text-xl font-black">{step.title}</h3>
-                  <p className="mt-3 leading-7 text-slate-600">{step.text}</p>
+                  <h3 className="text-lg font-black md:text-xl">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
+                    {step.text}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-24 md:px-8">
+        <section className="hidden mx-auto max-w-7xl px-5 py-24 md:block md:px-8">
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -766,53 +783,56 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </div>
         </section>
 
-        <section className="bg-white py-20">
-  <div className="mx-auto grid max-w-7xl gap-8 px-5 md:grid-cols-[0.9fr_1.1fr] md:items-center md:px-8">
-    <motion.div
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
-    >
-      <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
-        Cobertura
-      </p>
-      <h2 className="text-4xl font-black tracking-tight md:text-5xl">
-        Atendemos pedidos mayoristas en Perú.
-      </h2>
-    </motion.div>
-
-    <motion.div
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
-      className="rounded-[2rem] bg-slate-50 p-7 leading-8 text-slate-600"
-    >
-      Coordinamos producción, presentación y despacho según el requerimiento del cliente.
-      Trabajamos con empresas, colegios, instituciones, distribuidores, marcas y clientes
-      corporativos que necesitan fabricar medias o calcetines por volumen.
-    </motion.div>
-  </div>
-</section>
-
-        <section id="cotizacion" className="bg-slate-950 py-24 text-white">
-          <div className="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-[0.9fr_1.1fr] md:px-8">
+        <section className="bg-white py-14 md:py-20">
+          <div className="mx-auto grid max-w-7xl gap-6 px-5 md:grid-cols-[0.9fr_1.1fr] md:items-center md:gap-8 md:px-8">
             <motion.div
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.25 }}
-              className="space-y-6"
+            >
+              <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
+                Cobertura
+              </p>
+              <h2 className="text-3xl font-black tracking-tight md:text-5xl">
+                Atendemos pedidos mayoristas en Perú.
+              </h2>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.25 }}
+              className="rounded-[2rem] bg-slate-50 p-6 text-sm leading-7 text-slate-600 md:p-7 md:text-base md:leading-8"
+            >
+              Coordinamos producción, presentación y despacho según el
+              requerimiento del cliente. Trabajamos con empresas, colegios,
+              instituciones, distribuidores, marcas y clientes corporativos que
+              necesitan fabricar medias o calcetines por volumen.
+            </motion.div>
+          </div>
+        </section>
+
+        <section id="cotizacion" className="bg-slate-950 py-14 text-white md:py-24">
+          <div className="mx-auto grid max-w-7xl gap-8 px-5 md:grid-cols-[0.9fr_1.1fr] md:gap-10 md:px-8">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.25 }}
+              className="space-y-5 md:space-y-6"
             >
               <p className="text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
                 Cotización
               </p>
-              <h2 className="text-4xl font-black tracking-tight md:text-6xl">
+              <h2 className="text-3xl font-black tracking-tight md:text-6xl">
                 Cuéntanos qué necesitas producir.
               </h2>
-              <p className="text-lg leading-8 text-slate-300">
-                Completa tus datos y te responderemos por WhatsApp con una propuesta según modelo, cantidad, presentación y objetivo del pedido.
+              <p className="text-base leading-7 text-slate-300 md:text-lg md:leading-8">
+                Completa tus datos y te responderemos por WhatsApp con una
+                propuesta según modelo, cantidad, presentación y objetivo del
+                pedido.
               </p>
 
               <div className="grid gap-3 text-slate-300">
@@ -836,9 +856,9 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7 }}
-              className="rounded-[2.5rem] border border-white/10 bg-white p-6 text-slate-950 shadow-2xl md:p-8"
+              className="rounded-[2rem] border border-white/10 bg-white p-5 text-slate-950 shadow-2xl md:rounded-[2.5rem] md:p-8"
             >
-              <div className="grid gap-5">
+              <div className="grid gap-4 md:gap-5">
                 <label className="grid gap-2">
                   <span className="text-sm font-black">Nombre o empresa</span>
                   <input
@@ -858,66 +878,71 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                     className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
                   />
                 </label>
-                
-<label className="grid gap-2">
-  <span className="text-sm font-black">
-    Mensaje <span className="font-medium text-slate-400">(opcional)</span>
-  </span>
-  <textarea
-    value={mensaje}
-    onChange={(e) => setMensaje(e.target.value)}
-    placeholder="Ej. Quiero cotizar con logo, etiqueta o empaque personalizado."
-    rows="4"
-    className="resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-  />
-</label>
-                
-<div className="grid gap-5 md:grid-cols-2">
-  <label className="grid gap-2">
-    <span className="text-sm font-black">Modelo</span>
-    <select
-      value={modelo}
-      onChange={(e) => setModelo(e.target.value)}
-      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-    >
-      {models.map((m) => (
-        <option key={m.name}>{m.name}</option>
-      ))}
-    </select>
-  </label>
 
-  <label className="grid gap-2">
-    <span className="text-sm font-black">Cantidad aprox.</span>
+                <label className="grid gap-2">
+                  <span className="text-sm font-black">
+                    Mensaje{" "}
+                    <span className="font-medium text-slate-400">
+                      (opcional)
+                    </span>
+                  </span>
+                  <textarea
+                    value={mensaje}
+                    onChange={(e) => setMensaje(e.target.value)}
+                    placeholder="Ej. Quiero cotizar con logo, etiqueta o empaque personalizado."
+                    rows="3"
+                    className="resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+                  />
+                </label>
 
-    <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_105px]">
-      <input
-        value={cantidad}
-        onChange={(e) => setCantidad(e.target.value)}
-        placeholder="500"
-        className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-      />
+                <div className="grid gap-4 md:grid-cols-2 md:gap-5">
+                  <label className="grid gap-2">
+                    <span className="text-sm font-black">Modelo</span>
+                    <select
+                      value={modelo}
+                      onChange={(e) => setModelo(e.target.value)}
+                      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+                    >
+                      {models.map((m) => (
+                        <option key={m.name}>{m.name}</option>
+                      ))}
+                    </select>
+                  </label>
 
-      <select
-        value={unidadCantidad}
-        onChange={(e) => setUnidadCantidad(e.target.value)}
-        className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-3 py-4 font-semibold outline-none transition focus:border-cyan-500"
-      >
-        <option value="pares">Pares</option>
-        <option value="docenas">Docenas</option>
-      </select>
-    </div>
-  </label>
-</div>
-                
-<a
-  href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
-  target="_blank"
-  rel="noreferrer"
-  className="inline-flex items-center justify-center rounded-2xl bg-cyan-600 px-6 py-4 font-black text-white transition hover:bg-cyan-700"
->
-  <I type="chat" className="mr-2 h-5 w-5" />
-  Cotizar por WhatsApp
-</a>
+                  <label className="grid gap-2">
+                    <span className="text-sm font-black">
+                      Cantidad aprox.
+                    </span>
+
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_105px]">
+                      <input
+                        value={cantidad}
+                        onChange={(e) => setCantidad(e.target.value)}
+                        placeholder="500"
+                        className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+                      />
+
+                      <select
+                        value={unidadCantidad}
+                        onChange={(e) => setUnidadCantidad(e.target.value)}
+                        className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-3 py-4 font-semibold outline-none transition focus:border-cyan-500"
+                      >
+                        <option value="pares">Pares</option>
+                        <option value="docenas">Docenas</option>
+                      </select>
+                    </div>
+                  </label>
+                </div>
+
+                <a
+                  href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center rounded-2xl bg-cyan-600 px-6 py-4 font-black text-white transition hover:bg-cyan-700"
+                >
+                  <I type="chat" className="mr-2 h-5 w-5" />
+                  Cotizar por WhatsApp
+                </a>
 
                 <p className="text-center text-xs leading-6 text-slate-500">
                   Te responderemos con una propuesta según tu necesidad de
@@ -929,97 +954,99 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
         </section>
       </main>
 
-     <footer className="relative overflow-hidden border-t border-slate-200 bg-slate-950 px-5 py-14 text-white md:px-8">
-  <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl" />
-  <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl" />
+      <footer className="relative overflow-hidden border-t border-slate-200 bg-slate-950 px-5 py-12 text-white md:px-8 md:py-14">
+        <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl" />
 
-  <div className="relative mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.1fr_0.9fr_0.9fr] md:items-start">
-    <div>
-      <div className="flex items-center gap-3">
-        <img
-          src="/logo-medias-cadi.png"
-          alt="Logo Cadi"
-          className="h-12 w-12 rounded-xl object-contain"
-        />
-        <div>
-          <p className="text-2xl font-black">Cadi</p>
-          <p className="text-sm text-slate-400">
-            Fabricación textil al por mayor
-          </p>
+        <div className="relative mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.1fr_0.9fr_0.9fr] md:items-start md:gap-10">
+          <div>
+            <div className="flex items-center gap-3">
+              <img
+                src="/logo-medias-cadi.png"
+                alt="Logo Cadi"
+                className="h-12 w-12 rounded-xl object-contain"
+              />
+              <div>
+                <p className="text-2xl font-black">Cadi</p>
+                <p className="text-sm text-slate-400">
+                  Fabricación textil al por mayor
+                </p>
+              </div>
+            </div>
+
+            <p className="mt-5 max-w-sm text-sm leading-7 text-slate-300 md:mt-6 md:text-base">
+              Fabricamos medias y calcetines para empresas, colegios,
+              instituciones, marcas, distribuidores y clientes corporativos.
+            </p>
+          </div>
+
+          <div>
+            <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-cyan-300 md:mb-5">
+              Contacto
+            </p>
+
+            <div className="grid gap-3 text-sm text-slate-300">
+              <span className="flex items-center gap-3">
+                <I type="phone" className="h-4 w-4 shrink-0 text-cyan-300" />
+                +51 930 967 608
+              </span>
+
+              <span className="flex items-center gap-3">
+                <I type="mail" className="h-4 w-4 shrink-0 text-cyan-300" />
+                ventas@mediascadi.com
+              </span>
+
+              <span className="flex items-center gap-3">
+                <I type="pin" className="h-4 w-4 shrink-0 text-cyan-300" />
+                Perú
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-cyan-300 md:mb-5">
+              Información
+            </p>
+
+            <div className="grid gap-3 text-sm">
+              <a
+                href="/politica-de-envios.html"
+                className="text-slate-300 transition hover:text-cyan-300"
+              >
+                Política de envíos
+              </a>
+
+              <a
+                href="/politica-de-devoluciones.html"
+                className="text-slate-300 transition hover:text-cyan-300"
+              >
+                Política de devoluciones
+              </a>
+
+              <a
+                href="/politica-de-privacidad.html"
+                className="text-slate-300 transition hover:text-cyan-300"
+              >
+                Política de privacidad
+              </a>
+
+              <a
+                href="#cotizacion"
+                className="text-slate-300 transition hover:text-cyan-300"
+              >
+                Solicitar cotización
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <p className="mt-6 max-w-sm leading-7 text-slate-300">
-        Fabricamos medias y calcetines para empresas, colegios, instituciones,
-        marcas, distribuidores y clientes corporativos.
-      </p>
-    </div>
-
-    <div>
-      <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
-        Contacto
-      </p>
-
-      <div className="grid gap-3 text-sm text-slate-300">
-        <span className="flex items-center gap-3">
-          <I type="phone" className="h-4 w-4 shrink-0 text-cyan-300" />
-          +51 930 967 608
-        </span>
-
-        <span className="flex items-center gap-3">
-          <I type="mail" className="h-4 w-4 shrink-0 text-cyan-300" />
-          ventas@mediascadi.com
-        </span>
-
-        <span className="flex items-center gap-3">
-          <I type="pin" className="h-4 w-4 shrink-0 text-cyan-300" />
-          Perú
-        </span>
-      </div>
-    </div>
-
-    <div>
-      <p className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
-        Información
-      </p>
-
-      <div className="grid gap-3 text-sm">
-        <a
-          href="/politica-de-envios.html"
-          className="text-slate-300 transition hover:text-cyan-300"
-        >
-          Política de envíos
-        </a>
-
-        <a
-          href="/politica-de-devoluciones.html"
-          className="text-slate-300 transition hover:text-cyan-300"
-        >
-          Política de devoluciones
-        </a>
-
-        <a
-  href="/politica-de-privacidad.html"
-  className="text-slate-300 transition hover:text-cyan-300"
->
-  Política de privacidad
-</a>
-        
-        <a
-          href="#cotizacion"
-          className="text-slate-300 transition hover:text-cyan-300"
-        >
-          Solicitar cotización
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div className="relative mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
-    <p>© 2026 CORPORACION TEXTIL CADI S.A.C. Todos los derechos reservados.</p>
-    <p>Medias al por mayor en Perú</p>
-  </div>
-</footer>
+        <div className="relative mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-400 md:mt-12 md:flex-row md:items-center md:justify-between">
+          <p>
+            © 2026 CORPORACION TEXTIL CADI S.A.C. Todos los derechos reservados.
+          </p>
+          <p>Medias al por mayor en Perú</p>
+        </div>
+      </footer>
 
       <motion.a
         initial={{ scale: 0, opacity: 0 }}
@@ -1030,10 +1057,10 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
         )}`}
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-3 rounded-full bg-green-500 px-5 py-4 font-black text-white shadow-2xl shadow-green-200 transition hover:scale-105 hover:bg-green-600"
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-black text-white shadow-2xl shadow-green-200 transition hover:scale-105 hover:bg-green-600 md:bottom-6 md:right-6 md:px-5 md:py-4 md:text-base"
       >
         <I type="chat" className="h-5 w-5" />
-        WhatsApp
+        Cotizar
       </motion.a>
     </div>
   );
