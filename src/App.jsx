@@ -726,22 +726,22 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
             >
               {process.map((step) => (
                 <motion.div
-                  variants={fadeUp}
-                  key={step.title}
-                  className="min-w-[78%] rounded-[2rem] border border-slate-100 bg-slate-50 p-5 md:min-w-0 md:p-6"
-                >
-                  <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-slate-950 text-white md:mb-6 md:h-14 md:w-14">
-                    <I type={step.icon} className="h-6 w-6 md:h-7 md:w-7" />
-                  </div>
-                  <h3 className="text-lg font-black md:text-xl">
-                    {step.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
-                    {step.text}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
+  variants={fadeUp}
+  key={step.title}
+  className="flex min-w-[78%] flex-col items-center rounded-[2rem] border border-slate-100 bg-slate-50 p-5 text-center md:min-w-0 md:p-6"
+>
+  <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-slate-950 text-white md:mb-6 md:h-14 md:w-14">
+    <I type={step.icon} className="h-6 w-6 md:h-7 md:w-7" />
+  </div>
+
+  <h3 className="text-lg font-black md:text-xl">
+    {step.title}
+  </h3>
+
+  <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
+    {step.text}
+  </p>
+</motion.div>
           </div>
         </section>
 
