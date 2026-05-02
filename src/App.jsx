@@ -1031,6 +1031,13 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               </a>
 
               <a
+  href="/politica-de-cookies.html"
+  className="text-slate-300 transition hover:text-cyan-300"
+>
+  Política de cookies
+</a>
+
+              <a
                 href="#cotizacion"
                 className="text-slate-300 transition hover:text-cyan-300"
               >
