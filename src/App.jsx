@@ -701,41 +701,51 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
         </section>
 
         <section id="proceso" className="bg-white py-14 md:py-24">
-          <div className="mx-auto max-w-7xl px-5 md:px-8">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.25 }}
-              className="mb-8 max-w-3xl md:mb-12"
-            >
-              <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
-                Proceso de trabajo
-              </p>
-              <h2 className="text-3xl font-black tracking-tight md:text-6xl">
-                De la cotización al producto final, con una ruta clara.
-              </h2>
-            </motion.div>
+  <div className="mx-auto max-w-7xl px-5 md:px-8">
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.25 }}
+      className="mb-8 max-w-3xl md:mb-12"
+    >
+      <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
+        Proceso de trabajo
+      </p>
+      <h2 className="text-3xl font-black tracking-tight md:text-6xl">
+        De la cotización al producto final, con una ruta clara.
+      </h2>
+    </motion.div>
 
-<motion.div
-  variants={fadeUp}
-  key={step.title}
-  className="flex min-w-[78%] flex-col items-center rounded-[2rem] border border-slate-100 bg-slate-50 p-5 text-center md:min-w-0 md:p-6"
->
-  <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-slate-950 text-white md:mb-6 md:h-14 md:w-14">
-    <I type={step.icon} className="h-6 w-6 md:h-7 md:w-7" />
-  </div>
-
-  <h3 className="text-lg font-black md:text-xl">
-    {step.title}
-  </h3>
-
-  <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
-    {step.text}
-  </p>
-</motion.div>
+    <motion.div
+      variants={stagger}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      className="flex gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible md:pb-0"
+    >
+      {process.map((step) => (
+        <motion.div
+          variants={fadeUp}
+          key={step.title}
+          className="flex min-w-[78%] flex-col items-center rounded-[2rem] border border-slate-100 bg-slate-50 p-5 text-center md:min-w-0 md:p-6"
+        >
+          <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-slate-950 text-white md:mb-6 md:h-14 md:w-14">
+            <I type={step.icon} className="h-6 w-6 md:h-7 md:w-7" />
           </div>
-        </section>
+
+          <h3 className="text-lg font-black md:text-xl">
+            {step.title}
+          </h3>
+
+          <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
+            {step.text}
+          </p>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
         <section className="hidden mx-auto max-w-7xl px-5 py-24 md:block md:px-8">
           <motion.div
