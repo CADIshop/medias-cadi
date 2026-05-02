@@ -508,24 +508,28 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
       variants={fadeUp}
       whileHover={{ y: -8 }}
       key={service.title}
-      className="overflow-hidden rounded-[2.25rem] border border-slate-100 bg-slate-50 shadow-sm transition"
+      className="group overflow-hidden rounded-[2.25rem] border border-slate-100 bg-slate-50 shadow-sm transition"
     >
-      <div className="aspect-[4/3] w-full overflow-hidden">
+      <div className="h-64 w-full overflow-hidden bg-slate-200">
         <img
           src={service.image}
           alt={service.title}
-          className="h-full w-full object-cover transition duration-500 hover:scale-105"
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
           loading="lazy"
         />
       </div>
 
       <div className="p-7">
-        <h3 className="text-2xl font-black">{service.title}</h3>
+        <h3 className="text-2xl font-black text-slate-950">
+          {service.title}
+        </h3>
         <p className="mt-4 leading-8 text-slate-600">
           {service.text}
         </p>
       </div>
     </motion.div>
+  ))}
+</motion.div>
   ))}
 </motion.div>
           </div>
