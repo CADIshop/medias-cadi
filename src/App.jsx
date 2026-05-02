@@ -530,8 +530,6 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
     </motion.div>
   ))}
 </motion.div>
-  ))}
-</motion.div>
           </div>
         </section>
 
