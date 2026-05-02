@@ -363,23 +363,6 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               </a>
             </motion.div>
 
-            <motion.div
-              variants={fadeUp}
-              className="grid max-w-2xl grid-cols-3 gap-2 md:gap-3"
-            >
-              {["85% algodón", "10% spandex", "5% elástico"].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-white bg-white/80 p-3 text-center shadow-sm md:p-4"
-                >
-                  <p className="text-xs font-black text-slate-800 md:text-sm">
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
