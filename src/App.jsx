@@ -388,8 +388,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           >
             <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-cyan-200 via-white to-blue-200 blur-2xl" />
 
-            <div className="relative rounded-[2.25rem] border border-white bg-white/85 p-4 shadow-2xl shadow-slate-200 backdrop-blur-xl md:rounded-[3rem] md:p-5">
-              <div className="rounded-[2rem] bg-gradient-to-br from-slate-950 to-slate-800 p-4 text-white md:rounded-[2.5rem] md:p-6">
+            <div className="relative rounded-[2.25rem] bg-gradient-to-br from-slate-950 to-slate-800 p-5 text-white shadow-2xl shadow-slate-300 md:rounded-[3rem] md:p-7">
                 <div className="mb-4 flex items-center justify-between md:mb-8">
                   <p className="text-sm font-bold text-cyan-200">
                     Producción mayorista
@@ -433,7 +432,6 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                         aria-label={`Ver ${item.name}`}
                       />
                     ))}
-                  </div>
                 </div>
               </div>
             </div>
