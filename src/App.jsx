@@ -236,7 +236,8 @@ export default function LandingMediasMayoristas() {
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
   const [mensaje, setMensaje] = useState("");
-  const [openFaq, setOpenFaq] = useState(null);
+const [activeSlide, setActiveSlide] = useState(0);
+const [openFaq, setOpenFaq] = useState(null);
 
   const whatsappNumber = "51930967608";
 
