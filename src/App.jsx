@@ -143,17 +143,17 @@ const models = [
 
 const services = [
   {
-    icon: "spark",
+    image: "/servicios/diseno-y-desarrollo.jpg",
     title: "Diseño y desarrollo",
     text: "Convertimos tu idea en una propuesta clara: modelo, colores, tallas, estilo, empaque y presentación. Te asesoramos digitalmente para crear una línea lista para vender.",
   },
   {
-    icon: "factory",
+    image: "/servicios/produccion-mayorista.jpg",
     title: "Producción mayorista",
     text: "Fabricamos por volumen con procesos ordenados, control de tiempos y consistencia entre lotes para marcas, empresas e instituciones.",
   },
   {
-    icon: "box",
+    image: "/servicios/marca-y-presentacion.jpg",
     title: "Marca y presentación",
     text: "Preparamos el producto con identidad propia: etiquetado, empaque y presentación comercial para que tus medias lleguen listas al cliente final.",
   },
@@ -497,31 +497,37 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
             </motion.div>
 
             <motion.div
-              variants={stagger}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
-              className="flex gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible md:pb-0"
-            >
-              {services.map((service) => (
-                <motion.div
-                  variants={fadeUp}
-                  whileHover={{ y: -8 }}
-                  key={service.title}
-                  className="min-w-[82%] rounded-[2rem] border border-slate-100 bg-slate-50 p-6 shadow-sm transition md:min-w-0 md:rounded-[2.25rem] md:p-7"
-                >
-                  <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-slate-950 text-white md:mb-6 md:h-14 md:w-14">
-                    <I type={service.icon} className="h-6 w-6 md:h-7 md:w-7" />
-                  </div>
-                  <h3 className="text-xl font-black md:text-2xl">
-                    {service.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600 md:mt-4 md:text-base md:leading-8">
-                    {service.text}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
+  variants={stagger}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.2 }}
+  className="grid gap-5 md:grid-cols-3"
+>
+  {services.map((service) => (
+    <motion.div
+      variants={fadeUp}
+      whileHover={{ y: -8 }}
+      key={service.title}
+      className="overflow-hidden rounded-[2.25rem] border border-slate-100 bg-slate-50 shadow-sm transition"
+    >
+      <div className="aspect-[4/3] w-full overflow-hidden">
+        <img
+          src={service.image}
+          alt={service.title}
+          className="h-full w-full object-cover transition duration-500 hover:scale-105"
+          loading="lazy"
+        />
+      </div>
+
+      <div className="p-7">
+        <h3 className="text-2xl font-black">{service.title}</h3>
+        <p className="mt-4 leading-8 text-slate-600">
+          {service.text}
+        </p>
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
           </div>
         </section>
 
