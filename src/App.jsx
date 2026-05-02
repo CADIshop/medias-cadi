@@ -717,15 +717,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               </h2>
             </motion.div>
 
-            <motion.div
-              variants={stagger}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
-              className="flex gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible md:pb-0"
-            >
-              {process.map((step) => (
-                <motion.div
+<motion.div
   variants={fadeUp}
   key={step.title}
   className="flex min-w-[78%] flex-col items-center rounded-[2rem] border border-slate-100 bg-slate-50 p-5 text-center md:min-w-0 md:p-6"
