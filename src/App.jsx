@@ -236,7 +236,7 @@ export default function LandingMediasMayoristas() {
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
   const [mensaje, setMensaje] = useState("");
-  const [activeSlide, setActiveSlide] = useState(0);
+  const [openFaq, setOpenFaq] = useState(null);
 
   const whatsappNumber = "51930967608";
 
@@ -747,34 +747,62 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
   </div>
 </section>
 
-        <section className="hidden mx-auto max-w-7xl px-5 py-24 md:block md:px-8">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.25 }}
-            className="mb-10 max-w-2xl"
-          >
-            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
-              Preguntas frecuentes
-            </p>
-            <h2 className="text-4xl font-black tracking-tight md:text-5xl">
-              Información rápida para cotizar mejor.
-            </h2>
-          </motion.div>
+<section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-24">
+  <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.25 }}
+    className="mb-8 max-w-3xl md:mb-10"
+  >
+    <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
+      Preguntas frecuentes
+    </p>
+    <h2 className="text-3xl font-black tracking-tight md:text-5xl">
+      Información rápida para cotizar mejor.
+    </h2>
+  </motion.div>
 
-          <div className="grid gap-4 md:grid-cols-3">
-            {faqs.map((faq) => (
-              <div
-                key={faq.q}
-                className="rounded-[2rem] border border-white bg-white p-6 shadow-sm"
-              >
-                <h3 className="text-lg font-black">{faq.q}</h3>
-                <p className="mt-3 leading-7 text-slate-600">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+  <div className="overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-xl shadow-slate-100">
+    {faqs.map((faq, index) => {
+      const isOpen = openFaq === index;
+
+      return (
+        <div
+          key={faq.q}
+          className="border-b border-slate-100 last:border-b-0"
+        >
+          <button
+            type="button"
+            onClick={() => setOpenFaq(isOpen ? null : index)}
+            className="flex w-full items-center justify-between gap-4 bg-slate-50 px-5 py-5 text-left transition hover:bg-slate-100 md:px-7"
+          >
+            <span className="text-base font-black text-slate-950 md:text-lg">
+              {faq.q}
+            </span>
+
+            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white text-2xl font-light text-slate-700 shadow-sm">
+              {isOpen ? "−" : "+"}
+            </span>
+          </button>
+
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              transition={{ duration: 0.25 }}
+              className="bg-white px-5 py-5 md:px-7"
+            >
+              <p className="max-w-4xl leading-8 text-slate-600">
+                {faq.a}
+              </p>
+            </motion.div>
+          )}
+        </div>
+      );
+    })}
+  </div>
+</section>
 
         <section className="bg-white py-14 md:py-20">
           <div className="mx-auto grid max-w-7xl gap-6 px-5 md:grid-cols-[0.9fr_1.1fr] md:items-center md:gap-8 md:px-8">
