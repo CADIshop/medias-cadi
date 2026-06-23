@@ -1,2 +1,2 @@
-# medias-cadi
-Tienda online Medias Cadi
+# cadi-textil
+Tienda online Cadi Textil
