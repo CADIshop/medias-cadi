@@ -864,7 +864,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                 </span>
                 <span className="flex gap-3">
                   <I type="mail" className="h-5 w-5 shrink-0 text-cyan-300" />
-                  ventas@caditextil.com
+                  ventas@caditextil.com - 
                   ventas@mediascadi.com
                 </span>
                 <span className="flex gap-3">
