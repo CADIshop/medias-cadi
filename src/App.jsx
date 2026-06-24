@@ -334,7 +334,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
   </div>
 </div>
 
-</nav>
+<nav>
 
 <a
   href="#cotizacion"
