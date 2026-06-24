@@ -127,6 +127,13 @@ const process = [
   },
 ];
 
+const heroImages = [
+  "/clasico.png",
+  "/oversize.png",
+  "/pique.png",
+  "/deportivo.png",
+];
+
 const whatsappNumber = "51930967608";
 const whatsappText = encodeURIComponent(
   "Hola, quiero información sobre polos personalizados."
@@ -229,15 +236,10 @@ export default function Polos() {
 
             <div className="relative overflow-hidden rounded-[2.25rem] bg-gradient-to-br from-slate-950 to-slate-800 p-5 text-white shadow-2xl shadow-slate-300 md:rounded-[3rem] md:p-7">
               <img
-                const heroImages = [
-  "/clasico.png",
-  "/oversize.png",
-  "/pique.png",
-  "/deportivo.png",
-];
-                alt="Polos personalizados"
-                className="h-[320px] w-full rounded-[1.75rem] object-cover md:h-[460px]"
-              />
+  src={heroImages[0]}
+  alt="Polos personalizados"
+  className="h-[320px] w-full rounded-[1.75rem] object-cover md:h-[460px]"
+/>
 
               <div className="absolute bottom-8 left-8 right-8 rounded-[1.5rem] bg-slate-950/80 p-5 backdrop-blur">
                 <p className="text-sm font-bold text-cyan-300">
