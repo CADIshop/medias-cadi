@@ -312,10 +312,10 @@ export default function Polos() {
         <section id="proceso" className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
           <div className="mb-8 max-w-3xl">
             <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
-              Proceso breve
+              PROCESO DE FABRICACIÓN
             </p>
             <h2 className="text-3xl font-black tracking-tight md:text-5xl">
-              De la idea al pedido final.
+              Así convertimos tu idea en un producto listo para usar.
             </h2>
           </div>
 
