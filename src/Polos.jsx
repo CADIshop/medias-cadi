@@ -342,30 +342,27 @@ export default function Polos() {
             </h2>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-4">
-            const process = [
-  {
-    icon: "chat",
-    title: "1. Requerimiento",
-    text: "Cuéntanos el modelo, la cantidad, las tallas, el tipo de tela y la personalización que necesitas.",
-  },
-  {
-    icon: "sparkles",
-    title: "2. Propuesta",
-    text: "Definimos el modelo, los acabados, el tipo de estampado o bordado y elaboramos la cotización.",
-  },
-  {
-    icon: "factory",
-    title: "3. Fabricación",
-    text: "Producimos los polos con telas 20/1 o 30/1, realizando control de calidad durante el proceso.",
-  },
-  {
-    icon: "box",
-    title: "4. Entrega",
-    text: "Coordinamos el despacho para que recibas tu pedido listo para su uso o distribución.",
-  },
-];
-          </div>
+<div className="grid gap-6 md:grid-cols-4">
+  {process.map((step) => (
+    <motion.div
+      key={step.title}
+      whileHover={{ y: -8 }}
+      className="rounded-[2rem] border border-slate-100 bg-slate-50 p-8 text-center shadow-sm transition"
+    >
+      <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-950 text-white">
+        <I type={step.icon} className="h-8 w-8" />
+      </div>
+
+      <h3 className="text-2xl font-black">
+        {step.title}
+      </h3>
+
+      <p className="mt-4 text-base leading-7 text-slate-600">
+        {step.text}
+      </p>
+    </motion.div>
+  ))}
+</div>
         </section>
       </main>
 
