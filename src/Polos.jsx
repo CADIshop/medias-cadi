@@ -80,6 +80,29 @@ const modelos = [
   },
 ];
 
+const process = [
+  {
+    icon: "chat",
+    title: "1. Requerimiento",
+    text: "Cuéntanos el modelo, la cantidad, las tallas, el tipo de tela y la personalización que necesitas.",
+  },
+  {
+    icon: "sparkles",
+    title: "2. Propuesta",
+    text: "Definimos el modelo, los acabados, el tipo de estampado o bordado y elaboramos la cotización.",
+  },
+  {
+    icon: "factory",
+    title: "3. Fabricación",
+    text: "Producimos los polos con telas 20/1 o 30/1, realizando control de calidad durante el proceso.",
+  },
+  {
+    icon: "box",
+    title: "4. Entrega",
+    text: "Coordinamos el despacho para que recibas tu pedido listo para su uso o distribución.",
+  },
+];
+
 const whatsappNumber = "51930967608";
 const whatsappText = encodeURIComponent(
   "Hola, quiero información sobre polos personalizados."
@@ -320,19 +343,30 @@ export default function Polos() {
           </div>
 
           <div className="grid gap-5 md:grid-cols-4">
-            {[
-              "1. Envías tu idea",
-              "2. Definimos modelo y diseño",
-              "3. Producimos el pedido",
-              "4. Coordinamos entrega",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-[2rem] border border-slate-100 bg-white p-6 text-center shadow-sm"
-              >
-                <p className="text-lg font-black text-slate-950">{item}</p>
-              </div>
-            ))}
+sparkles: (
+  <>
+    <path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2z" />
+    <path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8L19 14z" />
+  </>
+),
+
+factory: (
+  <>
+    <path d="M3 21h18" />
+    <path d="M5 21V10l6 3V7l8 4v10" />
+    <path d="M8 17h2" />
+    <path d="M12 17h2" />
+    <path d="M16 17h2" />
+  </>
+),
+
+box: (
+  <>
+    <path d="M21 8l-9-5-9 5 9 5 9-5z" />
+    <path d="M3 8v8l9 5 9-5V8" />
+    <path d="M12 13v8" />
+  </>
+),
           </div>
         </section>
       </main>
