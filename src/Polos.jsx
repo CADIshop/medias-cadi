@@ -31,6 +31,30 @@ const I = ({ type, className = "h-5 w-5" }) => {
         <circle cx="12" cy="10" r="2.5" />
       </>
     ),
+    sparkles: (
+  <>
+    <path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2z" />
+    <path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8L19 14z" />
+  </>
+),
+
+factory: (
+  <>
+    <path d="M3 21h18" />
+    <path d="M5 21V10l6 3V7l8 4v10" />
+    <path d="M8 17h2" />
+    <path d="M12 17h2" />
+    <path d="M16 17h2" />
+  </>
+),
+
+box: (
+  <>
+    <path d="M21 8l-9-5-9 5 9 5 9-5z" />
+    <path d="M3 8v8l9 5 9-5V8" />
+    <path d="M12 13v8" />
+  </>
+),
   };
 
   return (
