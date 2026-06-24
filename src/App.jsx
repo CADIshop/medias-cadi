@@ -334,14 +334,14 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
   </div>
 </div>
 
-          <a
-            href="#cotizacion"
-            className="rounded-full bg-slate-950 px-4 py-3 text-xs font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-cyan-700 md:px-5 md:text-sm"
-          >
-            Cotizar ahora
-          </a>
-        </div>
-      </header>
+</nav>
+
+<a
+  href="#cotizacion"
+  className="rounded-full bg-slate-950 px-4 py-3 text-xs font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-cyan-700 md:px-5 md:text-sm"
+>
+  Cotizar ahora
+</a>
 
       <main className="relative z-10">
         <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-12 pt-10 md:grid-cols-[1.05fr_0.95fr] md:px-8 md:pb-20 md:pt-24">
