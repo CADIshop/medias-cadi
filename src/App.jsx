@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { motion } from "framer-motion";
+import Polos from "./Polos.jsx";
 
 const I = ({ type, className = "h-5 w-5" }) => {
   const base = {
