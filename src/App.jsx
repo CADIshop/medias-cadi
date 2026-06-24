@@ -282,7 +282,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               />
             </div>
             <div>
-              <p className="text-lg font-black tracking-tight">Cadi</p>
+              <p className="text-lg font-black tracking-tight">Cadi Textil</p>
               <p className="text-xs font-medium text-slate-500">
                 Fabricación textil al por mayor
               </p>
