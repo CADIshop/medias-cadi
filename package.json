@@ -8,12 +8,11 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "framer-motion": "latest"
-  },
-  "devDependencies": {}
-}
+"dependencies": {
+  "@vitejs/plugin-react": "latest",
+  "vite": "latest",
+  "react": "latest",
+  "react-dom": "latest",
+  "framer-motion": "latest",
+  "react-router-dom": "^7.0.0"
+},
