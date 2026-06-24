@@ -1127,6 +1127,6 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
   );
 }
 
-createRoot(document.getElementById("root")).render(
-  <LandingMediasMayoristas />
-);
+const Page = window.location.pathname === "/polos" ? Polos : LandingMediasMayoristas;
+
+createRoot(document.getElementById("root")).render(<Page />);
