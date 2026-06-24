@@ -290,20 +290,47 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </div>
 
 <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex">
-  <a href="#servicios">Servicios</a>
-  <a href="#fabricamos">Qué fabricamos</a>
-  <a href="#modelos">Modelos</a>
+  <a href="#servicios" className="hover:text-cyan-700">Servicios</a>
+  <a href="#fabricamos" className="hover:text-cyan-700">Qué fabricamos</a>
+  <a href="#modelos" className="hover:text-cyan-700">Modelos</a>
+  <a href="#proceso" className="hover:text-cyan-700">Proceso</a>
+  <a href="#cotizacion" className="hover:text-cyan-700">Cotización</a>
 
-  <a href="/otros-productos" className="hover:text-cyan-700">
-    Otros productos
-  </a>
+  <div className="group relative">
+    <button className="hover:text-cyan-700">
+      Otros productos y servicios
+    </button>
 
-  <a href="/otros-servicios" className="hover:text-cyan-700">
-    Otros servicios
-  </a>
+    <div className="invisible absolute right-0 top-full z-50 mt-4 w-64 rounded-2xl border border-slate-100 bg-white p-3 opacity-0 shadow-xl transition group-hover:visible group-hover:opacity-100">
+      <p className="px-3 py-2 text-xs font-black uppercase tracking-widest text-cyan-700">
+        Productos
+      </p>
 
-  <a href="#proceso">Proceso</a>
-  <a href="#cotizacion">Cotización</a>
+      <a href="/polos" className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700">
+        Polos
+      </a>
+
+      <p className="mt-3 px-3 py-2 text-xs font-black uppercase tracking-widest text-cyan-700">
+        Servicios
+      </p>
+
+      <a href="/lapiceros-personalizados" className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700">
+        Lapiceros personalizados
+      </a>
+
+      <a href="/llaveros-personalizados" className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700">
+        Llaveros personalizados
+      </a>
+
+      <a href="/cajitas-personalizadas" className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700">
+        Cajitas personalizadas
+      </a>
+
+      <a href="/bolsas-tocuyo-notex" className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700">
+        Bolsas de tocuyo y notex
+      </a>
+    </div>
+  </div>
 </nav>
 
           <a
