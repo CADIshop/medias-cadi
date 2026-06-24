@@ -82,25 +82,25 @@ const modelos = [
     name: "Polo clásico",
     tag: "Corporativo",
     text: "Ideal para empresas, eventos, campañas y uso diario.",
-    image: "/polos/polo-clasico-1.jpg",
+    image: "/clasico.png",
   },
   {
     name: "Polo oversize",
     tag: "Moda urbana",
     text: "Formato amplio para marcas de ropa, emprendimientos y colecciones urbanas.",
-    image: "/polos/polo-oversize-1.jpg",
+    image: "/oversize.png",
   },
   {
     name: "Polo piqué",
     tag: "Uniformes",
     text: "Perfecto para personal de empresa, atención al cliente e instituciones.",
-    image: "/polos/polo-pique-1.jpg",
+    image: "/pique.png",
   },
   {
     name: "Polo deportivo",
     tag: "Alto movimiento",
     text: "Pensado para equipos, academias, eventos deportivos y entrenamientos.",
-    image: "/polos/polo-deportivo-1.jpg",
+    image: "/deportivo.png",
   },
 ];
 
@@ -229,7 +229,12 @@ export default function Polos() {
 
             <div className="relative overflow-hidden rounded-[2.25rem] bg-gradient-to-br from-slate-950 to-slate-800 p-5 text-white shadow-2xl shadow-slate-300 md:rounded-[3rem] md:p-7">
               <img
-                src="/polos/polo-principal.jpg"
+                const heroImages = [
+  "/clasico.png",
+  "/oversize.png",
+  "/pique.png",
+  "/deportivo.png",
+];
                 alt="Polos personalizados"
                 className="h-[320px] w-full rounded-[1.75rem] object-cover md:h-[460px]"
               />
