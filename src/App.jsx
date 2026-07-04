@@ -162,7 +162,7 @@ const services = [
 
 const products = [
   "Medias y calcetines para empresas, colegios, clubes, academias e instituciones públicas o privadas.",
-  "Producción para licitaciones, campañas corporativas y requerimientos con especificaciones técnicas.",
+  "Producción por volumen desde 100 pares para cualquier tipo de negocio o institución.",
   "Marca blanca para negocios que desean vender medias con su propia identidad comercial.",
   "Personalización con marca, logo, etiqueta y empaque final según el objetivo del pedido.",
   "Líneas para clientes corporativos, distribuidores, emprendedores y negocios textiles.",
@@ -365,14 +365,10 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
 
             <motion.div variants={fadeUp} className="space-y-5 md:space-y-6">
               <h1 className="text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-7xl">
-                Fabricamos medias al por mayor para vender, uniformar y
-                abastecer.
+                Fabricación de medias deportivas y casuales al por mayor para marcas, negocios y distribuidores.
               </h1>
               <p className="max-w-2xl text-base leading-7 text-slate-600 md:text-lg md:leading-8">
-                En Cadi desarrollamos y fabricamos medias y calcetines por
-                volumen para empresas, colegios, instituciones, distribuidores y
-                marcas que buscan calidad, continuidad de producción y
-                presentación profesional.
+                En Cadi Textil fabricamos medias deportivas, casuales e institucionales con algodón de alta calidad. Atendemos marcas, emprendedores, distribuidores, tiendas, empresas y colegios, ofreciendo producción flexible, precios competitivos y una excelente relación calidad-precio para pedidos mayoristas.
               </p>
             </motion.div>
 
@@ -474,13 +470,15 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
 
           <div className="flex flex-wrap gap-3">
             {[
-              "Empresas",
-              "Colegios",
-              "Instituciones",
+              "Tiendas de ropa",
+              "Marcas de ropa",
+              "Emprendedores",
               "Distribuidores",
               "Marca blanca",
-              "Licitaciones",
-              "Academias deportivas",
+              "Equipos deportivos",
+              "Empresas",
+              "Colegioss",
+              "Academias",
               "Campañas corporativas",
             ].map((item) => (
               <span
@@ -493,6 +491,38 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </div>
         </section>
 
+<section className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-16">
+  <div className="grid gap-6 rounded-[2rem] bg-white p-6 shadow-xl shadow-slate-100 md:grid-cols-3 md:rounded-[2.5rem] md:p-8">
+    {[
+      {
+        title: "Pedidos mayoristas accesibles",
+        text: "Trabajamos pedidos por volumen para emprendedores, tiendas, marcas, distribuidores, empresas y colegios.",
+      },
+      {
+        title: "Precios competitivos",
+        text: "Ofrecemos precios rentables para reventa, con mejores condiciones según la cantidad solicitada.",
+      },
+      {
+        title: "Medias de algodón",
+        text: "Fabricamos medias deportivas, casuales e institucionales con enfoque en comodidad, resistencia y presentación.",
+      },
+    ].map((item) => (
+      <motion.div
+        key={item.title}
+        whileHover={{ y: -6 }}
+        className="rounded-[1.5rem] bg-slate-50 p-5"
+      >
+        <h3 className="text-xl font-black text-slate-950">
+          {item.title}
+        </h3>
+        <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
+          {item.text}
+        </p>
+      </motion.div>
+    ))}
+  </div>
+</section>
+        
         <section id="servicios" className="bg-white py-14 md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <motion.div
@@ -597,6 +627,48 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </motion.div>
         </section>
 
+<section className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-12">
+  <div className="rounded-[2rem] bg-slate-950 p-6 text-white shadow-2xl shadow-slate-200 md:rounded-[2.5rem] md:p-10">
+    <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+      <div>
+        <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
+          Compra mayorista
+        </p>
+        <h2 className="text-3xl font-black tracking-tight md:text-5xl">
+          Medias listas para vender, distribuir o personalizar.
+        </h2>
+        <p className="mt-5 text-base leading-8 text-slate-300">
+          Atendemos negocios que buscan productos rentables, cómodos y de buena
+          presentación para vender al por mayor o desarrollar su propia marca.
+        </p>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        {[
+          "Ideal para emprendedores",
+          "Para tiendas y distribuidores",
+          "Precios por volumen",
+          "Personalización con marca",
+          "Modelos deportivos y casuales",
+          "Producción nacional",
+        ].map((item) => (
+          <div
+            key={item}
+            className="flex items-center gap-3 rounded-2xl bg-white/10 p-4"
+          >
+            <div className="rounded-full bg-cyan-300 p-2 text-slate-950">
+              <I type="check" className="h-4 w-4" />
+            </div>
+            <p className="text-sm font-bold text-slate-100">
+              {item}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+        
         <section className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-10">
           <div className="grid gap-3 rounded-[2rem] bg-white p-5 shadow-xl shadow-slate-100 md:grid-cols-4 md:gap-4 md:rounded-[2.5rem] md:p-8">
             {[
@@ -1029,8 +1101,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
             </div>
 
             <p className="mt-5 max-w-sm text-sm leading-7 text-slate-300 md:mt-6 md:text-base">
-              Fabricamos medias y calcetines para empresas, colegios,
-              instituciones, marcas, distribuidores y clientes corporativos.
+              Fabricamos medias deportivas y casuales de algodón para tiendas, marcas, distribuidores, empresas, colegios y clientes mayoristas.
             </p>
           </div>
 
