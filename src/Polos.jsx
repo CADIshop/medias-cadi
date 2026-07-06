@@ -127,19 +127,22 @@ const process = [
   },
 ];
 
-const heroImages = [
-  "/clasico.png",
-  "/oversize.png",
-  "/pique.png",
-  "/deportivo.png",
-];
-
 const whatsappNumber = "51930967608";
 const whatsappText = encodeURIComponent(
   "Hola, quiero información sobre polos personalizados."
 );
 
 export default function Polos() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+useEffect(() => {
+  const timer = setInterval(() => {
+    setActiveSlide((prev) => (prev + 1) % modelos.length);
+  }, 3000);
+
+  return () => clearInterval(timer);
+}, []);
+  
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f7f8fb] text-slate-950">
       <div className="pointer-events-none fixed inset-0">
@@ -236,10 +239,44 @@ export default function Polos() {
 
             <div className="relative overflow-hidden rounded-[2.25rem] bg-gradient-to-br from-slate-950 to-slate-800 p-5 text-white shadow-2xl shadow-slate-300 md:rounded-[3rem] md:p-7">
               <img
-  src={heroImages[0]}
-  alt="Polos personalizados"
-  className="h-[320px] w-full rounded-[1.75rem] object-cover md:h-[460px]"
-/>
+<div className="relative overflow-hidden rounded-[1.75rem] bg-white/10">
+  <motion.img
+    key={modelos[activeSlide].image}
+    src={modelos[activeSlide].image}
+    alt={modelos[activeSlide].name}
+    initial={{ opacity: 0, scale: 1.05 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.7 }}
+    className="h-[320px] w-full object-cover md:h-[460px]"
+  />
+
+  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-5 md:p-6">
+    <p className="text-sm font-bold text-cyan-300">
+      {modelos[activeSlide].tag}
+    </p>
+
+    <h3 className="mt-1 text-2xl font-black text-white">
+      {modelos[activeSlide].name}
+    </h3>
+
+    <p className="mt-2 max-w-sm text-sm leading-6 text-slate-200">
+      {modelos[activeSlide].text}
+    </p>
+  </div>
+
+  <div className="absolute bottom-5 right-5 flex gap-2">
+    {modelos.map((item, index) => (
+      <button
+        key={item.name}
+        onClick={() => setActiveSlide(index)}
+        className={`h-3 w-3 rounded-full transition ${
+          activeSlide === index ? "bg-cyan-300" : "bg-white/40"
+        }`}
+        aria-label={`Ver ${item.name}`}
+      />
+    ))}
+  </div>
+</div>
 
               <div className="absolute bottom-8 left-8 right-8 rounded-[1.5rem] bg-slate-950/80 p-5 backdrop-blur">
                 <p className="text-sm font-bold text-cyan-300">
