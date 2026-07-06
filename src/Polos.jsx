@@ -277,241 +277,241 @@ export default function Polos() {
             </div>
           </motion.div>
         </section>
-      </main>
-    </div>
-  );
-}
 
-    <section id="modelos" className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
-      <div className="mb-8 max-w-3xl">
-        <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
-          Modelos
-        </p>
-        <h2 className="text-3xl font-black tracking-tight md:text-5xl">
-          Elige el tipo de polo según tu proyecto.
-        </h2>
-      </div>
-
-      <div className="grid gap-5 md:grid-cols-4">
-        {modelos.map((item) => (
-          <motion.div
-            key={item.name}
-            whileHover={{ y: -8 }}
-            className="rounded-[2rem] border border-white bg-white p-5 shadow-lg shadow-slate-100"
-          >
-            <div className="mb-5 h-48 overflow-hidden rounded-[1.5rem] bg-slate-100">
-              <img
-                src={item.image}
-                alt={item.name}
-                className="h-full w-full object-cover transition duration-500 hover:scale-110"
-              />
-            </div>
-
-            <span className="rounded-full bg-cyan-100 px-3 py-1 text-xs font-black text-cyan-700">
-              {item.tag}
-            </span>
-
-            <h3 className="mt-4 text-2xl font-black">{item.name}</h3>
-            <p className="mt-3 text-sm leading-7 text-slate-600">
-              {item.text}
+                <section id="modelos" className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
+          <div className="mb-8 max-w-3xl">
+            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
+              Modelos
             </p>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+            <h2 className="text-3xl font-black tracking-tight md:text-5xl">
+              Elige el tipo de polo según tu proyecto.
+            </h2>
+          </div>
 
-    <section id="telas" className="bg-white py-14 md:py-20">
-      <div className="mx-auto grid max-w-7xl gap-6 px-5 md:grid-cols-[0.9fr_1.1fr] md:items-center md:px-8">
-        <div>
-          <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
-            Telas disponibles
-          </p>
-          <h2 className="text-3xl font-black tracking-tight md:text-5xl">
-            Trabajamos con 30/1 y 20/1.
-          </h2>
-        </div>
-
-        <div className="rounded-[2rem] bg-slate-50 p-6 text-base leading-8 text-slate-600 md:p-8 md:text-lg">
-          Utilizamos telas 30/1 y 20/1 para polos personalizados,
-          uniformes, campañas y producción por volumen. La elección depende
-          del acabado, uso y presupuesto del pedido.
-        </div>
-      </div>
-    </section>
-
-    <section id="personalizacion" className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
-      <div className="mb-8 max-w-3xl">
-        <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
-          Personalización
-        </p>
-        <h2 className="text-3xl font-black tracking-tight md:text-5xl">
-          Adaptamos el polo a la identidad de tu marca o campaña.
-        </h2>
-      </div>
-
-      <div className="grid gap-3 md:grid-cols-3">
-        {["Logo", "Estampado", "Bordado", "DTF", "Sublimado", "Colores y tallas"].map(
-          (item) => (
-            <div
-              key={item}
-              className="flex items-center gap-3 rounded-[1.5rem] border border-white bg-white p-5 shadow-sm"
-            >
-              <span className="rounded-full bg-cyan-100 p-2 text-cyan-700">
-                <I type="check" className="h-4 w-4" />
-              </span>
-              <p className="font-black text-slate-800">{item}</p>
-            </div>
-          )
-        )}
-      </div>
-    </section>
-
-    <section className="bg-slate-950 py-14 text-white md:py-20">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="mb-8 max-w-3xl">
-          <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
-            Ideal para
-          </p>
-          <h2 className="text-3xl font-black tracking-tight md:text-5xl">
-            Una solución simple para pedidos personalizados.
-          </h2>
-        </div>
-
-        <div className="flex flex-wrap gap-3">
-          {["Empresas", "Eventos", "Colegios", "Marcas", "Campañas", "Uniformes", "Emprendedores"].map(
-            (item) => (
-              <span
-                key={item}
-                className="rounded-full border border-white/10 bg-white/10 px-5 py-3 text-sm font-black text-white"
+          <div className="grid gap-5 md:grid-cols-4">
+            {modelos.map((item) => (
+              <motion.div
+                key={item.name}
+                whileHover={{ y: -8 }}
+                className="rounded-[2rem] border border-white bg-white p-5 shadow-lg shadow-slate-100"
               >
-                {item}
-              </span>
-            )
-          )}
-        </div>
-      </div>
-    </section>
+                <div className="mb-5 h-48 overflow-hidden rounded-[1.5rem] bg-slate-100">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="h-full w-full object-cover transition duration-500 hover:scale-110"
+                  />
+                </div>
 
-    <section id="proceso" className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
-      <div className="mb-8 max-w-3xl">
-        <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
-          PROCESO DE FABRICACIÓN
-        </p>
-        <h2 className="text-3xl font-black tracking-tight md:text-5xl">
-          Así convertimos tu idea en un producto listo para usar.
-        </h2>
-      </div>
+                <span className="rounded-full bg-cyan-100 px-3 py-1 text-xs font-black text-cyan-700">
+                  {item.tag}
+                </span>
 
-<div className="grid gap-6 md:grid-cols-4">
-  {process.map((step) => (
-    <motion.div
-      key={step.title}
-      whileHover={{ y: -8 }}
-      className="rounded-[2rem] border border-slate-100 bg-slate-50 p-8 text-center shadow-sm transition"
-    >
-      <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-950 text-white">
-        <I type={step.icon} className="h-8 w-8" />
-      </div>
+                <h3 className="mt-4 text-2xl font-black">{item.name}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {item.text}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
 
-  <h3 className="text-2xl font-black">
-    {step.title}
-  </h3>
+        <section id="telas" className="bg-white py-14 md:py-20">
+          <div className="mx-auto grid max-w-7xl gap-6 px-5 md:grid-cols-[0.9fr_1.1fr] md:items-center md:px-8">
+            <div>
+              <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
+                Telas disponibles
+              </p>
+              <h2 className="text-3xl font-black tracking-tight md:text-5xl">
+                Trabajamos con 30/1 y 20/1.
+              </h2>
+            </div>
 
-  <p className="mt-4 text-base leading-7 text-slate-600">
-    {step.text}
-  </p>
-</motion.div>
+            <div className="rounded-[2rem] bg-slate-50 p-6 text-base leading-8 text-slate-600 md:p-8 md:text-lg">
+              Utilizamos telas 30/1 y 20/1 para polos personalizados,
+              uniformes, campañas y producción por volumen. La elección depende
+              del acabado, uso y presupuesto del pedido.
+            </div>
+          </div>
+        </section>
 
-))}
+        <section id="personalizacion" className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
+          <div className="mb-8 max-w-3xl">
+            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
+              Personalización
+            </p>
+            <h2 className="text-3xl font-black tracking-tight md:text-5xl">
+              Adaptamos el polo a la identidad de tu marca o campaña.
+            </h2>
+          </div>
 
-</div>
+          <div className="grid gap-3 md:grid-cols-3">
+            {["Logo", "Estampado", "Bordado", "DTF", "Sublimado", "Colores y tallas"].map(
+              (item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-3 rounded-[1.5rem] border border-white bg-white p-5 shadow-sm"
+                >
+                  <span className="rounded-full bg-cyan-100 p-2 text-cyan-700">
+                    <I type="check" className="h-4 w-4" />
+                  </span>
+                  <p className="font-black text-slate-800">{item}</p>
+                </div>
+              )
+            )}
+          </div>
+        </section>
+
+        <section className="bg-slate-950 py-14 text-white md:py-20">
+          <div className="mx-auto max-w-7xl px-5 md:px-8">
+            <div className="mb-8 max-w-3xl">
+              <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
+                Ideal para
+              </p>
+              <h2 className="text-3xl font-black tracking-tight md:text-5xl">
+                Una solución simple para pedidos personalizados.
+              </h2>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              {["Empresas", "Eventos", "Colegios", "Marcas", "Campañas", "Uniformes", "Emprendedores"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-white/10 bg-white/10 px-5 py-3 text-sm font-black text-white"
+                  >
+                    {item}
+                  </span>
+                )
+              )}
+            </div>
+          </div>
+        </section>
+
+                <section id="proceso" className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
+          <div className="mb-8 max-w-3xl">
+            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
+              PROCESO DE FABRICACIÓN
+            </p>
+            <h2 className="text-3xl font-black tracking-tight md:text-5xl">
+              Así convertimos tu idea en un producto listo para usar.
+            </h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-4">
+            {process.map((step) => (
+              <motion.div
+                key={step.title}
+                whileHover={{ y: -8 }}
+                className="rounded-[2rem] border border-slate-100 bg-slate-50 p-8 text-center shadow-sm transition"
+              >
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-950 text-white">
+                  <I type={step.icon} className="h-8 w-8" />
+                </div>
+
+                <h3 className="text-2xl font-black">
+                  {step.title}
+                </h3>
+
+                <p className="mt-4 text-base leading-7 text-slate-600">
+                  {step.text}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </section>
       </main>
 
-  <footer className="relative overflow-hidden border-t border-slate-200 bg-slate-950 px-5 py-12 text-white md:px-8 md:py-14">
-    <div className="relative mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.1fr_0.9fr_0.9fr]">
-      <div>
-        <div className="flex items-center gap-3">
-          <img
-            src="/logo-medias-cadi.png"
-            alt="Logo Cadi"
-            className="h-12 w-12 rounded-xl object-contain"
-          />
+      <footer className="relative overflow-hidden border-t border-slate-200 bg-slate-950 px-5 py-12 text-white md:px-8 md:py-14">
+        <div className="relative mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.1fr_0.9fr_0.9fr]">
           <div>
-            <p className="text-2xl font-black">Cadi</p>
-            <p className="text-sm text-slate-400">
-              Fabricación textil al por mayor
+            <div className="flex items-center gap-3">
+              <img
+                src="/logo-medias-cadi.png"
+                alt="Logo Cadi"
+                className="h-12 w-12 rounded-xl object-contain"
+              />
+              <div>
+                <p className="text-2xl font-black">Cadi</p>
+                <p className="text-sm text-slate-400">
+                  Fabricación textil al por mayor
+                </p>
+              </div>
+            </div>
+
+            <p className="mt-5 max-w-sm text-sm leading-7 text-slate-300">
+              Fabricamos medias, calcetines y otros productos textiles para
+              empresas, marcas, eventos e instituciones.
             </p>
+          </div>
+
+          <div>
+            <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
+              Contacto
+            </p>
+
+            <div className="grid gap-3 text-sm text-slate-300">
+              <span className="flex items-center gap-3">
+                <I type="phone" className="h-4 w-4 text-cyan-300" />
+                +51 930 967 608
+              </span>
+
+              <span className="flex items-center gap-3">
+                <I type="mail" className="h-4 w-4 text-cyan-300" />
+                ventas@mediascadi.com
+              </span>
+
+              <span className="flex items-center gap-3">
+                <I type="pin" className="h-4 w-4 text-cyan-300" />
+                Perú
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
+              Información
+            </p>
+
+            <div className="grid gap-3 text-sm">
+              <a href="/" className="text-slate-300 transition hover:text-cyan-300">
+                Página principal
+              </a>
+
+              <a href="/politica-de-envios.html" className="text-slate-300 transition hover:text-cyan-300">
+                Política de envíos
+              </a>
+
+              <a href="/politica-de-devoluciones.html" className="text-slate-300 transition hover:text-cyan-300">
+                Política de devoluciones
+              </a>
+
+              <a href="/politica-de-privacidad.html" className="text-slate-300 transition hover:text-cyan-300">
+                Política de privacidad
+              </a>
+            </div>
           </div>
         </div>
 
-        <p className="mt-5 max-w-sm text-sm leading-7 text-slate-300">
-          Fabricamos medias, calcetines y otros productos textiles para
-          empresas, marcas, eventos e instituciones.
-        </p>
-      </div>
-
-      <div>
-        <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
-          Contacto
-        </p>
-
-        <div className="grid gap-3 text-sm text-slate-300">
-          <span className="flex items-center gap-3">
-            <I type="phone" className="h-4 w-4 text-cyan-300" />
-            +51 930 967 608
-          </span>
-          <span className="flex items-center gap-3">
-            <I type="mail" className="h-4 w-4 text-cyan-300" />
-            ventas@mediascadi.com
-          </span>
-          <span className="flex items-center gap-3">
-            <I type="pin" className="h-4 w-4 text-cyan-300" />
-            Perú
-          </span>
+        <div className="relative mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
+          <p>© 2026 CORPORACION TEXTIL CADI S.A.C. Todos los derechos reservados.</p>
+          <p>Polos personalizados en Perú</p>
         </div>
-      </div>
+      </footer>
 
-      <div>
-        <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
-          Información
-        </p>
-
-        <div className="grid gap-3 text-sm">
-          <a href="/" className="text-slate-300 transition hover:text-cyan-300">
-            Página principal
-          </a>
-          <a href="/politica-de-envios.html" className="text-slate-300 transition hover:text-cyan-300">
-            Política de envíos
-          </a>
-          <a href="/politica-de-devoluciones.html" className="text-slate-300 transition hover:text-cyan-300">
-            Política de devoluciones
-          </a>
-          <a href="/politica-de-privacidad.html" className="text-slate-300 transition hover:text-cyan-300">
-            Política de privacidad
-          </a>
-        </div>
-      </div>
+      <motion.a
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.8, type: "spring" }}
+        href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-black text-white shadow-2xl shadow-green-200 transition hover:scale-105 hover:bg-green-600 md:bottom-6 md:right-6 md:px-5 md:py-4 md:text-base"
+      >
+        <I type="chat" className="h-5 w-5" />
+        Consultar
+      </motion.a>
     </div>
-
-    <div className="relative mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
-      <p>© 2026 CORPORACION TEXTIL CADI S.A.C. Todos los derechos reservados.</p>
-      <p>Polos personalizados en Perú</p>
-    </div>
-  </footer>
-
-  <motion.a
-    initial={{ scale: 0, opacity: 0 }}
-    animate={{ scale: 1, opacity: 1 }}
-    transition={{ delay: 0.8, type: "spring" }}
-    href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
-    target="_blank"
-    rel="noreferrer"
-    className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-black text-white shadow-2xl shadow-green-200 transition hover:scale-105 hover:bg-green-600 md:bottom-6 md:right-6 md:px-5 md:py-4 md:text-base"
-  >
-    <I type="chat" className="h-5 w-5" />
-    Consultar
-  </motion.a>
-</div>
-
-);}
+  );
+}
+        
