@@ -238,7 +238,7 @@ useEffect(() => {
             <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-cyan-200 via-white to-blue-200 blur-2xl" />
 
             <div className="relative overflow-hidden rounded-[2.25rem] bg-gradient-to-br from-slate-950 to-slate-800 p-5 text-white shadow-2xl shadow-slate-300 md:rounded-[3rem] md:p-7">
-              <img
+       
 <div className="relative overflow-hidden rounded-[1.75rem] bg-white/10">
   <motion.img
     key={modelos[activeSlide].image}
@@ -277,18 +277,6 @@ useEffect(() => {
     ))}
   </div>
 </div>
-
-              <div className="absolute bottom-8 left-8 right-8 rounded-[1.5rem] bg-slate-950/80 p-5 backdrop-blur">
-                <p className="text-sm font-bold text-cyan-300">
-                  Fabricación personalizada
-                </p>
-                <h3 className="mt-1 text-2xl font-black">
-                  Polos para campañas, uniformes y marcas
-                </h3>
-              </div>
-            </div>
-          </motion.div>
-        </section>
 
         <section id="modelos" className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
           <div className="mb-8 max-w-3xl">
