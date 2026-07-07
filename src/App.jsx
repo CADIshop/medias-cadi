@@ -960,24 +960,29 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                 pedido.
               </p>
 
-              <div className="grid gap-3 text-slate-300">
-                <span className="flex gap-3">
-                  <I type="phone" className="h-5 w-5 shrink-0 text-cyan-300" />
-                  +51 930 967 608
-                </span>
-                <span className="flex gap-3">
-                  <span className="flex items-start gap-3">
-  <I type="mail" className="mt-1 h-5 w-5 shrink-0 text-cyan-300" />
-  <span className="grid gap-1">
-    <span>ventas@caditextil.com</span>
-    <span>ventas@mediascadi.com</span>
+<div className="grid gap-3 text-slate-300">
+
+  <span className="flex gap-3">
+    <I type="phone" className="h-5 w-5 shrink-0 text-cyan-300" />
+    +51 930 967 608
   </span>
-</span>
-                <span className="flex gap-3">
-                  <I type="pin" className="h-5 w-5 shrink-0 text-cyan-300" />
-                  Perú
-                </span>
-              </div>
+
+  <span className="flex items-start gap-3">
+    <I type="mail" className="mt-1 h-5 w-5 shrink-0 text-cyan-300" />
+
+    <span className="grid gap-1">
+      <span>ventas@caditextil.com</span>
+      <span>ventas@mediascadi.com</span>
+    </span>
+
+  </span>
+
+  <span className="flex gap-3">
+    <I type="pin" className="h-5 w-5 shrink-0 text-cyan-300" />
+    Perú
+  </span>
+
+</div>
             </motion.div>
 
             <motion.div
@@ -1113,27 +1118,29 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               Contacto
             </p>
 
-            <div className="grid gap-3 text-sm text-slate-300">
-              <span className="flex items-center gap-3">
-                <I type="phone" className="h-4 w-4 shrink-0 text-cyan-300" />
-                +51 930 967 608
-              </span>
+<div className="grid gap-3 text-sm text-slate-300">
 
-              <span className="flex items-center gap-3">
-                <span className="flex items-start gap-3">
-  <I type="mail" className="mt-1 h-4 w-4 shrink-0 text-cyan-300" />
-  <span className="grid gap-1">
-    <span>ventas@caditextil.com</span>
-    <span>ventas@mediascadi.com</span>
+  <span className="flex items-center gap-3">
+    <I type="phone" className="h-4 w-4 shrink-0 text-cyan-300" />
+    +51 930 967 608
   </span>
-</span>
 
-              <span className="flex items-center gap-3">
-                <I type="pin" className="h-4 w-4 shrink-0 text-cyan-300" />
-                Perú
-              </span>
-            </div>
-          </div>
+  <span className="flex items-start gap-3">
+    <I type="mail" className="mt-1 h-4 w-4 shrink-0 text-cyan-300" />
+
+    <span className="grid gap-1">
+      <span>ventas@caditextil.com</span>
+      <span>ventas@mediascadi.com</span>
+    </span>
+
+  </span>
+
+  <span className="flex items-center gap-3">
+    <I type="pin" className="h-4 w-4 shrink-0 text-cyan-300" />
+    Perú
+  </span>
+
+</div>
 
           <div>
             <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-cyan-300 md:mb-5">
