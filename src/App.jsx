@@ -1142,10 +1142,11 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
 
 </div>
 
+          </div>
+
           <div>
             <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-cyan-300 md:mb-5">
               Información
-            </p>
 
             <div className="grid gap-3 text-sm">
               <a
