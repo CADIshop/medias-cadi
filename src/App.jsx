@@ -348,7 +348,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
 </header>
 
       <main className="relative z-10">
-        <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-8 md:grid-cols-[1.05fr_0.95fr] md:px-8 md:py-14">
+        <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-6 md:grid-cols-[1.05fr_0.95fr] md:px-8 md:py-10">
           <motion.div
             variants={stagger}
             initial="hidden"
