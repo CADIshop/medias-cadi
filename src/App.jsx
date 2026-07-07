@@ -341,7 +341,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
   href="#cotizacion"
   className="rounded-full bg-slate-950 px-4 py-3 text-xs font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-cyan-700 md:px-5 md:text-sm"
 >
-  Cotizar ahora
+  Cotizar
 </a>
 
 </div>
@@ -468,7 +468,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
             </h2>
           </motion.div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
             {[
               "Tiendas de ropa",
               "Marcas de ropa",
@@ -477,16 +477,16 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               "Marca blanca",
               "Equipos deportivos",
               "Empresas",
-              "Colegioss",
+              "Colegios",
               "Academias",
               "Campañas corporativas",
             ].map((item) => (
               <span
-                key={item}
-                className="rounded-full border border-cyan-100 bg-white px-4 py-2 text-sm font-black text-slate-800 shadow-sm"
-              >
-                {item}
-              </span>
+  key={item}
+  className="flex min-h-[44px] items-center justify-center rounded-full border border-cyan-100 bg-white px-3 py-2 text-center text-xs font-black text-slate-800 shadow-sm sm:px-4 sm:text-sm"
+>
+  {item}
+</span>
             ))}
           </div>
         </section>
@@ -966,10 +966,13 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                   +51 930 967 608
                 </span>
                 <span className="flex gap-3">
-                  <I type="mail" className="h-5 w-5 shrink-0 text-cyan-300" />
-                  ventas@caditextil.com - 
-                  ventas@mediascadi.com
-                </span>
+                  <span className="flex items-start gap-3">
+  <I type="mail" className="mt-1 h-5 w-5 shrink-0 text-cyan-300" />
+  <span className="grid gap-1">
+    <span>ventas@caditextil.com</span>
+    <span>ventas@mediascadi.com</span>
+  </span>
+</span>
                 <span className="flex gap-3">
                   <I type="pin" className="h-5 w-5 shrink-0 text-cyan-300" />
                   Perú
@@ -1117,9 +1120,13 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               </span>
 
               <span className="flex items-center gap-3">
-                <I type="mail" className="h-4 w-4 shrink-0 text-cyan-300" />
-                ventas@mediascadi.com
-              </span>
+                <span className="flex items-start gap-3">
+  <I type="mail" className="mt-1 h-4 w-4 shrink-0 text-cyan-300" />
+  <span className="grid gap-1">
+    <span>ventas@caditextil.com</span>
+    <span>ventas@mediascadi.com</span>
+  </span>
+</span>
 
               <span className="flex items-center gap-3">
                 <I type="pin" className="h-4 w-4 shrink-0 text-cyan-300" />
