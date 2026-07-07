@@ -353,7 +353,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
             variants={stagger}
             initial="hidden"
             animate="show"
-            className="space-y-6 md:space-y-8"
+            className="space-y-4 md:space-y-5"
           >
             <motion.div
               variants={fadeUp}
@@ -363,7 +363,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               Fabricación para marcas, empresas y distribuidores
             </motion.div>
 
-            <motion.div variants={fadeUp} className="space-y-5 md:space-y-6">
+            <motion.div variants={fadeUp} className="space-y-3 md:space-y-4">
               <h1 className="text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-7xl">
                 Fabricación de medias deportivas y casuales al por mayor para marcas, negocios y distribuidores.
               </h1>
