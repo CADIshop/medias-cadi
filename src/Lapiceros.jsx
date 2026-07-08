@@ -382,11 +382,11 @@ export default function Lapiceros() {
           whileHover={{ y: -8 }}
           className="rounded-[2rem] border border-white bg-white p-5 shadow-lg shadow-slate-100"
         >
-          <div className="mb-5 h-48 overflow-hidden rounded-[1.5rem] bg-slate-100">
+          <div className="mb-5 h-60 overflow-hidden rounded-[1.5rem] bg-slate-100">
             <img
               src={item.image}
               alt={item.name}
-              className="h-full w-full object-cover transition duration-500 hover:scale-110"
+              className="h-full w-full object-contain p-6" transition duration-500 hover:scale-110"
             />
           </div>
 
@@ -458,11 +458,11 @@ export default function Lapiceros() {
           whileHover={{ y: -8 }}
           className="rounded-[2rem] border border-white bg-white p-5 shadow-lg shadow-slate-100"
         >
-          <div className="mb-5 h-56 overflow-hidden rounded-[1.5rem] bg-slate-100">
+          <div className="mb-5 h-72 overflow-hidden rounded-[1.5rem] bg-slate-100">
             <img
               src={item.image}
               alt={item.name}
-              className="h-full w-full object-cover transition duration-500 hover:scale-110"
+              className="h-full w-full object-contain p-6" transition duration-500 hover:scale-110"
             />
           </div>
 
