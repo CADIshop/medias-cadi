@@ -295,43 +295,134 @@ export default function Lapiceros() {
           </motion.div>
         </section>
 
-        <section id="modelos" className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
-          <div className="mb-8 max-w-3xl">
-            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
-              Modelos
-            </p>
-            <h2 className="text-3xl font-black tracking-tight md:text-5xl">
-              Elige el producto ideal para tu marca o campaña.
-            </h2>
+        <section
+  id="modelos"
+  className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20"
+>
+  <div className="mb-12 max-w-3xl">
+    <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
+      MODELOS
+    </p>
+
+    <h2 className="text-3xl font-black tracking-tight md:text-5xl">
+      Elige el producto ideal para tu marca.
+    </h2>
+  </div>
+
+  {/* ===================== LAPICEROS ===================== */}
+
+  <div className="mb-16">
+    <h3 className="text-3xl font-black">
+      Lapiceros personalizados
+    </h3>
+
+    <p className="mt-2 mb-8 text-slate-600">
+      Ideales para campañas, empresas, ferias y regalos corporativos.
+    </p>
+
+    <div className="grid gap-5 md:grid-cols-4">
+      {lapiceros.map((item) => (
+        <motion.div
+          key={item.name}
+          whileHover={{ y: -8 }}
+          className="rounded-[2rem] border border-white bg-white p-5 shadow-lg shadow-slate-100"
+        >
+          <div className="mb-5 h-48 overflow-hidden rounded-[1.5rem] bg-slate-100">
+            <img
+              src={item.image}
+              alt={item.name}
+              className="h-full w-full object-cover transition duration-500 hover:scale-110"
+            />
           </div>
 
-          <div className="grid gap-5 md:grid-cols-4">
-            {modelos.map((item) => (
-              <motion.div
-                key={item.name}
-                whileHover={{ y: -8 }}
-                className="rounded-[2rem] border border-white bg-white p-5 shadow-lg shadow-slate-100"
-              >
-                <div className="mb-5 h-48 overflow-hidden rounded-[1.5rem] bg-slate-100">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="h-full w-full object-cover transition duration-500 hover:scale-110"
-                  />
-                </div>
+          <h3 className="text-2xl font-black">
+            {item.name}
+          </h3>
 
-                <span className="rounded-full bg-cyan-100 px-3 py-1 text-xs font-black text-cyan-700">
-                  {item.tag}
-                </span>
+          <p className="mt-3 text-sm leading-7 text-slate-600">
+            {item.text}
+          </p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
 
-                <h3 className="mt-4 text-2xl font-black">{item.name}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  {item.text}
-                </p>
-              </motion.div>
-            ))}
+  {/* ===================== TAZAS ===================== */}
+
+  <div className="mb-16">
+    <h3 className="text-3xl font-black">
+      Tazas 11 oz
+    </h3>
+
+    <p className="mt-2 mb-8 text-slate-600">
+      Personalizadas para oficinas, empresas, cafeterías y promociones.
+    </p>
+
+    <div className="grid gap-5 md:grid-cols-3">
+      {tazas.map((item) => (
+        <motion.div
+          key={item.name}
+          whileHover={{ y: -8 }}
+          className="rounded-[2rem] border border-white bg-white p-5 shadow-lg shadow-slate-100"
+        >
+          <div className="mb-5 h-48 overflow-hidden rounded-[1.5rem] bg-slate-100">
+            <img
+              src={item.image}
+              alt={item.name}
+              className="h-full w-full object-cover transition duration-500 hover:scale-110"
+            />
           </div>
-        </section>
+
+          <h3 className="text-2xl font-black">
+            {item.name}
+          </h3>
+
+          <p className="mt-3 text-sm leading-7 text-slate-600">
+            {item.text}
+          </p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+
+  {/* ===================== BOLSAS ===================== */}
+
+  <div>
+    <h3 className="text-3xl font-black">
+      Bolsas personalizadas
+    </h3>
+
+    <p className="mt-2 mb-8 text-slate-600">
+      Reutilizables para tiendas, campañas y eventos promocionales.
+    </p>
+
+    <div className="grid gap-5 md:grid-cols-2">
+      {bolsas.map((item) => (
+        <motion.div
+          key={item.name}
+          whileHover={{ y: -8 }}
+          className="rounded-[2rem] border border-white bg-white p-5 shadow-lg shadow-slate-100"
+        >
+          <div className="mb-5 h-56 overflow-hidden rounded-[1.5rem] bg-slate-100">
+            <img
+              src={item.image}
+              alt={item.name}
+              className="h-full w-full object-cover transition duration-500 hover:scale-110"
+            />
+          </div>
+
+          <h3 className="text-2xl font-black">
+            {item.name}
+          </h3>
+
+          <p className="mt-3 text-sm leading-7 text-slate-600">
+            {item.text}
+          </p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
         <section className="bg-slate-950 py-14 text-white md:py-20">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
