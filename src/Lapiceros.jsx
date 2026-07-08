@@ -193,16 +193,6 @@ export default function Lapiceros() {
             <a href="#personalizacion" className="hover:text-cyan-700">Personalización</a>
             <a href="#proceso" className="hover:text-cyan-700">Proceso</a>
           </nav>
-
-          <a
-  href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
-  target="_blank"
-  rel="noreferrer"
-  className="fixed bottom-6 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 text-sm font-black text-white shadow-xl shadow-green-500/30 transition hover:-translate-y-1 hover:bg-green-600"
->
-  <I type="chat" className="h-5 w-5" />
-  Cotizar
-</a>
         </div>
       </header>
 
@@ -574,6 +564,16 @@ export default function Lapiceros() {
           </div>
         </section>
       </main>
+      
+<a
+  href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
+  target="_blank"
+  rel="noreferrer"
+  className="fixed bottom-6 right-5 z-40 inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 text-sm font-black text-white shadow-xl shadow-green-500/30 transition-all duration-300 hover:-translate-y-1 hover:bg-green-600"
+>
+  <I type="chat" className="h-5 w-5" />
+  Cotizar
+</a>
 
       <ScrollToTopButton />
 
