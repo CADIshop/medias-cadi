@@ -386,7 +386,7 @@ export default function Lapiceros() {
             <img
               src={item.image}
               alt={item.name}
-              className="h-full w-full object-contain p-6" transition duration-500 hover:scale-110"
+              className="h-full w-full object-contain p-6 transition duration-500 hover:scale-110"
             />
           </div>
 
@@ -462,7 +462,7 @@ export default function Lapiceros() {
             <img
               src={item.image}
               alt={item.name}
-              className="h-full w-full object-contain p-6" transition duration-500 hover:scale-110"
+              className="h-full w-full object-contain p-6 transition duration-500 hover:scale-110"
             />
           </div>
 
