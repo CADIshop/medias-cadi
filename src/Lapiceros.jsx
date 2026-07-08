@@ -120,6 +120,8 @@ const bolsas = [
   }
 ];
 
+const modelos = [...lapiceros, ...tazas, ...bolsas];
+
 
 
 const process = [
