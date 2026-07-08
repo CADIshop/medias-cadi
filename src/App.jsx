@@ -317,21 +317,12 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
         Servicios
       </p>
 
-      <a href="/lapiceros-personalizados" className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700">
-        Lapiceros personalizados
-      </a>
-
-      <a href="/llaveros-personalizados" className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700">
-        Llaveros personalizados
-      </a>
-
-      <a href="/cajitas-personalizadas" className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700">
-        Cajitas personalizadas
-      </a>
-
-      <a href="/bolsas-tocuyo-notex" className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700">
-        Bolsas de tocuyo y notex
-      </a>
+<a
+  href="/merch-personalizado"
+  className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700"
+>
+  Merch personalizado
+</a>
     </div>
   </div>
 </div>
@@ -1215,6 +1206,14 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
   );
 }
 
-const Page = window.location.pathname === "/polos" ? Polos : LandingMediasMayoristas;
+let Page = LandingMediasMayoristas;
+
+if (window.location.pathname === "/polos") {
+  Page = Polos;
+}
+
+if (window.location.pathname === "/merch-personalizado") {
+  Page = Lapiceros;
+}
 
 createRoot(document.getElementById("root")).render(<Page />);
