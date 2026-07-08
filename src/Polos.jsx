@@ -151,56 +151,63 @@ export default function Polos() {
       </div>
 
       <header className="sticky top-0 z-40 border-b border-white/80 bg-white/80 backdrop-blur-2xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 md:px-8 md:py-4">
-          <a href="/" className="flex items-center gap-3">
-            <img
-              src="/logo-medias-cadi.png"
-              alt="Logo Cadi"
-              className="h-11 w-11 rounded-xl object-contain md:h-12 md:w-12"
-            />
-            <div>
-              <p className="text-lg font-black tracking-tight">Cadi Textil</p>
-              <p className="text-xs font-medium text-slate-500">
-                Fabricación textil al por mayor
-              </p>
-            </div>
-          </a>
+  <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 md:px-8 md:py-4">
+    <a href="/" className="flex items-center gap-3">
+      <img
+        src="/logo-medias-cadi.png"
+        alt="Logo Cadi"
+        className="h-11 w-11 rounded-xl object-contain md:h-12 md:w-12"
+      />
+      <div>
+        <p className="text-lg font-black tracking-tight">Cadi Textil</p>
+        <p className="text-xs font-medium text-slate-500">
+          Fabricación textil al por mayor
+        </p>
+      </div>
+    </a>
 
-          <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex">
-            <a href="/" className="hover:text-cyan-700">Inicio</a>
-            <a href="#modelos" className="hover:text-cyan-700">Modelos</a>
-            <a href="#telas" className="hover:text-cyan-700">Telas</a>
-            <a href="#personalizacion" className="hover:text-cyan-700">Personalización</a>
-            <a href="#proceso" className="hover:text-cyan-700">Proceso</a>
-          </nav>
+    <button
+      onClick={() => setOpenMenu(!openMenu)}
+      className="flex h-11 w-11 items-center justify-center rounded-full bg-slate-950 text-white lg:hidden"
+      aria-label="Abrir menú"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+    </button>
 
-        </div>
-        {openMenu && (
-  <div className="border-t border-slate-100 bg-white px-5 py-4 shadow-lg lg:hidden">
-    <div className="grid gap-3 text-sm font-black text-slate-700">
-      <a href="/" onClick={() => setOpenMenu(false)}>
-        Inicio
-      </a>
-
-      <a href="/polos" onClick={() => setOpenMenu(false)}>
-        Polos personalizados
-      </a>
-
-      <a href="/merch-personalizado" onClick={() => setOpenMenu(false)}>
-        Merchandising personalizado
-      </a>
-
-      <a href="#modelos" onClick={() => setOpenMenu(false)}>
-        Modelos
-      </a>
-
-      <a href="#proceso" onClick={() => setOpenMenu(false)}>
-        Proceso
-      </a>
-    </div>
+    <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex">
+      <a href="/" className="hover:text-cyan-700">Inicio</a>
+      <a href="/polos" className="hover:text-cyan-700">Polos</a>
+      <a href="/merch-personalizado" className="hover:text-cyan-700">Merchandising</a>
+      <a href="#modelos" className="hover:text-cyan-700">Modelos</a>
+      <a href="#proceso" className="hover:text-cyan-700">Proceso</a>
+    </nav>
   </div>
-)}
-      </header>
+
+  {openMenu && (
+    <div className="border-t border-slate-100 bg-white px-5 py-4 shadow-lg lg:hidden">
+      <div className="grid gap-3 text-sm font-black text-slate-700">
+        <a href="/" onClick={() => setOpenMenu(false)}>Inicio</a>
+        <a href="/polos" onClick={() => setOpenMenu(false)}>Polos personalizados</a>
+        <a href="/merch-personalizado" onClick={() => setOpenMenu(false)}>Merchandising personalizado</a>
+        <a href="#modelos" onClick={() => setOpenMenu(false)}>Modelos</a>
+        <a href="#proceso" onClick={() => setOpenMenu(false)}>Proceso</a>
+      </div>
+    </div>
+  )}
+</header>
 
       <main className="relative z-10">
         <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-12 pt-10 md:grid-cols-[1.05fr_0.95fr] md:px-8 md:pb-20 md:pt-24">
