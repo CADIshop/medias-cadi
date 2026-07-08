@@ -373,12 +373,12 @@ export default function Polos() {
               </h2>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
               {["Empresas", "Eventos", "Colegios", "Marcas", "Campañas", "Uniformes", "Emprendedores"].map(
                 (item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-white/10 bg-white/10 px-5 py-3 text-sm font-black text-white"
+                    className="flex min-h-[44px] items-center justify-center rounded-full border border-white/10 bg-white/10 px-3 py-2 text-center text-xs font-black text-white sm:px-5 sm:py-3 sm:text-sm"
                   >
                     {item}
                   </span>
