@@ -33,27 +33,27 @@ export default function ScrollToTopButton() {
           exit={{ opacity: 0, y: 25, scale: 0.8 }}
           transition={{ duration: 0.25 }}
           aria-label="Volver arriba"
-          className="
-            fixed
-            bottom-6
-            right-6
-            z-50
-            flex
-            h-12
-            w-12
-            items-center
-            justify-center
-            rounded-full
-            bg-cyan-600
-            text-white
-            shadow-xl
-            shadow-cyan-500/30
-            transition
-            hover:-translate-y-1
-            hover:bg-cyan-700
-            md:h-14
-            md:w-14
-          "
+   className="
+  fixed
+  bottom-24
+  right-6
+  z-50
+  flex
+  h-12
+  w-12
+  items-center
+  justify-center
+  rounded-full
+  bg-cyan-600
+  text-white
+  shadow-xl
+  shadow-cyan-500/30
+  transition
+  hover:-translate-y-1
+  hover:bg-cyan-700
+  md:h-14
+  md:w-14
+"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
