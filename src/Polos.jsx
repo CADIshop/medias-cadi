@@ -512,7 +512,7 @@ export default function Polos() {
         className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-black text-white shadow-2xl shadow-green-200 transition hover:scale-105 hover:bg-green-600 md:bottom-6 md:right-6 md:px-5 md:py-4 md:text-base"
       >
         <I type="chat" className="h-5 w-5" />
-        Consultar
+        Cotizar
       </motion.a>
     </div>
   );
