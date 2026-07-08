@@ -66,62 +66,61 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const modelos = [
+const lapiceros = [
   {
     name: "Lapicero ecológico retráctil",
-    tag: "Lapiceros",
-    text: "Modelo ecológico ideal para campañas sostenibles, empresas y eventos.",
     image: "/lapicero-ecologico-retractil.png",
+    text: "Modelo ecológico ideal para campañas sostenibles, empresas y eventos."
   },
   {
     name: "Lapicero satinado anillos centrales",
-    tag: "Lapiceros",
-    text: "Diseño elegante para imagen corporativa y regalos promocionales.",
     image: "/lapicero-satinado-anillos.png",
+    text: "Diseño elegante para imagen corporativa."
   },
   {
     name: "Lapicero metálico un anillo",
-    tag: "Lapiceros",
-    text: "Modelo premium para regalos ejecutivos y presentaciones empresariales.",
     image: "/lapicero-metalico-un-anillo.png",
+    text: "Modelo premium para regalos empresariales."
   },
   {
     name: "Lapicero plástico con touch",
-    tag: "Lapiceros",
-    text: "Práctico para campañas publicitarias, negocios y eventos.",
     image: "/lapicero-plastico-touch.png",
-  },
+    text: "Ideal para campañas publicitarias."
+  }
+];
+
+const tazas = [
   {
-    name: "Taza blanca 11 oz",
-    tag: "Tazas",
-    text: "Taza clásica personalizada, ideal para marcas, oficinas y regalos corporativos.",
+    name: "Taza blanca",
     image: "/taza-blanca-11oz.png",
+    text: "Modelo clásico de 11 oz."
   },
   {
-    name: "Taza interior de color 11 oz",
-    tag: "Tazas",
-    text: "Taza personalizada con interior de color para diseños más llamativos.",
+    name: "Taza interior de color",
     image: "/taza-interior-color-11oz.png",
+    text: "Personalizada con interior de color."
   },
   {
-    name: "Taza brillante 11 oz",
-    tag: "Tazas",
-    text: "Acabado brillante para una presentación más comercial y moderna.",
+    name: "Taza brillante",
     image: "/taza-brillante-11oz.png",
-  },
+    text: "Acabado brillante para mayor impacto visual."
+  }
+];
+
+const bolsas = [
   {
     name: "Bolsa de tocuyo",
-    tag: "Bolsas",
-    text: "Bolsa reutilizable personalizada para eventos, tiendas y campañas ecológicas.",
     image: "/bolsa-tocuyo.png",
+    text: "Bolsa reutilizable personalizada."
   },
   {
     name: "Bolsa de notex",
-    tag: "Bolsas",
-    text: "Bolsa práctica y económica para ferias, negocios, campañas y entregas.",
     image: "/bolsa-notex.png",
-  },
+    text: "Ideal para campañas promocionales y ferias."
+  }
 ];
+
+
 
 const process = [
   {
