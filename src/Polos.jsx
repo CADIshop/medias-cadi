@@ -179,7 +179,7 @@ export default function Polos() {
             rel="noreferrer"
             className="rounded-full bg-slate-950 px-4 py-3 text-xs font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-cyan-700 md:px-5 md:text-sm"
           >
-            Consultar
+            Cotizar
           </a>
         </div>
       </header>
