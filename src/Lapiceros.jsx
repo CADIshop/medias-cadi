@@ -69,27 +69,57 @@ const fadeUp = {
 const modelos = [
   {
     name: "Lapicero ecológico retráctil",
-    tag: "Ecológico",
-    text: "Ideal para campañas sostenibles, empresas, ferias e instituciones.",
+    tag: "Lapiceros",
+    text: "Modelo ecológico ideal para campañas sostenibles, empresas y eventos.",
     image: "/lapicero-ecologico-retractil.png",
   },
   {
     name: "Lapicero satinado anillos centrales",
-    tag: "Corporativo",
-    text: "Diseño elegante con acabado satinado para imagen empresarial.",
+    tag: "Lapiceros",
+    text: "Diseño elegante para imagen corporativa y regalos promocionales.",
     image: "/lapicero-satinado-anillos.png",
   },
   {
     name: "Lapicero metálico un anillo",
-    tag: "Premium",
-    text: "Modelo metálico para regalos corporativos y presentaciones ejecutivas.",
+    tag: "Lapiceros",
+    text: "Modelo premium para regalos ejecutivos y presentaciones empresariales.",
     image: "/lapicero-metalico-un-anillo.png",
   },
   {
     name: "Lapicero plástico con touch",
-    tag: "Touch",
-    text: "Práctico para campañas publicitarias, negocios y eventos promocionales.",
+    tag: "Lapiceros",
+    text: "Práctico para campañas publicitarias, negocios y eventos.",
     image: "/lapicero-plastico-touch.png",
+  },
+  {
+    name: "Taza blanca 11 oz",
+    tag: "Tazas",
+    text: "Taza clásica personalizada, ideal para marcas, oficinas y regalos corporativos.",
+    image: "/taza-blanca-11oz.png",
+  },
+  {
+    name: "Taza interior de color 11 oz",
+    tag: "Tazas",
+    text: "Taza personalizada con interior de color para diseños más llamativos.",
+    image: "/taza-interior-color-11oz.png",
+  },
+  {
+    name: "Taza brillante 11 oz",
+    tag: "Tazas",
+    text: "Acabado brillante para una presentación más comercial y moderna.",
+    image: "/taza-brillante-11oz.png",
+  },
+  {
+    name: "Bolsa de tocuyo",
+    tag: "Bolsas",
+    text: "Bolsa reutilizable personalizada para eventos, tiendas y campañas ecológicas.",
+    image: "/bolsa-tocuyo.png",
+  },
+  {
+    name: "Bolsa de notex",
+    tag: "Bolsas",
+    text: "Bolsa práctica y económica para ferias, negocios, campañas y entregas.",
+    image: "/bolsa-notex.png",
   },
 ];
 
@@ -118,7 +148,7 @@ const process = [
 
 const whatsappNumber = "51930967608";
 const whatsappText = encodeURIComponent(
-  "Hola, quiero cotizar lapiceros personalizados al por mayor."
+  "Hola, quiero cotizar Merch personalizado al por mayor."
 );
 
 export default function Lapiceros() {
@@ -183,17 +213,15 @@ export default function Lapiceros() {
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-100 bg-white px-4 py-2 text-xs font-bold text-slate-700 shadow-sm md:text-sm">
               <I type="pen" className="h-4 w-4 text-cyan-700" />
-              Lapiceros personalizados al por mayor
+              Merch personalizado al por mayor
             </div>
 
             <h1 className="text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-7xl">
-              Lapiceros personalizados para empresas, campañas y eventos.
+              Merch personalizado para empresas, campañas y eventos.
             </h1>
 
             <p className="max-w-2xl text-base leading-7 text-slate-600 md:text-lg md:leading-8">
-              Personalizamos lapiceros publicitarios para empresas, instituciones,
-              ferias, campañas promocionales y regalos corporativos. Trabajamos
-              modelos ecológicos, metálicos, satinados y con touch.
+              Personalizamos productos promocionales para empresas, instituciones, ferias, campañas y regalos corporativos. Trabajamos lapiceros, tazas de 11 oz y bolsas personalizadas para fortalecer la imagen de tu marca.
             </p>
 
             <div className="flex flex-col gap-3 sm:flex-row">
@@ -273,7 +301,7 @@ export default function Lapiceros() {
               Modelos
             </p>
             <h2 className="text-3xl font-black tracking-tight md:text-5xl">
-              Elige el lapicero ideal para tu campaña.
+              Elige el producto ideal para tu marca o campaña.
             </h2>
           </div>
 
