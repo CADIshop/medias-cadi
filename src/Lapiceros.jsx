@@ -155,6 +155,7 @@ const whatsappText = encodeURIComponent(
 
 export default function Lapiceros() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -187,6 +188,27 @@ export default function Lapiceros() {
             </div>
           </a>
 
+          <button
+  onClick={() => setOpenMenu(!openMenu)}
+  className="flex h-11 w-11 items-center justify-center rounded-full bg-slate-950 text-white lg:hidden"
+  aria-label="Abrir menú"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth="2"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M4 6h16M4 12h16M4 18h16"
+    />
+  </svg>
+</button>
+
           <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex">
             <a href="/" className="hover:text-cyan-700">Inicio</a>
             <a href="#modelos" className="hover:text-cyan-700">Modelos</a>
@@ -194,6 +216,31 @@ export default function Lapiceros() {
             <a href="#proceso" className="hover:text-cyan-700">Proceso</a>
           </nav>
         </div>
+        {openMenu && (
+  <div className="border-t border-slate-100 bg-white px-5 py-4 shadow-lg lg:hidden">
+    <div className="grid gap-3 text-sm font-black text-slate-700">
+      <a href="/" onClick={() => setOpenMenu(false)}>
+        Inicio
+      </a>
+
+      <a href="/polos" onClick={() => setOpenMenu(false)}>
+        Polos personalizados
+      </a>
+
+      <a href="/merch-personalizado" onClick={() => setOpenMenu(false)}>
+        Merchandising personalizado
+      </a>
+
+      <a href="#modelos" onClick={() => setOpenMenu(false)}>
+        Modelos
+      </a>
+
+      <a href="#proceso" onClick={() => setOpenMenu(false)}>
+        Proceso
+      </a>
+    </div>
+  </div>
+)}
       </header>
 
       <main className="relative z-10">
