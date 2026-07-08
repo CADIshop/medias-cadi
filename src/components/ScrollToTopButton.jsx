@@ -12,8 +12,8 @@ useEffect(() => {
 
     const progress = scrollTop / documentHeight;
 
-    // Mostrar el botón cuando el usuario haya recorrido el 70% de la página
-    setVisible(progress > 0.7);
+    // Mostrar el botón cuando el usuario haya recorrido el 80% de la página
+    setVisible(progress > 0.8);
   };
 
   window.addEventListener("scroll", handleScroll);
