@@ -330,13 +330,6 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
 
 </nav>
 
-<a
-  href="#cotizacion"
-  className="rounded-full bg-slate-950 px-4 py-3 text-xs font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-cyan-700 md:px-5 md:text-sm"
->
-  Cotizar
-</a>
-
 </div>
 </header>
 
