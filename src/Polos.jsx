@@ -1,3 +1,4 @@
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -422,6 +423,8 @@ export default function Polos() {
         </section>
       </main>
 
+      <ScrollToTopButton />
+      
       <footer className="relative overflow-hidden border-t border-slate-200 bg-slate-950 px-5 py-12 text-white md:px-8 md:py-14">
         <div className="relative mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.1fr_0.9fr_0.9fr]">
           <div>
