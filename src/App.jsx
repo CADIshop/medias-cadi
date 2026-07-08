@@ -1,3 +1,4 @@
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import React, { useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { motion } from "framer-motion";
@@ -1080,6 +1081,8 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
         </section>
       </main>
 
+      <ScrollToTopButton />
+      
       <footer className="relative overflow-hidden border-t border-slate-200 bg-slate-950 px-5 py-12 text-white md:px-8 md:py-14">
         <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl" />
