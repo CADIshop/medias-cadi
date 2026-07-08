@@ -188,11 +188,11 @@ export default function Polos() {
     </button>
 
 <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex">
-  <a href="/" className="hover:text-cyan-700">Medias</a>
   <a href="#modelos" className="hover:text-cyan-700">Modelos</a>
   <a href="#telas" className="hover:text-cyan-700">Telas</a>
   <a href="#personalizacion" className="hover:text-cyan-700">Personalización</a>
   <a href="#proceso" className="hover:text-cyan-700">Proceso</a>
+  <a href="/" className="hover:text-cyan-700">Medias</a>
   <a href="/merch-personalizado" className="hover:text-cyan-700">Merchandising</a>
 </nav>
   </div>
@@ -205,6 +205,7 @@ export default function Polos() {
 <a href="#telas" onClick={() => setOpenMenu(false)}>Telas</a>
 <a href="#personalizacion" onClick={() => setOpenMenu(false)}>Personalización</a>
 <a href="#proceso" onClick={() => setOpenMenu(false)}>Proceso</a>
+<a href="/" onClick={() => setOpenMenu(false)}>Medias</a>
 <a href="/merch-personalizado" onClick={() => setOpenMenu(false)}>Merchandising personalizado</a>
       </div>
     </div>
