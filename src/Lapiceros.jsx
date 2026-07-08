@@ -209,34 +209,49 @@ export default function Lapiceros() {
   </svg>
 </button>
 
-          <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex">
-            <a href="/" className="hover:text-cyan-700">Inicio</a>
-            <a href="#modelos" className="hover:text-cyan-700">Modelos</a>
-            <a href="#personalizacion" className="hover:text-cyan-700">Personalización</a>
-            <a href="#proceso" className="hover:text-cyan-700">Proceso</a>
-          </nav>
+<nav className="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex">
+  <a href="#modelos" className="hover:text-cyan-700">
+    Modelos
+  </a>
+
+  <a href="#personalizacion" className="hover:text-cyan-700">
+    Personalización
+  </a>
+
+  <a href="#proceso" className="hover:text-cyan-700">
+    Proceso
+  </a>
+
+  <a href="/" className="hover:text-cyan-700">
+    Medias
+  </a>
+
+  <a href="/polos" className="hover:text-cyan-700">
+    Polos
+  </a>
+</nav>
         </div>
-        {openMenu && (
+{openMenu && (
   <div className="border-t border-slate-100 bg-white px-5 py-4 shadow-lg lg:hidden">
     <div className="grid gap-3 text-sm font-black text-slate-700">
-      <a href="/" onClick={() => setOpenMenu(false)}>
-        Inicio
-      </a>
-
-      <a href="/polos" onClick={() => setOpenMenu(false)}>
-        Polos personalizados
-      </a>
-
-      <a href="/merch-personalizado" onClick={() => setOpenMenu(false)}>
-        Merchandising personalizado
-      </a>
-
       <a href="#modelos" onClick={() => setOpenMenu(false)}>
         Modelos
       </a>
 
+      <a href="#personalizacion" onClick={() => setOpenMenu(false)}>
+        Personalización
+      </a>
+
       <a href="#proceso" onClick={() => setOpenMenu(false)}>
         Proceso
+      </a>
+
+      <a href="/" onClick={() => setOpenMenu(false)}>
+        Medias
+      </a>
+
+      <a href="/polos" onClick={() => setOpenMenu(false)}>
+        Polos personalizados
       </a>
     </div>
   </div>
