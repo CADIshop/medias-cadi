@@ -195,13 +195,14 @@ export default function Lapiceros() {
           </nav>
 
           <a
-            href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full bg-slate-950 px-4 py-3 text-xs font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-cyan-700 md:px-5 md:text-sm"
-          >
-            Consultar
-          </a>
+  href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
+  target="_blank"
+  rel="noreferrer"
+  className="fixed bottom-6 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 text-sm font-black text-white shadow-xl shadow-green-500/30 transition hover:-translate-y-1 hover:bg-green-600"
+>
+  <I type="chat" className="h-5 w-5" />
+  Cotizar
+</a>
         </div>
       </header>
 
