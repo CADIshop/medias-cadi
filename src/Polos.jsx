@@ -133,6 +133,7 @@ const whatsappText = encodeURIComponent(
 
 export default function Polos() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -173,15 +174,32 @@ export default function Polos() {
             <a href="#proceso" className="hover:text-cyan-700">Proceso</a>
           </nav>
 
-          <a
-            href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full bg-slate-950 px-4 py-3 text-xs font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-cyan-700 md:px-5 md:text-sm"
-          >
-            Cotizar
-          </a>
         </div>
+        {openMenu && (
+  <div className="border-t border-slate-100 bg-white px-5 py-4 shadow-lg lg:hidden">
+    <div className="grid gap-3 text-sm font-black text-slate-700">
+      <a href="/" onClick={() => setOpenMenu(false)}>
+        Inicio
+      </a>
+
+      <a href="/polos" onClick={() => setOpenMenu(false)}>
+        Polos personalizados
+      </a>
+
+      <a href="/merch-personalizado" onClick={() => setOpenMenu(false)}>
+        Merchandising personalizado
+      </a>
+
+      <a href="#modelos" onClick={() => setOpenMenu(false)}>
+        Modelos
+      </a>
+
+      <a href="#proceso" onClick={() => setOpenMenu(false)}>
+        Proceso
+      </a>
+    </div>
+  </div>
+)}
       </header>
 
       <main className="relative z-10">
