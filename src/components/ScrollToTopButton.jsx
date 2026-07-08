@@ -4,17 +4,24 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setVisible(window.scrollY > 700);
-    };
+useEffect(() => {
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    const documentHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
 
-    window.addEventListener("scroll", handleScroll);
+    const progress = scrollTop / documentHeight;
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    // Mostrar el botón cuando el usuario haya recorrido el 70% de la página
+    setVisible(progress > 0.7);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -33,26 +40,27 @@ export default function ScrollToTopButton() {
           exit={{ opacity: 0, y: 25, scale: 0.8 }}
           transition={{ duration: 0.25 }}
           aria-label="Volver arriba"
-   className="
+className="
   fixed
   bottom-24
-  right-6
+  right-5
   z-50
   flex
-  h-12
-  w-12
+  h-10
+  w-10
   items-center
   justify-center
   rounded-full
   bg-cyan-600
   text-white
-  shadow-xl
-  shadow-cyan-500/30
-  transition
+  shadow-lg
+  shadow-cyan-500/20
+  transition-all
+  duration-300
   hover:-translate-y-1
   hover:bg-cyan-700
-  md:h-14
-  md:w-14
+  md:h-11
+  md:w-11
 "
         >
           <svg
@@ -63,7 +71,7 @@ export default function ScrollToTopButton() {
             strokeWidth="2.8"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-6 w-6"
+            className="h-5 w-5"
           >
             <path d="M12 19V5" />
             <path d="m5 12 7-7 7 7" />
