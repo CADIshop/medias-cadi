@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Polos from "./Polos.jsx";
 import Lapiceros from "./Lapiceros.jsx";
 
+const [openMenu, setOpenMenu] = useState(false);
 const I = ({ type, className = "h-5 w-5" }) => {
   const base = {
     className,
