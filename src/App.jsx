@@ -292,6 +292,27 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
             </div>
           </div>
 
+          <button
+  onClick={() => setOpenMenu(!openMenu)}
+  className="flex h-11 w-11 items-center justify-center rounded-full bg-slate-950 text-white lg:hidden"
+  aria-label="Abrir menú"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth="2"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M4 6h16M4 12h16M4 18h16"
+    />
+  </svg>
+</button>
+
 <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex">
   <a href="#servicios" className="hover:text-cyan-700">Servicios</a>
   <a href="#fabricamos" className="hover:text-cyan-700">Qué fabricamos</a>
