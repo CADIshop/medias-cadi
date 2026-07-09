@@ -240,6 +240,7 @@ export default function LandingMediasMayoristas() {
   const [telefono, setTelefono] = useState("");
   const [mensaje, setMensaje] = useState("");
 const [activeSlide, setActiveSlide] = useState(0);
+  const [openMenu, setOpenMenu] = useState(false);
 const [openFaq, setOpenFaq] = useState(null);
 
   const whatsappNumber = "51930967608";
@@ -352,6 +353,21 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
 </nav>
 
 </div>
+
+{openMenu && (
+  <div className="border-t border-slate-100 bg-white px-5 py-4 shadow-lg lg:hidden">
+    <div className="grid gap-3 text-sm font-black text-slate-700">
+      <a href="#servicios" onClick={() => setOpenMenu(false)}>Servicios</a>
+      <a href="#fabricamos" onClick={() => setOpenMenu(false)}>Qué fabricamos</a>
+      <a href="#modelos" onClick={() => setOpenMenu(false)}>Modelos</a>
+      <a href="#proceso" onClick={() => setOpenMenu(false)}>Proceso</a>
+      <a href="#cotizacion" onClick={() => setOpenMenu(false)}>Cotización</a>
+      <a href="/polos" onClick={() => setOpenMenu(false)}>Polos</a>
+      <a href="/merch-personalizado" onClick={() => setOpenMenu(false)}>Merch personalizado</a>
+    </div>
+  </div>
+)}        
+        
 </header>
 
       <main className="relative z-10">
