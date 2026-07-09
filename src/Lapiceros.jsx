@@ -575,11 +575,10 @@ export default function Lapiceros() {
                 Cotización
               </p>
               <h2 className="text-3xl font-black tracking-tight md:text-5xl">
-                Cotiza tus lapiceros personalizados.
+                Cotiza tus productos personalizados.
               </h2>
               <p className="mt-5 text-base leading-8 text-slate-300">
-                Escríbenos por WhatsApp y te orientamos según modelo, cantidad,
-                color y tipo de personalización.
+                Escríbenos por WhatsApp y te asesoraremos según el producto, modelo, cantidad, tipo de personalización y el uso que necesites para tu empresa, marca o evento.
               </p>
 
               <div className="mt-6 grid gap-3 text-slate-300">
@@ -609,8 +608,7 @@ export default function Lapiceros() {
               </h3>
 
               <p className="mt-4 leading-7 text-slate-600">
-                Indícanos el modelo de lapicero, cantidad aproximada y logo a
-                personalizar para enviarte una propuesta.
+                Cuéntanos qué producto necesitas, la cantidad aproximada y el tipo de personalización que deseas. Nuestro equipo te responderá con una cotización personalizada.
               </p>
 
               <a
