@@ -668,18 +668,16 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                     </span>
 
                     <select
-                      value={personalizacion}
-                      onChange={(e) => setPersonalizacion(e.target.value)}
-                      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-                    >
-                      <option>Solo polos</option>
-                      <option>Logo personalizado</option>
-                      <option>Estampado</option>
-                      <option>Bordado</option>
-                      <option>DTF</option>
-                      <option>Sublimado</option>
-                      <option>Todo personalizado</option>
-                    </select>
+                     <select
+  value={personalizacion}
+  onChange={(e) => setPersonalizacion(e.target.value)}
+  className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+>
+  <option>Solo polos</option>
+  <option>Logo personalizado</option>
+  <option>Estampado DTF</option>
+  <option>Sublimación</option>
+</select>
                   </label>
                 </div>
 
