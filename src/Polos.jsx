@@ -484,6 +484,241 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
             ))}
           </div>
         </section>
+
+        <section
+          id="cotizacion"
+          className="bg-slate-950 py-14 text-white md:py-24"
+        >
+          <div className="mx-auto grid max-w-7xl gap-8 px-5 md:grid-cols-[0.9fr_1.1fr] md:gap-10 md:px-8">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.25 }}
+              className="space-y-5 md:space-y-6"
+            >
+              <p className="text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
+                Cotización
+              </p>
+
+              <h2 className="text-3xl font-black tracking-tight md:text-6xl">
+                Cuéntanos qué polos necesitas producir.
+              </h2>
+
+              <p className="text-base leading-7 text-slate-300 md:text-lg md:leading-8">
+                Completa la información de tu pedido y te responderemos por
+                WhatsApp con una propuesta según el modelo, tela, cantidad y
+                personalización requerida.
+              </p>
+
+              <div className="grid gap-3 text-slate-300">
+                <span className="flex gap-3">
+                  <I
+                    type="phone"
+                    className="h-5 w-5 shrink-0 text-cyan-300"
+                  />
+                  +51 930 967 608
+                </span>
+
+                <span className="flex items-start gap-3">
+                  <I
+                    type="mail"
+                    className="mt-1 h-5 w-5 shrink-0 text-cyan-300"
+                  />
+
+                  <span className="grid gap-1">
+                    <span>ventas@caditextil.com</span>
+                    <span>ventas@mediascadi.com</span>
+                  </span>
+                </span>
+
+                <span className="flex gap-3">
+                  <I
+                    type="pin"
+                    className="h-5 w-5 shrink-0 text-cyan-300"
+                  />
+                  Perú
+                </span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7 }}
+              className="rounded-[2rem] border border-white/10 bg-white p-5 text-slate-950 shadow-2xl md:rounded-[2.5rem] md:p-8"
+            >
+              <div className="grid gap-4 md:gap-5">
+                <label className="grid gap-2">
+                  <span className="text-sm font-black">Nombre o empresa</span>
+
+                  <input
+                    value={nombre}
+                    onChange={(e) => setNombre(e.target.value)}
+                    placeholder="Ej. Comercial Cadi"
+                    className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+                  />
+                </label>
+
+                <label className="grid gap-2">
+                  <span className="text-sm font-black">Tipo de cliente</span>
+
+                  <select
+                    value={tipoCliente}
+                    onChange={(e) => setTipoCliente(e.target.value)}
+                    className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+                  >
+                    <option>Emprendedor</option>
+                    <option>Tienda</option>
+                    <option>Distribuidor</option>
+                    <option>Empresa</option>
+                    <option>Club deportivo</option>
+                    <option>Academia</option>
+                    <option>Colegio</option>
+                    <option>Institución pública</option>
+                    <option>Institución privada</option>
+                  </select>
+                </label>
+
+                <label className="grid gap-2">
+                  <span className="text-sm font-black">
+                    ¿Para qué necesitas los polos?
+                  </span>
+
+                  <select
+                    value={objetivo}
+                    onChange={(e) => setObjetivo(e.target.value)}
+                    className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+                  >
+                    <option>Reventa al por mayor</option>
+                    <option>Reventa al por menor</option>
+                    <option>Marca propia</option>
+                    <option>Uniformes</option>
+                    <option>Campaña publicitaria</option>
+                    <option>Merchandising</option>
+                    <option>Evento</option>
+                    <option>Uso interno de la empresa</option>
+                    <option>Otro</option>
+                  </select>
+                </label>
+
+                <div className="grid gap-4 md:grid-cols-2 md:gap-5">
+                  <label className="grid gap-2">
+                    <span className="text-sm font-black">Modelo de polo</span>
+
+                    <select
+                      value={modeloPolo}
+                      onChange={(e) => setModeloPolo(e.target.value)}
+                      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+                    >
+                      {modelos.map((modelo) => (
+                        <option key={modelo.name} value={modelo.name}>
+                          {modelo.name}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+
+                  <label className="grid gap-2">
+                    <span className="text-sm font-black">
+                      Cantidad aproximada
+                    </span>
+
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_120px]">
+                      <input
+                        value={cantidad}
+                        onChange={(e) => setCantidad(e.target.value)}
+                        placeholder="100"
+                        className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+                      />
+
+                      <select
+                        value={unidadCantidad}
+                        onChange={(e) => setUnidadCantidad(e.target.value)}
+                        className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-3 py-4 font-semibold outline-none transition focus:border-cyan-500"
+                      >
+                        <option value="unidades">Unidades</option>
+                        <option value="docenas">Docenas</option>
+                      </select>
+                    </div>
+                  </label>
+                </div>
+
+                <div className="grid gap-4 md:grid-cols-2 md:gap-5">
+                  <label className="grid gap-2">
+                    <span className="text-sm font-black">Tipo de tela</span>
+
+                    <select
+                      value={tipoTela}
+                      onChange={(e) => setTipoTela(e.target.value)}
+                      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+                    >
+                      <option>Algodón 30/1</option>
+                      <option>Algodón 20/1</option>
+                      <option>Tela piqué</option>
+                      <option>Tela deportiva</option>
+                      <option>Necesito asesoría</option>
+                    </select>
+                  </label>
+
+                  <label className="grid gap-2">
+                    <span className="text-sm font-black">
+                      Personalización requerida
+                    </span>
+
+                    <select
+                      value={personalizacion}
+                      onChange={(e) => setPersonalizacion(e.target.value)}
+                      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+                    >
+                      <option>Solo polos</option>
+                      <option>Logo personalizado</option>
+                      <option>Estampado</option>
+                      <option>Bordado</option>
+                      <option>DTF</option>
+                      <option>Sublimado</option>
+                      <option>Todo personalizado</option>
+                    </select>
+                  </label>
+                </div>
+
+                <label className="grid gap-2">
+                  <span className="text-sm font-black">
+                    Mensaje{" "}
+                    <span className="font-medium text-slate-400">
+                      (opcional)
+                    </span>
+                  </span>
+
+                  <textarea
+                    value={mensaje}
+                    onChange={(e) => setMensaje(e.target.value)}
+                    placeholder="Ej. Necesito polos negros con logo estampado al frente."
+                    rows="3"
+                    className="resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+                  />
+                </label>
+
+                <a
+                  href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center rounded-2xl bg-cyan-600 px-6 py-4 font-black text-white transition hover:bg-cyan-700"
+                >
+                  <I type="chat" className="mr-2 h-5 w-5" />
+                  Cotizar por WhatsApp
+                </a>
+
+                <p className="text-center text-xs leading-6 text-slate-500">
+                  Te responderemos con una propuesta según tu necesidad de
+                  producción.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
       </main>
 
       <ScrollToTopButton />
