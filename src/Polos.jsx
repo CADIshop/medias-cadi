@@ -1,5 +1,5 @@
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 const I = ({ type, className = "h-5 w-5" }) => {
@@ -127,13 +127,20 @@ const process = [
 ];
 
 const whatsappNumber = "51930967608";
-const whatsappText = encodeURIComponent(
-  "Hola, quiero información sobre polos personalizados."
-);
 
 export default function Polos() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [openMenu, setOpenMenu] = useState(false);
+
+  const [nombre, setNombre] = useState("");
+  const [tipoCliente, setTipoCliente] = useState("Emprendedor");
+  const [objetivo, setObjetivo] = useState("Reventa al por mayor");
+  const [modeloPolo, setModeloPolo] = useState("Polo clásico");
+  const [cantidad, setCantidad] = useState("100");
+  const [unidadCantidad, setUnidadCantidad] = useState("unidades");
+  const [tipoTela, setTipoTela] = useState("Algodón 30/1");
+  const [personalizacion, setPersonalizacion] = useState("Solo polos");
+  const [mensaje, setMensaje] = useState("");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -143,6 +150,33 @@ export default function Polos() {
     return () => clearInterval(timer);
   }, []);
 
+  const whatsappText = useMemo(
+  () =>
+    encodeURIComponent(
+      `Hola, quiero cotizar polos personalizados.
+
+Nombre o empresa: ${nombre || "Por completar"}
+Tipo de cliente: ${tipoCliente}
+Objetivo del pedido: ${objetivo}
+Modelo de polo: ${modeloPolo}
+Cantidad aproximada: ${cantidad} ${unidadCantidad}
+Tipo de tela: ${tipoTela}
+Personalización requerida: ${personalizacion}
+Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
+    ),
+  [
+    nombre,
+    tipoCliente,
+    objetivo,
+    modeloPolo,
+    cantidad,
+    unidadCantidad,
+    tipoTela,
+    personalizacion,
+    mensaje,
+  ]
+);
+  
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f7f8fb] text-slate-950">
       <div className="pointer-events-none fixed inset-0">
@@ -192,6 +226,7 @@ export default function Polos() {
   <a href="#telas" className="hover:text-cyan-700">Telas</a>
   <a href="#personalizacion" className="hover:text-cyan-700">Personalización</a>
   <a href="#proceso" className="hover:text-cyan-700">Proceso</a>
+  <a href="#cotizacion" className="hover:text-cyan-700">Cotización</a>
   <a href="/" className="hover:text-cyan-700">Medias</a>
   <a href="/merch-personalizado" className="hover:text-cyan-700">Merchandising</a>
 </nav>
@@ -199,15 +234,15 @@ export default function Polos() {
 
   {openMenu && (
     <div className="border-t border-slate-100 bg-white px-5 py-4 shadow-lg lg:hidden">
-      <div className="grid gap-3 text-sm font-black text-slate-700">
-        <a href="/" onClick={() => setOpenMenu(false)}>Medias</a>
-<a href="#modelos" onClick={() => setOpenMenu(false)}>Modelos</a>
-<a href="#telas" onClick={() => setOpenMenu(false)}>Telas</a>
-<a href="#personalizacion" onClick={() => setOpenMenu(false)}>Personalización</a>
-<a href="#proceso" onClick={() => setOpenMenu(false)}>Proceso</a>
-<a href="/" onClick={() => setOpenMenu(false)}>Medias</a>
-<a href="/merch-personalizado" onClick={() => setOpenMenu(false)}>Merchandising personalizado</a>
-      </div>
+<div className="grid gap-3 text-sm font-black text-slate-700">
+  <a href="#modelos" onClick={() => setOpenMenu(false)}>Modelos</a>
+  <a href="#telas" onClick={() => setOpenMenu(false)}>Telas</a>
+  <a href="#personalizacion" onClick={() => setOpenMenu(false)}>Personalización</a>
+  <a href="#proceso" onClick={() => setOpenMenu(false)}>Proceso</a>
+  <a href="#cotizacion" onClick={() => setOpenMenu(false)}>Cotización</a>
+  <a href="/" onClick={() => setOpenMenu(false)}>Medias</a>
+  <a href="/merch-personalizado" onClick={() => setOpenMenu(false)}>Merchandising personalizado</a>
+</div>
     </div>
   )}
 </header>
