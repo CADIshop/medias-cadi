@@ -237,7 +237,9 @@ export default function LandingMediasMayoristas() {
   const [unidadCantidad, setUnidadCantidad] = useState("pares");
   const [modelo, setModelo] = useState("Tobilleras");
   const [nombre, setNombre] = useState("");
-  const [telefono, setTelefono] = useState("");
+  const [tipoCliente, setTipoCliente] = useState("Emprendedor");
+const [objetivo, setObjetivo] = useState("Venta al por mayor");
+  const [personalizacion, setPersonalizacion] = useState("Solo medias");
   const [mensaje, setMensaje] = useState("");
 const [activeSlide, setActiveSlide] = useState(0);
   const [openMenu, setOpenMenu] = useState(false);
@@ -259,10 +261,11 @@ const [openFaq, setOpenFaq] = useState(null);
         `Hola, quiero cotizar medias al por mayor.
 
 Nombre o empresa: ${nombre || "Por completar"}
-Teléfono: ${telefono || "Por completar"}
+Tipo: ${tipoCliente}
+Objetivo: ${objetivo}
 Modelo: ${modelo}
 Cantidad aproximada: ${cantidad} ${unidadCantidad}
-Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
+Mensaje adicional: ${mensaje || "Sin mensaje adicional"}
       ),
     [cantidad, unidadCantidad, modelo, nombre, telefono, mensaje]
   );
@@ -1016,80 +1019,133 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               className="rounded-[2rem] border border-white/10 bg-white p-5 text-slate-950 shadow-2xl md:rounded-[2.5rem] md:p-8"
             >
               <div className="grid gap-4 md:gap-5">
-                <label className="grid gap-2">
-                  <span className="text-sm font-black">Nombre o empresa</span>
-                  <input
-                    value={nombre}
-                    onChange={(e) => setNombre(e.target.value)}
-                    placeholder="Ej. Comercial Cadi"
-                    className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-                  />
-                </label>
+  <label className="grid gap-2">
+    <span className="text-sm font-black">Nombre o empresa</span>
 
-                <label className="grid gap-2">
-                  <span className="text-sm font-black">Teléfono</span>
-                  <input
-                    value={telefono}
-                    onChange={(e) => setTelefono(e.target.value)}
-                    placeholder="Ej. 930 967 608"
-                    className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-                  />
-                </label>
+    <input
+      value={nombre}
+      onChange={(e) => setNombre(e.target.value)}
+      placeholder="Ej. Comercial Cadi"
+      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+    />
+  </label>
 
-                <label className="grid gap-2">
-                  <span className="text-sm font-black">
-                    Mensaje{" "}
-                    <span className="font-medium text-slate-400">
-                      (opcional)
-                    </span>
-                  </span>
-                  <textarea
-                    value={mensaje}
-                    onChange={(e) => setMensaje(e.target.value)}
-                    placeholder="Ej. Quiero cotizar con logo, etiqueta o empaque personalizado."
-                    rows="3"
-                    className="resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-                  />
-                </label>
+  <label className="grid gap-2">
+    <span className="text-sm font-black">Tipo de cliente</span>
 
-                <div className="grid gap-4 md:grid-cols-2 md:gap-5">
-                  <label className="grid gap-2">
-                    <span className="text-sm font-black">Modelo</span>
-                    <select
-                      value={modelo}
-                      onChange={(e) => setModelo(e.target.value)}
-                      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-                    >
-                      {models.map((m) => (
-                        <option key={m.name}>{m.name}</option>
-                      ))}
-                    </select>
-                  </label>
+    <select
+      value={tipoCliente}
+      onChange={(e) => setTipoCliente(e.target.value)}
+      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+    >
+      <option>Emprendedor</option>
+      <option>Tienda</option>
+      <option>Distribuidor</option>
+      <option>Empresa</option>
+      <option>Club deportivo</option>
+      <option>Academia</option>
+      <option>Colegio</option>
+      <option>Institución pública</option>
+      <option>Institución privada</option>
+    </select>
+  </label>
 
-                  <label className="grid gap-2">
-                    <span className="text-sm font-black">
-                      Cantidad aprox.
-                    </span>
+  <label className="grid gap-2">
+    <span className="text-sm font-black">
+      ¿Para qué necesitas las medias?
+    </span>
 
-                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_105px]">
-                      <input
-                        value={cantidad}
-                        onChange={(e) => setCantidad(e.target.value)}
-                        placeholder="500"
-                        className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-                      />
+    <select
+      value={objetivo}
+      onChange={(e) => setObjetivo(e.target.value)}
+      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+    >
+      <option>Reventa al por mayor</option>
+      <option>Reventa al por menor</option>
+      <option>Marca propia</option>
+      <option>Uniformes</option>
+      <option>Campaña publicitaria</option>
+      <option>Merchandising</option>
+      <option>Uso interno de la empresa</option>
+      <option>Otro</option>
+    </select>
+  </label>
 
-                      <select
-                        value={unidadCantidad}
-                        onChange={(e) => setUnidadCantidad(e.target.value)}
-                        className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-3 py-4 font-semibold outline-none transition focus:border-cyan-500"
-                      >
-                        <option value="pares">Pares</option>
-                        <option value="docenas">Docenas</option>
-                      </select>
-                    </div>
-                  </label>
-                </div>
+  <div className="grid gap-4 md:grid-cols-2 md:gap-5">
+    <label className="grid gap-2">
+      <span className="text-sm font-black">Modelo</span>
+
+      <select
+        value={modelo}
+        onChange={(e) => setModelo(e.target.value)}
+        className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+      >
+        {models.map((m) => (
+          <option key={m.name}>{m.name}</option>
+        ))}
+      </select>
+    </label>
+
+    <label className="grid gap-2">
+      <span className="text-sm font-black">
+        Cantidad aprox.
+      </span>
+
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_105px]">
+        <input
+          value={cantidad}
+          onChange={(e) => setCantidad(e.target.value)}
+          placeholder="500"
+          className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+        />
+
+        <select
+          value={unidadCantidad}
+          onChange={(e) => setUnidadCantidad(e.target.value)}
+          className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-3 py-4 font-semibold outline-none transition focus:border-cyan-500"
+        >
+          <option value="pares">Pares</option>
+          <option value="docenas">Docenas</option>
+        </select>
+      </div>
+    </label>
+  </div>
+
+  <label className="grid gap-2">
+    <span className="text-sm font-black">
+      Personalización requerida
+    </span>
+
+    <select
+      value={personalizacion}
+      onChange={(e) => setPersonalizacion(e.target.value)}
+      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+    >
+      <option>Solo medias</option>
+      <option>Logo personalizado</option>
+      <option>Diseño Jacquard</option>
+      <option>Etiqueta personalizada</option>
+      <option>Todo personalizado</option>
+    </select>
+  </label>
+
+  <label className="grid gap-2">
+    <span className="text-sm font-black">
+      Mensaje{" "}
+      <span className="font-medium text-slate-400">
+        (opcional)
+      </span>
+    </span>
+
+    <textarea
+      value={mensaje}
+      onChange={(e) => setMensaje(e.target.value)}
+      placeholder="Ej. Necesito un diseño con logo y etiqueta personalizada."
+      rows="3"
+      className="resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+    />
+  </label>
+</div>
 
                 <a
                   href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
