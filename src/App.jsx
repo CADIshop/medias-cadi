@@ -255,20 +255,30 @@ const [openFaq, setOpenFaq] = useState(null);
     return () => clearInterval(timer);
   }, []);
 
-  const whatsappText = useMemo(
-    () =>
-      encodeURIComponent(
-        `Hola, quiero cotizar medias al por mayor.
+const whatsappText = useMemo(
+  () =>
+    encodeURIComponent(
+      `Hola, quiero cotizar medias al por mayor.
 
 Nombre o empresa: ${nombre || "Por completar"}
-Tipo: ${tipoCliente}
-Objetivo: ${objetivo}
+Tipo de cliente: ${tipoCliente}
+Objetivo del pedido: ${objetivo}
 Modelo: ${modelo}
 Cantidad aproximada: ${cantidad} ${unidadCantidad}
-Mensaje adicional: ${mensaje || "Sin mensaje adicional"}
-      ),
-    [cantidad, unidadCantidad, modelo, nombre, telefono, mensaje]
-  );
+Personalización requerida: ${personalizacion}
+Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
+    ),
+  [
+    cantidad,
+    unidadCantidad,
+    modelo,
+    nombre,
+    tipoCliente,
+    objetivo,
+    personalizacion,
+    mensaje,
+  ]
+);
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f7f8fb] text-slate-950">
