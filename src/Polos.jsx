@@ -663,22 +663,21 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                   </label>
 
                   <label className="grid gap-2">
-                    <span className="text-sm font-black">
-                      Personalización requerida
-                    </span>
+  <span className="text-sm font-black">
+    Personalización requerida
+  </span>
 
-                    <select
-                     <select
-  value={personalizacion}
-  onChange={(e) => setPersonalizacion(e.target.value)}
-  className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
->
-  <option>Solo polos</option>
-  <option>Logo personalizado</option>
-  <option>Estampado DTF</option>
-  <option>Sublimación</option>
-</select>
-                  </label>
+  <select
+    value={personalizacion}
+    onChange={(e) => setPersonalizacion(e.target.value)}
+    className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
+  >
+    <option>Solo polos</option>
+    <option>Logo personalizado</option>
+    <option>Estampado DTF</option>
+    <option>Sublimación</option>
+  </select>
+</label>
                 </div>
 
                 <label className="grid gap-2">
