@@ -426,8 +426,6 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                 Ver servicios
               </a>
             </motion.div>
-
-            </motion.div>
           
           <motion.div
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
@@ -1155,9 +1153,8 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
       className="resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
     />
   </label>
-</div>
 
-                <a
+  <a
                   href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
                   target="_blank"
                   rel="noreferrer"
