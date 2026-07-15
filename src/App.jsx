@@ -426,6 +426,8 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                 Ver servicios
               </a>
             </motion.div>
+
+            </motion.div>
           
           <motion.div
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
