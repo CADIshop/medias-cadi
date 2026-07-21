@@ -175,7 +175,7 @@ const advantages = [
   {
     icon: "shield",
     title: "Composición confiable",
-    text: "85% algodón, 10% spandex y 5% elástico para suavidad, ajuste y resistencia.",
+    text: "85% algodón peinado, 10% spandex y 5% elástico para suavidad, ajuste y resistencia.",
   },
   {
     icon: "factory",
@@ -404,7 +404,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                 Fabricación de medias deportivas y casuales al por mayor para marcas, negocios y distribuidores.
               </h1>
               <p className="max-w-2xl text-base leading-7 text-slate-600 md:text-lg md:leading-8">
-                En Cadi Textil fabricamos medias deportivas, casuales e institucionales con algodón de alta calidad. Atendemos marcas, emprendedores, distribuidores, tiendas, empresas y colegios, ofreciendo producción flexible, precios competitivos y una excelente relación calidad-precio para pedidos mayoristas.
+                En Cadi Textil fabricamos medias deportivas, casuales e institucionales con algodón peinado. Atendemos marcas, emprendedores, distribuidores, tiendas, empresas y colegios, ofreciendo producción flexible, precios competitivos y una excelente relación calidad-precio para pedidos mayoristas.
               </p>
             </motion.div>
 
@@ -539,7 +539,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
         text: "Ofrecemos precios rentables para reventa, con mejores condiciones según la cantidad solicitada.",
       },
       {
-        title: "Medias de algodón",
+        title: "Medias de algodón peinado",
         text: "Fabricamos medias deportivas, casuales e institucionales con enfoque en comodidad, resistencia y presentación.",
       },
     ].map((item) => (
@@ -1199,7 +1199,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
             </div>
 
             <p className="mt-5 max-w-sm text-sm leading-7 text-slate-300 md:mt-6 md:text-base">
-              Fabricamos medias deportivas y casuales de algodón para tiendas, marcas, distribuidores, empresas, colegios y clientes mayoristas.
+              Fabricamos medias deportivas y casuales de algodón peinado para tiendas, marcas, distribuidores, empresas, colegios y clientes mayoristas.
             </p>
           </div>
 
