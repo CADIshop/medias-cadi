@@ -293,7 +293,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           <div className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center md:h-12 md:w-12">
               <img
-                src="/logo-medias-cadi.png"
+                src="/logo-cadi.png"
                 alt="Logo Cadi"
                 className="h-11 w-11 rounded-xl object-contain md:h-12 md:w-12"
               />
