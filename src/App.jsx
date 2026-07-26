@@ -396,16 +396,23 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               className="inline-flex items-center gap-2 rounded-full border border-cyan-100 bg-white px-4 py-2 text-xs font-bold text-slate-700 shadow-sm md:text-sm"
             >
               <I type="spark" className="h-4 w-4 text-cyan-700" />
-              Fabricación para marcas, empresas y distribuidores
+              Especialistas en medias personalizadas
             </motion.div>
 
             <motion.div variants={fadeUp} className="space-y-3 md:space-y-4">
               <h1 className="text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-7xl">
-                Fabricación de medias deportivas y casuales al por mayor para marcas, negocios y distribuidores.
-              </h1>
+  Tu marca.
+  <br />
+  Tus medias.
+  <br />
+  Nosotros hacemos el resto.
+</h1>
               <p className="max-w-2xl text-base leading-7 text-slate-600 md:text-lg md:leading-8">
-                En Cadi Textil fabricamos medias deportivas, casuales e institucionales con algodón peinado. Atendemos marcas, emprendedores, distribuidores, tiendas, empresas y colegios, ofreciendo producción flexible, precios competitivos y una excelente relación calidad-precio para pedidos mayoristas.
-              </p>
+  Fabricamos medias personalizadas para marcas, empresas y distribuidores
+  que buscan crear, vender o fortalecer su propia línea de productos.
+  Producción nacional desde 100 pares con diseño, etiqueta y presentación
+  personalizada.
+</p>
             </motion.div>
 
             <motion.div
@@ -416,7 +423,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                 href="#cotizacion"
                 className="inline-flex items-center justify-center rounded-full bg-cyan-600 px-7 py-4 font-black text-white shadow-xl shadow-cyan-200 transition hover:-translate-y-1 hover:bg-cyan-700"
               >
-                Cotizar por WhatsApp
+                Solicitar cotización
                 <I type="arrow" className="ml-2 h-5 w-5" />
               </a>
               <a
