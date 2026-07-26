@@ -148,7 +148,7 @@ const services = [
   {
     image: "/servicios/diseno-y-desarrollo.jpg",
     title: "Diseño y desarrollo",
-    text: "Convertimos tu idea en una propuesta clara: modelo, colores, tallas, estilo, empaque y presentación. Te asesoramos digitalmente para crear una línea lista para vender.",
+    text: "Convertimos tu idea en una propuesta clara: modelo, colores, tallas, estilo, diseño y presentación del producto. Te asesoramos digitalmente para crear una línea lista para vender."
   },
   {
     image: "/servicios/produccion-mayorista.jpg",
@@ -224,7 +224,7 @@ const faqs = [
   },
   {
     q: "¿Puedo vender las medias con mi propia marca?",
-    a: "Sí. Podemos orientar la presentación final con etiqueta, empaque e identidad de marca según el requerimiento.",
+    a: "Sí. Podemos orientar la presentación final con etiqueta, diseño y elementos de identidad de marca aplicados a la media según el requerimiento.",
   },
   {
     q: "¿Qué modelos fabrican?",
