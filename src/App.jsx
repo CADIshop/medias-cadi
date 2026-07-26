@@ -156,17 +156,17 @@ const services = [
     text: "Fabricamos por volumen con procesos ordenados, control de tiempos y consistencia entre lotes para marcas, empresas e instituciones.",
   },
   {
-    image: "/servicios/marca-y-presentacion.jpg",
-    title: "Marca y presentación",
-    text: "Preparamos el producto con identidad propia: etiquetado, empaque y presentación comercial para que tus medias lleguen listas al cliente final.",
-  },
+  image: "/servicios/marca-y-presentacion.jpg",
+  title: "Marca e identidad",
+  text: "Ayudamos a desarrollar medias con identidad propia mediante logo, diseño Jacquard y opciones de personalización para fortalecer tu marca.",
+},
 ];
 
 const products = [
   "Medias y calcetines para empresas, colegios, clubes, academias e instituciones públicas o privadas.",
   "Producción por volumen desde 100 pares para cualquier tipo de negocio o institución.",
   "Marca blanca para negocios que desean vender medias con su propia identidad comercial.",
-  "Personalización con marca, logo, etiqueta y empaque final según el objetivo del pedido.",
+  "Personalización con marca, logo, diseño Jacquard y etiqueta según el objetivo del pedido.",,
   "Líneas para clientes corporativos, distribuidores, emprendedores y negocios textiles.",
   "Mangas industriales en algodón, nylon, poliéster y dralón para distintas aplicaciones.",
 ];
@@ -409,9 +409,9 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
 </h1>
               <p className="max-w-2xl text-base leading-7 text-slate-600 md:text-lg md:leading-8">
   Fabricamos medias personalizadas para marcas, empresas y distribuidores
-  que buscan crear, vender o fortalecer su propia línea de productos.
-  Producción nacional desde 100 pares con diseño, etiqueta y presentación
-  personalizada.
+  que buscan crear o ampliar su propia línea de productos.
+  Producción nacional desde 100 pares con diseño, logo y personalización
+  según el objetivo de tu negocio.
 </p>
             </motion.div>
 
@@ -1138,11 +1138,10 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
       onChange={(e) => setPersonalizacion(e.target.value)}
       className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
     >
-      <option>Solo medias</option>
+      <option>medias color entero</option>
       <option>Logo personalizado</option>
       <option>Diseño Jacquard</option>
       <option>Etiqueta personalizada</option>
-      <option>Todo personalizado</option>
     </select>
   </label>
 
