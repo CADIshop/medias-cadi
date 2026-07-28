@@ -1,9 +1,8 @@
-import ScrollToTopButton from "./components/ScrollToTopButton";
 import React, { useMemo, useState } from "react";
-import { createRoot } from "react-dom/client";
 import { motion } from "framer-motion";
-import Polos from "./Polos.jsx";
-import Lapiceros from "./Lapiceros.jsx";
+
+// Si tienes estos componentes en tu proyecto, puedes descomentarlos:
+// import ScrollToTopButton from "./components/ScrollToTopButton";
 
 const I = ({ type, className = "h-5 w-5" }) => {
   const base = {
@@ -232,21 +231,6 @@ const process = [
   },
 ];
 
-const faqs = [
-  {
-    q: "¿Atienden pedidos para empresas y colegios?",
-    a: "Sí. Trabajamos pedidos por volumen para empresas, colegios, instituciones, clubes, distribuidores y clientes corporativos.",
-  },
-  {
-    q: "¿Puedo vender las medias con mi propia marca?",
-    a: "Sí. Podemos orientar la presentación final con etiqueta, diseño y elementos de identidad de marca aplicados a la media según el requerimiento.",
-  },
-  {
-    q: "¿Qué modelos fabrican?",
-    a: "Fabricamos taloneras, tobilleras, medias 3/4 y medias de futsal. También trabajamos mangas industriales.",
-  },
-];
-
 export default function LandingMediasMayoristas() {
   const [cantidad, setCantidad] = useState("500");
   const [unidadCantidad, setUnidadCantidad] = useState("pares");
@@ -258,9 +242,6 @@ export default function LandingMediasMayoristas() {
   const [mensaje, setMensaje] = useState("");
   const [activeSlide, setActiveSlide] = useState(0);
   const [openMenu, setOpenMenu] = useState(false);
-  const [openFaq, setOpenFaq] = useState(null);
-
-  const whatsappNumber = "51930967608";
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -269,31 +250,6 @@ export default function LandingMediasMayoristas() {
 
     return () => clearInterval(timer);
   }, []);
-
-  const whatsappText = useMemo(
-    () =>
-      encodeURIComponent(
-        `Hola, quiero cotizar medias al por mayor.
-
-Nombre o empresa: ${nombre || "Por completar"}
-Tipo de cliente: ${tipoCliente}
-Objetivo del pedido: ${objetivo}
-Modelo: ${modelo}
-Cantidad aproximada: ${cantidad} ${unidadCantidad}
-Personalización requerida: ${personalizacion}
-Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
-      ),
-    [
-      cantidad,
-      unidadCantidad,
-      modelo,
-      nombre,
-      tipoCliente,
-      objetivo,
-      personalizacion,
-      mensaje,
-    ]
-  );
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f7f8fb] text-slate-950">
@@ -358,38 +314,6 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
             <a href="#cotizacion" className="hover:text-cyan-700">
               Cotización
             </a>
-
-            <div className="group relative">
-              <button className="hover:text-cyan-700">
-                Otros productos y servicios
-              </button>
-
-              <div className="invisible absolute right-0 top-full z-50 mt-0 w-64 pt-4 opacity-0 transition group-hover:visible group-hover:opacity-100">
-                <div className="rounded-2xl border border-slate-100 bg-white p-3 shadow-xl">
-                  <p className="px-3 py-2 text-xs font-black uppercase tracking-widest text-cyan-700">
-                    Productos
-                  </p>
-
-                  <a
-                    href="/polos"
-                    className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700"
-                  >
-                    Polos
-                  </a>
-
-                  <p className="mt-3 px-3 py-2 text-xs font-black uppercase tracking-widest text-cyan-700">
-                    Servicios
-                  </p>
-
-                  <a
-                    href="/merch-personalizado"
-                    className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700"
-                  >
-                    Merch personalizado
-                  </a>
-                </div>
-              </div>
-            </div>
           </nav>
         </div>
 
@@ -411,45 +335,32 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               <a href="#cotizacion" onClick={() => setOpenMenu(false)}>
                 Cotización
               </a>
-              <a href="/polos" onClick={() => setOpenMenu(false)}>
-                Polos
-              </a>
-              <a href="/merch-personalizado" onClick={() => setOpenMenu(false)}>
-                Merch personalizado
-              </a>
             </div>
           </div>
         )}
       </header>
 
       <main className="relative z-10">
-        {/* ========================================================= */}
-        {/* FASE 1 — HERO 2.0 (NUEVO DISEÑO CONVERSIÓN Y MARCA PROPIA) */}
-        {/* ========================================================= */}
+        {/* HERO 2.0 */}
         <section className="relative overflow-hidden bg-slate-950 text-slate-100 pt-12 pb-16 lg:pt-20 lg:pb-28">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-cyan-500/10 blur-[120px] pointer-events-none rounded-full" />
 
           <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-              {/* COLUMNA IZQUIERDA: Copy, Titular y CTAs */}
               <div className="lg:col-span-7 flex flex-col space-y-6 text-left">
-                {/* Badge Superior */}
                 <div className="inline-flex items-center gap-2 self-start px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-xs font-bold uppercase tracking-wider text-cyan-400 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                   DESDE 100 PARES • DISEÑO PERSONALIZADO
                 </div>
 
-                {/* Titular Principal */}
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
                   Crea tu propia marca de medias con un proveedor que te acompaña en cada paso.
                 </h1>
 
-                {/* Subtítulo enfocado en Acompañamiento */}
                 <p className="text-base sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl">
                   Fabricamos medias personalizadas para emprendedores, empresas, clubes deportivos y distribuidores desde 100 pares. Desarrollamos tu diseño junto a ti y solo iniciamos la producción cuando apruebas el resultado.
                 </p>
 
-                {/* Botones de Acción */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
                   <a
                     href="#cotizacion"
@@ -467,7 +378,6 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                   </a>
                 </div>
 
-                {/* Puntos clave inmediatos */}
                 <div className="pt-3 grid grid-cols-2 gap-y-2 gap-x-4 text-xs sm:text-sm text-slate-400 font-medium">
                   <div className="flex items-center gap-2">
                     <I type="check" className="w-4 h-4 text-cyan-400 shrink-0" />
@@ -488,14 +398,10 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                 </div>
               </div>
 
-              {/* COLUMNA DERECHA: Opción A - Mockup Apple Style + Tarjeta de Ventaja Competitiva */}
               <div className="lg:col-span-5 relative flex flex-col items-center">
                 <div className="relative w-full aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-[2.5rem] bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 flex flex-col justify-between overflow-hidden shadow-2xl group">
-                  
-                  {/* Iluminación sutil de fondo */}
                   <div className="absolute inset-0 bg-cyan-500/5 blur-xl pointer-events-none" />
 
-                  {/* Top Bar Mockup */}
                   <div className="flex justify-between items-center z-10">
                     <span className="text-[11px] font-mono tracking-widest text-slate-400 uppercase">
                       CADI TEXTIL • LAB
@@ -505,7 +411,6 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                     </span>
                   </div>
 
-                  {/* Elemento central de Producto/Diseño */}
                   <div className="my-auto text-center space-y-4 z-10 py-6">
                     <div className="w-28 h-28 mx-auto rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform duration-300">
                       <I type="layers" className="w-12 h-12 text-cyan-400 stroke-[1.5]" />
@@ -516,7 +421,6 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                     </div>
                   </div>
 
-                  {/* Tarjeta Flotante: ¿Por qué elegir Cadi Textil? */}
                   <div className="z-10 bg-slate-900/90 backdrop-blur-md border border-slate-800 p-4 sm:p-5 rounded-2xl space-y-3 shadow-2xl">
                     <p className="text-xs sm:text-sm font-black text-slate-100 flex items-center gap-2">
                       <I type="shield" className="w-4 h-4 text-cyan-400" />
@@ -537,12 +441,10 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                       </li>
                     </ul>
                   </div>
-
                 </div>
               </div>
             </div>
 
-            {/* BARRA DE CONFIANZA HORIZONTAL (Clean & Elegant) */}
             <div className="mt-16 pt-8 border-t border-slate-900 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-cyan-400 shrink-0">
@@ -584,85 +486,10 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                 </div>
               </div>
             </div>
-
           </div>
         </section>
 
-        {/* ========================================================= */}
-        {/* SECCIONES SIGUIENTES (MANTENIDAS EXACTAMENTE IGUAL)       */}
-        {/* ========================================================= */}
-        <section className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-16">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.25 }}
-            className="mb-6 max-w-3xl md:mb-10"
-          >
-            <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
-              Ideal para
-            </p>
-            <h2 className="text-3xl font-black tracking-tight md:text-5xl">
-              Producción para negocios que necesitan vender, uniformar o
-              abastecer.
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
-            {[
-              "Tiendas de ropa",
-              "Marcas de ropa",
-              "Emprendedores",
-              "Distribuidores",
-              "Marca blanca",
-              "Equipos deportivos",
-              "Empresas",
-              "Colegios",
-              "Academias",
-              "Campañas corporativas",
-            ].map((item) => (
-              <span
-                key={item}
-                className="flex min-h-[44px] items-center justify-center rounded-full border border-cyan-100 bg-white px-3 py-2 text-center text-xs font-black text-slate-800 shadow-sm sm:px-4 sm:text-sm"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-16">
-          <div className="grid gap-6 rounded-[2rem] bg-white p-6 shadow-xl shadow-slate-100 md:grid-cols-3 md:rounded-[2.5rem] md:p-8">
-            {[
-              {
-                title: "Pedidos mayoristas accesibles",
-                text: "Trabajamos pedidos por volumen para emprendedores, tiendas, marcas, distribuidores, empresas y colegios.",
-              },
-              {
-                title: "Precios competitivos",
-                text: "Ofrecemos precios rentables para reventa, con mejores condiciones según la cantidad solicitada.",
-              },
-              {
-                title: "Medias de alta densidad",
-                text: "Fabricamos medias deportivas, casuales e institucionales con enfoque en comodidad, resistencia y presentación.",
-              },
-            ].map((item) => (
-              <motion.div
-                key={item.title}
-                whileHover={{ y: -6 }}
-                className="rounded-[1.5rem] bg-slate-50 p-5"
-              >
-                <h3 className="text-xl font-black text-slate-950">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
-                  {item.text}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
+        {/* SERVICIOS */}
         <section id="servicios" className="bg-white py-14 md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <motion.div
@@ -676,8 +503,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                 Nuestros servicios
               </p>
               <h2 className="text-3xl font-black tracking-tight md:text-6xl">
-                Te ayudamos a crear un producto textil con identidad, calidad y
-                salida comercial.
+                Te ayudamos a crear un producto textil con identidad y salida comercial.
               </h2>
             </motion.div>
 
@@ -718,6 +544,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </div>
         </section>
 
+        {/* QUÉ FABRICAMOS */}
         <section
           id="fabricamos"
           className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-24"
@@ -734,14 +561,11 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                 ¿Qué fabricamos?
               </p>
               <h2 className="text-3xl font-black tracking-tight md:text-6xl">
-                Soluciones para empresas, instituciones y marcas que necesitan
-                producir a escala.
+                Soluciones para empresas, instituciones y marcas.
               </h2>
             </div>
             <p className="text-base leading-7 text-slate-600 md:text-lg md:leading-8">
-              No solo entregamos medias: desarrollamos productos textiles
-              pensados para campañas, uniformes, venta mayorista, licitaciones y
-              líneas de marca propia.
+              No solo entregamos medias: desarrollamos productos textiles pensados para campañas, uniformes, venta mayorista y líneas de marca propia.
             </p>
           </motion.div>
 
@@ -767,131 +591,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </motion.div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-12">
-          <div className="rounded-[2rem] bg-slate-950 p-6 text-white shadow-2xl shadow-slate-200 md:rounded-[2.5rem] md:p-10">
-            <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-              <div>
-                <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
-                  Compra mayorista
-                </p>
-                <h2 className="text-3xl font-black tracking-tight md:text-5xl">
-                  Medias listas para vender, distribuir o personalizar.
-                </h2>
-                <p className="mt-5 text-base leading-8 text-slate-300">
-                  Atendemos negocios que buscan productos rentables, cómodos y de buena
-                  presentación para vender al por mayor o desarrollar su propia marca.
-                </p>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  "Ideal para emprendedores",
-                  "Para tiendas y distribuidores",
-                  "Precios por volumen",
-                  "Personalización con marca",
-                  "Modelos deportivos y casuales",
-                  "Producción nacional",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-3 rounded-2xl bg-white/10 p-4"
-                  >
-                    <div className="rounded-full bg-cyan-300 p-2 text-slate-950">
-                      <I type="check" className="h-4 w-4" />
-                    </div>
-                    <p className="text-sm font-bold text-slate-100">
-                      {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-10">
-          <div className="grid gap-3 rounded-[2rem] bg-white p-5 shadow-xl shadow-slate-100 md:grid-cols-4 md:gap-4 md:rounded-[2.5rem] md:p-8">
-            {[
-              {
-                title: "Atención directa",
-                text: "Coordinación rápida por WhatsApp para cotizaciones y pedidos.",
-              },
-              {
-                title: "Producción por volumen",
-                text: "Fabricación pensada para empresas, campañas y distribución.",
-              },
-              {
-                title: "Marca blanca",
-                text: "Producto listo para presentarse con identidad comercial propia.",
-              },
-              {
-                title: "Despacho coordinado",
-                text: "Envíos y entregas según destino, volumen y requerimiento.",
-              },
-            ].map((item) => (
-              <motion.div
-                key={item.title}
-                whileHover={{ y: -6 }}
-                className="rounded-[1.5rem] bg-slate-50 p-4 md:rounded-[1.75rem] md:p-5"
-              >
-                <h3 className="text-base font-black text-slate-950 md:text-lg">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  {item.text}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
-        <section className="bg-slate-950 py-14 text-white md:py-24">
-          <div className="mx-auto max-w-7xl px-5 md:px-8">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.25 }}
-              className="mb-8 max-w-3xl md:mb-12"
-            >
-              <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
-                Por qué elegirnos
-              </p>
-              <h2 className="text-3xl font-black tracking-tight md:text-6xl">
-                Una fabricación pensada para que tu producto se vea mejor y se
-                venda mejor.
-              </h2>
-            </motion.div>
-
-            <motion.div
-              variants={stagger}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
-              className="flex gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible md:pb-0"
-            >
-              {advantages.map((item) => (
-                <motion.div
-                  variants={fadeUp}
-                  whileHover={{ y: -8 }}
-                  key={item.title}
-                  className="min-w-[78%] rounded-[2rem] border border-white/10 bg-white/10 p-5 backdrop-blur md:min-w-0 md:p-6"
-                >
-                  <div className="mb-5 grid h-11 w-11 place-items-center rounded-2xl bg-cyan-300 text-slate-950 md:mb-6 md:h-12 md:w-12">
-                    <I type={item.icon} className="h-5 w-5" />
-                  </div>
-                  <h3 className="text-lg font-black md:text-xl">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-300 md:text-base">
-                    {item.text}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
+        {/* MODELOS */}
         <section
           id="modelos"
           className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-24"
@@ -944,6 +644,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </motion.div>
         </section>
 
+        {/* PROCESO */}
         <section id="proceso" className="bg-white py-14 md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <motion.div
@@ -957,7 +658,7 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
                 Proceso de trabajo
               </p>
               <h2 className="text-3xl font-black tracking-tight md:text-6xl">
-                De la cotización al producto final, con una ruta clara.
+                De la cotización al producto final.
               </h2>
             </motion.div>
 
@@ -987,8 +688,6 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </div>
         </section>
       </main>
-
-      <ScrollToTopButton />
     </div>
   );
 }
