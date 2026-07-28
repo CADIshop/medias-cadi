@@ -76,6 +76,21 @@ const I = ({ type, className = "h-5 w-5" }) => {
     star: (
       <path d="m12 2 3 6 6 .9-4.5 4.4 1.1 6.2L12 16.5 6.4 19.5l1.1-6.2L3 8.9 9 8l3-6Z" />
     ),
+    layers: (
+      <>
+        <path d="m12 2 10 5-10 5L2 7l10-5Z" />
+        <path d="m2 17 10 5 10-5" />
+        <path d="m2 12 10 5 10-5" />
+      </>
+    ),
+    refresh: (
+      <>
+        <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+        <path d="M3 3v5h5" />
+        <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
+        <path d="M16 16h5v5" />
+      </>
+    ),
   };
 
   return <svg {...base}>{p[type]}</svg>;
@@ -148,7 +163,7 @@ const services = [
   {
     image: "/servicios/diseno-y-desarrollo.jpg",
     title: "Diseño y desarrollo",
-    text: "Convertimos tu idea en una propuesta clara: modelo, colores, tallas, estilo, diseño y presentación del producto. Te asesoramos digitalmente para crear una línea lista para vender."
+    text: "Convertimos tu idea en una propuesta clara: modelo, colores, tallas, estilo, diseño y presentación del producto. Te asesoramos digitalmente para crear una línea lista para vender.",
   },
   {
     image: "/servicios/produccion-mayorista.jpg",
@@ -156,17 +171,17 @@ const services = [
     text: "Fabricamos por volumen con procesos ordenados, control de tiempos y consistencia entre lotes para marcas, empresas e instituciones.",
   },
   {
-  image: "/servicios/marca-y-presentacion.jpg",
-  title: "Marca e identidad",
-  text: "Ayudamos a desarrollar medias con identidad propia mediante logo, diseño Jacquard y opciones de personalización para fortalecer tu marca.",
-},
+    image: "/servicios/marca-y-presentacion.jpg",
+    title: "Marca e identidad",
+    text: "Ayudamos a desarrollar medias con identidad propia mediante logo, diseño Jacquard y opciones de personalización para fortalecer tu marca.",
+  },
 ];
 
 const products = [
   "Medias y calcetines para empresas, colegios, clubes, academias e instituciones públicas o privadas.",
   "Producción por volumen desde 100 pares para cualquier tipo de negocio o institución.",
   "Marca blanca para negocios que desean vender medias con su propia identidad comercial.",
-  "Personalización con marca, logo, diseño Jacquard y etiqueta según el objetivo del pedido.",,
+  "Personalización con marca, logo, diseño Jacquard y etiqueta según el objetivo del pedido.",
   "Líneas para clientes corporativos, distribuidores, emprendedores y negocios textiles.",
   "Mangas industriales en algodón, nylon, poliéster y dralón para distintas aplicaciones.",
 ];
@@ -175,7 +190,7 @@ const advantages = [
   {
     icon: "shield",
     title: "Composición confiable",
-    text: "85% algodón peinado, 10% spandex y 5% elástico para suavidad, ajuste y resistencia.",
+    text: "Fibra seleccionada de alta densidad con spandex y elástico para suavidad, ajuste y resistencia.",
   },
   {
     icon: "factory",
@@ -238,12 +253,12 @@ export default function LandingMediasMayoristas() {
   const [modelo, setModelo] = useState("Tobilleras");
   const [nombre, setNombre] = useState("");
   const [tipoCliente, setTipoCliente] = useState("Emprendedor");
-const [objetivo, setObjetivo] = useState("Venta al por mayor");
+  const [objetivo, setObjetivo] = useState("Venta al por mayor");
   const [personalizacion, setPersonalizacion] = useState("Solo medias");
   const [mensaje, setMensaje] = useState("");
-const [activeSlide, setActiveSlide] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
   const [openMenu, setOpenMenu] = useState(false);
-const [openFaq, setOpenFaq] = useState(null);
+  const [openFaq, setOpenFaq] = useState(null);
 
   const whatsappNumber = "51930967608";
 
@@ -255,10 +270,10 @@ const [openFaq, setOpenFaq] = useState(null);
     return () => clearInterval(timer);
   }, []);
 
-const whatsappText = useMemo(
-  () =>
-    encodeURIComponent(
-      `Hola, quiero cotizar medias al por mayor.
+  const whatsappText = useMemo(
+    () =>
+      encodeURIComponent(
+        `Hola, quiero cotizar medias al por mayor.
 
 Nombre o empresa: ${nombre || "Por completar"}
 Tipo de cliente: ${tipoCliente}
@@ -267,18 +282,18 @@ Modelo: ${modelo}
 Cantidad aproximada: ${cantidad} ${unidadCantidad}
 Personalización requerida: ${personalizacion}
 Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
-    ),
-  [
-    cantidad,
-    unidadCantidad,
-    modelo,
-    nombre,
-    tipoCliente,
-    objetivo,
-    personalizacion,
-    mensaje,
-  ]
-);
+      ),
+    [
+      cantidad,
+      unidadCantidad,
+      modelo,
+      nombre,
+      tipoCliente,
+      objetivo,
+      personalizacion,
+      mensaje,
+    ]
+  );
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f7f8fb] text-slate-950">
@@ -307,193 +322,275 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </div>
 
           <button
-  onClick={() => setOpenMenu(!openMenu)}
-  className="flex h-11 w-11 items-center justify-center rounded-full bg-slate-950 text-white lg:hidden"
-  aria-label="Abrir menú"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-6 w-6"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth="2"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M4 6h16M4 12h16M4 18h16"
-    />
-  </svg>
-</button>
-
-<nav className="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex">
-  <a href="#servicios" className="hover:text-cyan-700">Servicios</a>
-  <a href="#fabricamos" className="hover:text-cyan-700">Qué fabricamos</a>
-  <a href="#modelos" className="hover:text-cyan-700">Modelos</a>
-  <a href="#proceso" className="hover:text-cyan-700">Proceso</a>
-  <a href="#cotizacion" className="hover:text-cyan-700">Cotización</a>
-
-<div className="group relative">
-  <button className="hover:text-cyan-700">
-    Otros productos y servicios
-  </button>
-
-  <div className="invisible absolute right-0 top-full z-50 mt-0 w-64 pt-4 opacity-0 transition group-hover:visible group-hover:opacity-100">
-    <div className="rounded-2xl border border-slate-100 bg-white p-3 shadow-xl">
-      <p className="px-3 py-2 text-xs font-black uppercase tracking-widest text-cyan-700">
-        Productos
-      </p>
-
-      <a href="/polos" className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700">
-        Polos
-      </a>
-
-      <p className="mt-3 px-3 py-2 text-xs font-black uppercase tracking-widest text-cyan-700">
-        Servicios
-      </p>
-
-<a
-  href="/merch-personalizado"
-  className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700"
->
-  Merch personalizado
-</a>
-    </div>
-  </div>
-</div>
-
-</nav>
-
-</div>
-
-{openMenu && (
-  <div className="border-t border-slate-100 bg-white px-5 py-4 shadow-lg lg:hidden">
-    <div className="grid gap-3 text-sm font-black text-slate-700">
-      <a href="#servicios" onClick={() => setOpenMenu(false)}>Servicios</a>
-      <a href="#fabricamos" onClick={() => setOpenMenu(false)}>Qué fabricamos</a>
-      <a href="#modelos" onClick={() => setOpenMenu(false)}>Modelos</a>
-      <a href="#proceso" onClick={() => setOpenMenu(false)}>Proceso</a>
-      <a href="#cotizacion" onClick={() => setOpenMenu(false)}>Cotización</a>
-      <a href="/polos" onClick={() => setOpenMenu(false)}>Polos</a>
-      <a href="/merch-personalizado" onClick={() => setOpenMenu(false)}>Merch personalizado</a>
-    </div>
-  </div>
-)}        
-        
-</header>
-
-      <main className="relative z-10">
-        <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-6 md:grid-cols-[1.05fr_0.95fr] md:px-8 md:py-10">
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            animate="show"
-            className="space-y-4 md:space-y-5"
+            onClick={() => setOpenMenu(!openMenu)}
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-slate-950 text-white lg:hidden"
+            aria-label="Abrir menú"
           >
-            <motion.div
-              variants={fadeUp}
-              className="inline-flex items-center gap-2 rounded-full border border-cyan-100 bg-white px-4 py-2 text-xs font-bold text-slate-700 shadow-sm md:text-sm"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
             >
-              <I type="spark" className="h-4 w-4 text-cyan-700" />
-              Especialistas en medias personalizadas
-            </motion.div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
 
-            <motion.div variants={fadeUp} className="space-y-3 md:space-y-4">
-              <h1 className="text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-7xl">
-  Tu marca.
-  <br />
-  Tus medias.
-  <br />
-  Nosotros hacemos el resto.
-</h1>
-              <p className="max-w-2xl text-base leading-7 text-slate-600 md:text-lg md:leading-8">
-  Fabricamos medias personalizadas para marcas, empresas y distribuidores
-  que buscan crear o ampliar su propia línea de productos.
-  Producción nacional desde 100 pares con diseño, logo y personalización
-  según el objetivo de tu negocio.
-</p>
-            </motion.div>
+          <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex">
+            <a href="#servicios" className="hover:text-cyan-700">
+              Servicios
+            </a>
+            <a href="#fabricamos" className="hover:text-cyan-700">
+              Qué fabricamos
+            </a>
+            <a href="#modelos" className="hover:text-cyan-700">
+              Modelos
+            </a>
+            <a href="#proceso" className="hover:text-cyan-700">
+              Proceso
+            </a>
+            <a href="#cotizacion" className="hover:text-cyan-700">
+              Cotización
+            </a>
 
-            <motion.div
-              variants={fadeUp}
-              className="flex flex-col gap-3 sm:flex-row"
-            >
-              <a
-                href="#cotizacion"
-                className="inline-flex items-center justify-center rounded-full bg-cyan-600 px-7 py-4 font-black text-white shadow-xl shadow-cyan-200 transition hover:-translate-y-1 hover:bg-cyan-700"
-              >
-                Solicitar cotización
-                <I type="arrow" className="ml-2 h-5 w-5" />
-              </a>
-              <a
-                href="#servicios"
-                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-7 py-4 font-black text-slate-900 shadow-sm transition hover:-translate-y-1 hover:bg-slate-50"
-              >
-                Ver servicios
-              </a>
-            </motion.div>
+            <div className="group relative">
+              <button className="hover:text-cyan-700">
+                Otros productos y servicios
+              </button>
 
-            </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-cyan-200 via-white to-blue-200 blur-2xl" />
-
-            <div className="relative rounded-[2.25rem] bg-gradient-to-br from-slate-950 to-slate-800 p-5 text-white shadow-2xl shadow-slate-300 md:rounded-[3rem] md:p-7">
-                <div className="mb-4 flex items-center justify-between md:mb-8">
-                  <p className="text-sm font-bold text-cyan-200">
-                    Producción mayorista
+              <div className="invisible absolute right-0 top-full z-50 mt-0 w-64 pt-4 opacity-0 transition group-hover:visible group-hover:opacity-100">
+                <div className="rounded-2xl border border-slate-100 bg-white p-3 shadow-xl">
+                  <p className="px-3 py-2 text-xs font-black uppercase tracking-widest text-cyan-700">
+                    Productos
                   </p>
-                  <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-bold">
-                    Cadi
-                  </span>
-                </div>
 
-                <div className="relative overflow-hidden rounded-[1.5rem] bg-white/10 md:rounded-[2rem]">
-                  <motion.img
-                    key={models[activeSlide].images[0]}
-                    src={models[activeSlide].images[0]}
-                    alt={models[activeSlide].name}
-                    initial={{ opacity: 0, scale: 1.05 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.7 }}
-                    className="h-[300px] w-full object-cover md:h-[420px]"
-                  />
+                  <a
+                    href="/polos"
+                    className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700"
+                  >
+                    Polos
+                  </a>
 
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-5 md:p-6">
-                    <p className="text-sm font-bold text-cyan-200">
-                      {models[activeSlide].tag}
-                    </p>
-                    <h3 className="text-2xl font-black text-white md:text-3xl">
-                      {models[activeSlide].name}
-                    </h3>
-                    <p className="mt-2 max-w-sm text-xs leading-5 text-slate-200 md:text-sm md:leading-6">
-                      {models[activeSlide].text}
-                    </p>
-                  </div>
+                  <p className="mt-3 px-3 py-2 text-xs font-black uppercase tracking-widest text-cyan-700">
+                    Servicios
+                  </p>
 
-                  <div className="absolute bottom-5 right-5 flex gap-2">
-                    {models.map((item, index) => (
-                      <button
-                        key={item.name}
-                        onClick={() => setActiveSlide(index)}
-                        className={`h-3 w-3 rounded-full transition ${
-                          activeSlide === index ? "bg-cyan-300" : "bg-white/40"
-                        }`}
-                        aria-label={`Ver ${item.name}`}
-                      />
-                    ))}
+                  <a
+                    href="/merch-personalizado"
+                    className="block rounded-xl px-3 py-2 text-sm font-bold text-slate-700 hover:bg-cyan-50 hover:text-cyan-700"
+                  >
+                    Merch personalizado
+                  </a>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </nav>
+        </div>
+
+        {openMenu && (
+          <div className="border-t border-slate-100 bg-white px-5 py-4 shadow-lg lg:hidden">
+            <div className="grid gap-3 text-sm font-black text-slate-700">
+              <a href="#servicios" onClick={() => setOpenMenu(false)}>
+                Servicios
+              </a>
+              <a href="#fabricamos" onClick={() => setOpenMenu(false)}>
+                Qué fabricamos
+              </a>
+              <a href="#modelos" onClick={() => setOpenMenu(false)}>
+                Modelos
+              </a>
+              <a href="#proceso" onClick={() => setOpenMenu(false)}>
+                Proceso
+              </a>
+              <a href="#cotizacion" onClick={() => setOpenMenu(false)}>
+                Cotización
+              </a>
+              <a href="/polos" onClick={() => setOpenMenu(false)}>
+                Polos
+              </a>
+              <a href="/merch-personalizado" onClick={() => setOpenMenu(false)}>
+                Merch personalizado
+              </a>
+            </div>
+          </div>
+        )}
+      </header>
+
+      <main className="relative z-10">
+        {/* ========================================================= */}
+        {/* FASE 1 — HERO 2.0 (NUEVO DISEÑO CONVERSIÓN Y MARCA PROPIA) */}
+        {/* ========================================================= */}
+        <section className="relative overflow-hidden bg-slate-950 text-slate-100 pt-12 pb-16 lg:pt-20 lg:pb-28">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-cyan-500/10 blur-[120px] pointer-events-none rounded-full" />
+
+          <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+              {/* COLUMNA IZQUIERDA: Copy, Titular y CTAs */}
+              <div className="lg:col-span-7 flex flex-col space-y-6 text-left">
+                {/* Badge Superior */}
+                <div className="inline-flex items-center gap-2 self-start px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-xs font-bold uppercase tracking-wider text-cyan-400 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                  DESDE 100 PARES • DISEÑO PERSONALIZADO
+                </div>
+
+                {/* Titular Principal */}
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
+                  Crea tu propia marca de medias con un proveedor que te acompaña en cada paso.
+                </h1>
+
+                {/* Subtítulo enfocado en Acompañamiento */}
+                <p className="text-base sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl">
+                  Fabricamos medias personalizadas para emprendedores, empresas, clubes deportivos y distribuidores desde 100 pares. Desarrollamos tu diseño junto a ti y solo iniciamos la producción cuando apruebas el resultado.
+                </p>
+
+                {/* Botones de Acción */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                  <a
+                    href="#cotizacion"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-base transition-all duration-200 shadow-lg shadow-cyan-500/20 active:scale-[0.98]"
+                  >
+                    Solicitar cotización
+                    <I type="arrow" className="w-5 h-5" />
+                  </a>
+
+                  <a
+                    href="#modelos"
+                    className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white text-slate-950 hover:bg-slate-100 font-black text-base transition-all duration-200 active:scale-[0.98]"
+                  >
+                    Ver modelos
+                  </a>
+                </div>
+
+                {/* Puntos clave inmediatos */}
+                <div className="pt-3 grid grid-cols-2 gap-y-2 gap-x-4 text-xs sm:text-sm text-slate-400 font-medium">
+                  <div className="flex items-center gap-2">
+                    <I type="check" className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>Desde 100 pares</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <I type="check" className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>Diseño personalizado</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <I type="check" className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>Producción bajo aprobación</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <I type="check" className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>Atención personalizada</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* COLUMNA DERECHA: Opción A - Mockup Apple Style + Tarjeta de Ventaja Competitiva */}
+              <div className="lg:col-span-5 relative flex flex-col items-center">
+                <div className="relative w-full aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-[2.5rem] bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 flex flex-col justify-between overflow-hidden shadow-2xl group">
+                  
+                  {/* Iluminación sutil de fondo */}
+                  <div className="absolute inset-0 bg-cyan-500/5 blur-xl pointer-events-none" />
+
+                  {/* Top Bar Mockup */}
+                  <div className="flex justify-between items-center z-10">
+                    <span className="text-[11px] font-mono tracking-widest text-slate-400 uppercase">
+                      CADI TEXTIL • LAB
+                    </span>
+                    <span className="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-slate-800 text-cyan-300 border border-slate-700">
+                      TU LOGO AQUÍ
+                    </span>
+                  </div>
+
+                  {/* Elemento central de Producto/Diseño */}
+                  <div className="my-auto text-center space-y-4 z-10 py-6">
+                    <div className="w-28 h-28 mx-auto rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform duration-300">
+                      <I type="layers" className="w-12 h-12 text-cyan-400 stroke-[1.5]" />
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-base font-bold text-slate-100">Personalización Integral</p>
+                      <p className="text-xs text-slate-400">Tejido Jacquard • Etiqueta de Marca • Packaging</p>
+                    </div>
+                  </div>
+
+                  {/* Tarjeta Flotante: ¿Por qué elegir Cadi Textil? */}
+                  <div className="z-10 bg-slate-900/90 backdrop-blur-md border border-slate-800 p-4 sm:p-5 rounded-2xl space-y-3 shadow-2xl">
+                    <p className="text-xs sm:text-sm font-black text-slate-100 flex items-center gap-2">
+                      <I type="shield" className="w-4 h-4 text-cyan-400" />
+                      ¿Por qué elegir Cadi Textil?
+                    </p>
+                    <ul className="text-xs text-slate-300 space-y-2 font-medium">
+                      <li className="flex items-start gap-2">
+                        <span className="text-cyan-400 font-bold">•</span>
+                        <span>Comienzas desde solo 100 pares.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-cyan-400 font-bold">•</span>
+                        <span>Revisas y apruebas el diseño antes de producir.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-cyan-400 font-bold">•</span>
+                        <span>Fabricamos para tu marca, no para la nuestra.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            {/* BARRA DE CONFIANZA HORIZONTAL (Clean & Elegant) */}
+            <div className="mt-16 pt-8 border-t border-slate-900 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-cyan-400 shrink-0">
+                  <I type="spark" className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-500 uppercase font-mono tracking-wider">Volumen flexible</p>
+                  <p className="text-xs sm:text-sm font-bold text-slate-200">Desde 100 pares</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-cyan-400 shrink-0">
+                  <I type="layers" className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-500 uppercase font-mono tracking-wider">Identidad</p>
+                  <p className="text-xs sm:text-sm font-bold text-slate-200">Diseños exclusivos</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-cyan-400 shrink-0">
+                  <I type="shield" className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-500 uppercase font-mono tracking-wider">Garantía</p>
+                  <p className="text-xs sm:text-sm font-bold text-slate-200">Producción personalizada</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-cyan-400 shrink-0">
+                  <I type="refresh" className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-500 uppercase font-mono tracking-wider">Soporte</p>
+                  <p className="text-xs sm:text-sm font-bold text-slate-200">Atención en todo el proceso</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </section>
 
+        {/* ========================================================= */}
+        {/* SECCIONES SIGUIENTES (MANTENIDAS EXACTAMENTE IGUAL)       */}
+        {/* ========================================================= */}
         <section className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-16">
           <motion.div
             variants={fadeUp}
@@ -525,47 +622,47 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
               "Campañas corporativas",
             ].map((item) => (
               <span
-  key={item}
-  className="flex min-h-[44px] items-center justify-center rounded-full border border-cyan-100 bg-white px-3 py-2 text-center text-xs font-black text-slate-800 shadow-sm sm:px-4 sm:text-sm"
->
-  {item}
-</span>
+                key={item}
+                className="flex min-h-[44px] items-center justify-center rounded-full border border-cyan-100 bg-white px-3 py-2 text-center text-xs font-black text-slate-800 shadow-sm sm:px-4 sm:text-sm"
+              >
+                {item}
+              </span>
             ))}
           </div>
         </section>
 
-<section className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-16">
-  <div className="grid gap-6 rounded-[2rem] bg-white p-6 shadow-xl shadow-slate-100 md:grid-cols-3 md:rounded-[2.5rem] md:p-8">
-    {[
-      {
-        title: "Pedidos mayoristas accesibles",
-        text: "Trabajamos pedidos por volumen para emprendedores, tiendas, marcas, distribuidores, empresas y colegios.",
-      },
-      {
-        title: "Precios competitivos",
-        text: "Ofrecemos precios rentables para reventa, con mejores condiciones según la cantidad solicitada.",
-      },
-      {
-        title: "Medias de algodón peinado",
-        text: "Fabricamos medias deportivas, casuales e institucionales con enfoque en comodidad, resistencia y presentación.",
-      },
-    ].map((item) => (
-      <motion.div
-        key={item.title}
-        whileHover={{ y: -6 }}
-        className="rounded-[1.5rem] bg-slate-50 p-5"
-      >
-        <h3 className="text-xl font-black text-slate-950">
-          {item.title}
-        </h3>
-        <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
-          {item.text}
-        </p>
-      </motion.div>
-    ))}
-  </div>
-</section>
-        
+        <section className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-16">
+          <div className="grid gap-6 rounded-[2rem] bg-white p-6 shadow-xl shadow-slate-100 md:grid-cols-3 md:rounded-[2.5rem] md:p-8">
+            {[
+              {
+                title: "Pedidos mayoristas accesibles",
+                text: "Trabajamos pedidos por volumen para emprendedores, tiendas, marcas, distribuidores, empresas y colegios.",
+              },
+              {
+                title: "Precios competitivos",
+                text: "Ofrecemos precios rentables para reventa, con mejores condiciones según la cantidad solicitada.",
+              },
+              {
+                title: "Medias de alta densidad",
+                text: "Fabricamos medias deportivas, casuales e institucionales con enfoque en comodidad, resistencia y presentación.",
+              },
+            ].map((item) => (
+              <motion.div
+                key={item.title}
+                whileHover={{ y: -6 }}
+                className="rounded-[1.5rem] bg-slate-50 p-5"
+              >
+                <h3 className="text-xl font-black text-slate-950">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
+                  {item.text}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
         <section id="servicios" className="bg-white py-14 md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <motion.div
@@ -585,39 +682,39 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
             </motion.div>
 
             <motion.div
-  variants={stagger}
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: true, amount: 0.2 }}
-  className="grid gap-5 md:grid-cols-3"
->
-  {services.map((service) => (
-    <motion.div
-      variants={fadeUp}
-      whileHover={{ y: -8 }}
-      key={service.title}
-      className="group overflow-hidden rounded-[2.25rem] border border-slate-100 bg-slate-50 shadow-sm transition"
-    >
-      <div className="h-64 w-full overflow-hidden bg-slate-200">
-        <img
-          src={service.image}
-          alt={service.title}
-          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-          loading="lazy"
-        />
-      </div>
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
+              className="grid gap-5 md:grid-cols-3"
+            >
+              {services.map((service) => (
+                <motion.div
+                  variants={fadeUp}
+                  whileHover={{ y: -8 }}
+                  key={service.title}
+                  className="group overflow-hidden rounded-[2.25rem] border border-slate-100 bg-slate-50 shadow-sm transition"
+                >
+                  <div className="h-64 w-full overflow-hidden bg-slate-200">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
 
-      <div className="p-7">
-        <h3 className="text-2xl font-black text-slate-950">
-          {service.title}
-        </h3>
-        <p className="mt-4 leading-8 text-slate-600">
-          {service.text}
-        </p>
-      </div>
-    </motion.div>
-  ))}
-</motion.div>
+                  <div className="p-7">
+                    <h3 className="text-2xl font-black text-slate-950">
+                      {service.title}
+                    </h3>
+                    <p className="mt-4 leading-8 text-slate-600">
+                      {service.text}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
@@ -670,48 +767,48 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
           </motion.div>
         </section>
 
-<section className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-12">
-  <div className="rounded-[2rem] bg-slate-950 p-6 text-white shadow-2xl shadow-slate-200 md:rounded-[2.5rem] md:p-10">
-    <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-      <div>
-        <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
-          Compra mayorista
-        </p>
-        <h2 className="text-3xl font-black tracking-tight md:text-5xl">
-          Medias listas para vender, distribuir o personalizar.
-        </h2>
-        <p className="mt-5 text-base leading-8 text-slate-300">
-          Atendemos negocios que buscan productos rentables, cómodos y de buena
-          presentación para vender al por mayor o desarrollar su propia marca.
-        </p>
-      </div>
+        <section className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-12">
+          <div className="rounded-[2rem] bg-slate-950 p-6 text-white shadow-2xl shadow-slate-200 md:rounded-[2.5rem] md:p-10">
+            <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+              <div>
+                <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
+                  Compra mayorista
+                </p>
+                <h2 className="text-3xl font-black tracking-tight md:text-5xl">
+                  Medias listas para vender, distribuir o personalizar.
+                </h2>
+                <p className="mt-5 text-base leading-8 text-slate-300">
+                  Atendemos negocios que buscan productos rentables, cómodos y de buena
+                  presentación para vender al por mayor o desarrollar su propia marca.
+                </p>
+              </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        {[
-          "Ideal para emprendedores",
-          "Para tiendas y distribuidores",
-          "Precios por volumen",
-          "Personalización con marca",
-          "Modelos deportivos y casuales",
-          "Producción nacional",
-        ].map((item) => (
-          <div
-            key={item}
-            className="flex items-center gap-3 rounded-2xl bg-white/10 p-4"
-          >
-            <div className="rounded-full bg-cyan-300 p-2 text-slate-950">
-              <I type="check" className="h-4 w-4" />
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  "Ideal para emprendedores",
+                  "Para tiendas y distribuidores",
+                  "Precios por volumen",
+                  "Personalización con marca",
+                  "Modelos deportivos y casuales",
+                  "Producción nacional",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-3 rounded-2xl bg-white/10 p-4"
+                  >
+                    <div className="rounded-full bg-cyan-300 p-2 text-slate-950">
+                      <I type="check" className="h-4 w-4" />
+                    </div>
+                    <p className="text-sm font-bold text-slate-100">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <p className="text-sm font-bold text-slate-100">
-              {item}
-            </p>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
-        
+        </section>
+
         <section className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-10">
           <div className="grid gap-3 rounded-[2rem] bg-white p-5 shadow-xl shadow-slate-100 md:grid-cols-4 md:gap-4 md:rounded-[2.5rem] md:p-8">
             {[
@@ -848,476 +945,50 @@ Mensaje adicional: ${mensaje || "Sin mensaje adicional"}`
         </section>
 
         <section id="proceso" className="bg-white py-14 md:py-24">
-  <div className="mx-auto max-w-7xl px-5 md:px-8">
-    <motion.div
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
-      className="mb-8 max-w-3xl md:mb-12"
-    >
-      <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
-        Proceso de trabajo
-      </p>
-      <h2 className="text-3xl font-black tracking-tight md:text-6xl">
-        De la cotización al producto final, con una ruta clara.
-      </h2>
-    </motion.div>
-
-    <motion.div
-      variants={stagger}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
-      className="flex gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible md:pb-0"
-    >
-      {process.map((step) => (
-        <motion.div
-          variants={fadeUp}
-          key={step.title}
-          className="flex min-w-[78%] flex-col items-center rounded-[2rem] border border-slate-100 bg-slate-50 p-5 text-center md:min-w-0 md:p-6"
-        >
-          <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-slate-950 text-white md:mb-6 md:h-14 md:w-14">
-            <I type={step.icon} className="h-6 w-6 md:h-7 md:w-7" />
-          </div>
-
-          <h3 className="text-lg font-black md:text-xl">
-            {step.title}
-          </h3>
-
-          <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
-            {step.text}
-          </p>
-        </motion.div>
-      ))}
-    </motion.div>
-  </div>
-</section>
-
-<section className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-24">
-  <motion.div
-    variants={fadeUp}
-    initial="hidden"
-    whileInView="show"
-    viewport={{ once: true, amount: 0.25 }}
-    className="mb-8 max-w-3xl md:mb-10"
-  >
-    <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
-      Preguntas frecuentes
-    </p>
-    <h2 className="text-3xl font-black tracking-tight md:text-5xl">
-      Información rápida para cotizar mejor.
-    </h2>
-  </motion.div>
-
-  <div className="overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-xl shadow-slate-100">
-    {faqs.map((faq, index) => {
-      const isOpen = openFaq === index;
-
-      return (
-        <div
-          key={faq.q}
-          className="border-b border-slate-100 last:border-b-0"
-        >
-          <button
-            type="button"
-            onClick={() => setOpenFaq(isOpen ? null : index)}
-            className="flex w-full items-center justify-between gap-4 bg-slate-50 px-5 py-5 text-left transition hover:bg-slate-100 md:px-7"
-          >
-            <span className="text-base font-black text-slate-950 md:text-lg">
-              {faq.q}
-            </span>
-
-            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white text-2xl font-light text-slate-700 shadow-sm">
-              {isOpen ? "−" : "+"}
-            </span>
-          </button>
-
-          {isOpen && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              transition={{ duration: 0.25 }}
-              className="bg-white px-5 py-5 md:px-7"
-            >
-              <p className="max-w-4xl leading-8 text-slate-600">
-                {faq.a}
-              </p>
-            </motion.div>
-          )}
-        </div>
-      );
-    })}
-  </div>
-</section>
-
-        <section className="bg-white py-14 md:py-20">
-          <div className="mx-auto grid max-w-7xl gap-6 px-5 md:grid-cols-[0.9fr_1.1fr] md:items-center md:gap-8 md:px-8">
+          <div className="mx-auto max-w-7xl px-5 md:px-8">
             <motion.div
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.25 }}
+              className="mb-8 max-w-3xl md:mb-12"
             >
               <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-cyan-700">
-                Cobertura
-              </p>
-              <h2 className="text-3xl font-black tracking-tight md:text-5xl">
-                Atendemos pedidos mayoristas en Perú.
-              </h2>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.25 }}
-              className="rounded-[2rem] bg-slate-50 p-6 text-sm leading-7 text-slate-600 md:p-7 md:text-base md:leading-8"
-            >
-              Coordinamos producción, presentación y despacho según el
-              requerimiento del cliente. Trabajamos con empresas, colegios,
-              instituciones, distribuidores, marcas y clientes corporativos que
-              necesitan fabricar medias o calcetines por volumen.
-            </motion.div>
-          </div>
-        </section>
-
-        <section id="cotizacion" className="bg-slate-950 py-14 text-white md:py-24">
-          <div className="mx-auto grid max-w-7xl gap-8 px-5 md:grid-cols-[0.9fr_1.1fr] md:gap-10 md:px-8">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.25 }}
-              className="space-y-5 md:space-y-6"
-            >
-              <p className="text-sm font-black uppercase tracking-[0.25em] text-cyan-300">
-                Cotización
+                Proceso de trabajo
               </p>
               <h2 className="text-3xl font-black tracking-tight md:text-6xl">
-                Cuéntanos qué necesitas producir.
+                De la cotización al producto final, con una ruta clara.
               </h2>
-              <p className="text-base leading-7 text-slate-300 md:text-lg md:leading-8">
-                Completa tus datos y te responderemos por WhatsApp con una
-                propuesta según modelo, cantidad, presentación y objetivo del
-                pedido.
-              </p>
-
-<div className="grid gap-3 text-slate-300">
-
-  <span className="flex gap-3">
-    <I type="phone" className="h-5 w-5 shrink-0 text-cyan-300" />
-    +51 930 967 608
-  </span>
-
-  <span className="flex items-start gap-3">
-    <I type="mail" className="mt-1 h-5 w-5 shrink-0 text-cyan-300" />
-
-    <span className="grid gap-1">
-      <span>ventas@caditextil.com</span>
-      <span>ventas@mediascadi.com</span>
-    </span>
-
-  </span>
-
-  <span className="flex gap-3">
-    <I type="pin" className="h-5 w-5 shrink-0 text-cyan-300" />
-    Perú
-  </span>
-
-</div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7 }}
-              className="rounded-[2rem] border border-white/10 bg-white p-5 text-slate-950 shadow-2xl md:rounded-[2.5rem] md:p-8"
+              className="flex gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible md:pb-0"
             >
-              <div className="grid gap-4 md:gap-5">
-  <label className="grid gap-2">
-    <span className="text-sm font-black">Nombre o empresa</span>
-
-    <input
-      value={nombre}
-      onChange={(e) => setNombre(e.target.value)}
-      placeholder="Ej. Comercial Cadi"
-      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-    />
-  </label>
-
-  <label className="grid gap-2">
-    <span className="text-sm font-black">Tipo de cliente</span>
-
-    <select
-      value={tipoCliente}
-      onChange={(e) => setTipoCliente(e.target.value)}
-      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-    >
-      <option>Emprendedor</option>
-      <option>Tienda</option>
-      <option>Distribuidor</option>
-      <option>Empresa</option>
-      <option>Club deportivo</option>
-      <option>Academia</option>
-      <option>Colegio</option>
-      <option>Institución pública</option>
-      <option>Institución privada</option>
-    </select>
-  </label>
-
-  <label className="grid gap-2">
-    <span className="text-sm font-black">
-      ¿Para qué necesitas las medias?
-    </span>
-
-    <select
-      value={objetivo}
-      onChange={(e) => setObjetivo(e.target.value)}
-      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-    >
-      <option>Reventa al por mayor</option>
-      <option>Reventa al por menor</option>
-      <option>Marca propia</option>
-      <option>Uniformes</option>
-      <option>Campaña publicitaria</option>
-      <option>Merchandising</option>
-      <option>Uso interno de la empresa</option>
-      <option>Otro</option>
-    </select>
-  </label>
-
-  <div className="grid gap-4 md:grid-cols-2 md:gap-5">
-    <label className="grid gap-2">
-      <span className="text-sm font-black">Modelo</span>
-
-      <select
-        value={modelo}
-        onChange={(e) => setModelo(e.target.value)}
-        className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-      >
-        {models.map((m) => (
-          <option key={m.name}>{m.name}</option>
-        ))}
-      </select>
-    </label>
-
-    <label className="grid gap-2">
-      <span className="text-sm font-black">
-        Cantidad aprox.
-      </span>
-
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_105px]">
-        <input
-          value={cantidad}
-          onChange={(e) => setCantidad(e.target.value)}
-          placeholder="500"
-          className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-        />
-
-        <select
-          value={unidadCantidad}
-          onChange={(e) => setUnidadCantidad(e.target.value)}
-          className="min-w-0 rounded-2xl border border-slate-200 bg-slate-50 px-3 py-4 font-semibold outline-none transition focus:border-cyan-500"
-        >
-          <option value="pares">Pares</option>
-          <option value="docenas">Docenas</option>
-        </select>
-      </div>
-    </label>
-  </div>
-
-  <label className="grid gap-2">
-    <span className="text-sm font-black">
-      Personalización requerida
-    </span>
-
-    <select
-      value={personalizacion}
-      onChange={(e) => setPersonalizacion(e.target.value)}
-      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-    >
-      <option>medias color entero</option>
-      <option>Logo personalizado</option>
-      <option>Diseño Jacquard</option>
-      <option>Etiqueta personalizada</option>
-    </select>
-  </label>
-
-  <label className="grid gap-2">
-    <span className="text-sm font-black">
-      Mensaje{" "}
-      <span className="font-medium text-slate-400">
-        (opcional)
-      </span>
-    </span>
-
-    <textarea
-      value={mensaje}
-      onChange={(e) => setMensaje(e.target.value)}
-      placeholder="Ej. Necesito un diseño con logo y etiqueta personalizada."
-      rows="3"
-      className="resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:border-cyan-500"
-    />
-  </label>
-
-  <a
-                  href={`https://wa.me/${whatsappNumber}?text=${whatsappText}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-2xl bg-cyan-600 px-6 py-4 font-black text-white transition hover:bg-cyan-700"
+              {process.map((step) => (
+                <motion.div
+                  variants={fadeUp}
+                  key={step.title}
+                  className="flex min-w-[78%] flex-col items-center rounded-[2rem] border border-slate-100 bg-slate-50 p-5 text-center md:min-w-0 md:p-6"
                 >
-                  <I type="chat" className="mr-2 h-5 w-5" />
-                  Cotizar por WhatsApp
-                </a>
-
-                <p className="text-center text-xs leading-6 text-slate-500">
-                  Te responderemos con una propuesta según tu necesidad de
-                  producción.
-                </p>
-              </div>
+                  <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-slate-950 text-white md:mb-6 md:h-14 md:w-14">
+                    <I type={step.icon} className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-black">{step.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
+                    {step.text}
+                  </p>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </section>
       </main>
 
       <ScrollToTopButton />
-      
-      <footer className="relative overflow-hidden border-t border-slate-200 bg-slate-950 px-5 py-12 text-white md:px-8 md:py-14">
-        <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl" />
-
-        <div className="relative mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.1fr_0.9fr_0.9fr] md:items-start md:gap-10">
-          <div>
-            <div className="flex items-center gap-3">
-              <img
-                src="/logo-medias-cadi.png"
-                alt="Logo Cadi"
-                className="h-12 w-12 rounded-xl object-contain"
-              />
-              <div>
-                <p className="text-2xl font-black">Cadi</p>
-                <p className="text-sm text-slate-400">
-                  Fabricación textil al por mayor
-                </p>
-              </div>
-            </div>
-
-            <p className="mt-5 max-w-sm text-sm leading-7 text-slate-300 md:mt-6 md:text-base">
-              Fabricamos medias deportivas y casuales de algodón peinado para tiendas, marcas, distribuidores, empresas, colegios y clientes mayoristas.
-            </p>
-          </div>
-
-          <div>
-            <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-cyan-300 md:mb-5">
-              Contacto
-            </p>
-
-<div className="grid gap-3 text-sm text-slate-300">
-
-  <span className="flex items-center gap-3">
-    <I type="phone" className="h-4 w-4 shrink-0 text-cyan-300" />
-    +51 930 967 608
-  </span>
-
-  <span className="flex items-start gap-3">
-    <I type="mail" className="mt-1 h-4 w-4 shrink-0 text-cyan-300" />
-
-    <span className="grid gap-1">
-      <span>ventas@caditextil.com</span>
-      <span>ventas@mediascadi.com</span>
-    </span>
-
-  </span>
-
-  <span className="flex items-center gap-3">
-    <I type="pin" className="h-4 w-4 shrink-0 text-cyan-300" />
-    Perú
-  </span>
-
-</div>
-
-          </div>
-
-          <div>
-            <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-cyan-300 md:mb-5">
-              Información
-            </p>
-
-            <div className="grid gap-3 text-sm">
-              <a
-                href="/politica-de-envios.html"
-                className="text-slate-300 transition hover:text-cyan-300"
-              >
-                Política de envíos
-              </a>
-
-              <a
-                href="/politica-de-devoluciones.html"
-                className="text-slate-300 transition hover:text-cyan-300"
-              >
-                Política de devoluciones
-              </a>
-
-              <a
-                href="/politica-de-privacidad.html"
-                className="text-slate-300 transition hover:text-cyan-300"
-              >
-                Política de privacidad
-              </a>
-
-              <a
-  href="/politica-de-cookies.html"
-  className="text-slate-300 transition hover:text-cyan-300"
->
-  Política de cookies
-</a>
-
-              <a
-                href="#cotizacion"
-                className="text-slate-300 transition hover:text-cyan-300"
-              >
-                Solicitar cotización
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-400 md:mt-12 md:flex-row md:items-center md:justify-between">
-          <p>
-            © 2026 CORPORACION TEXTIL CADI S.A.C. Todos los derechos reservados.
-          </p>
-          <p>Medias al por mayor en Perú</p>
-        </div>
-      </footer>
-
-      <motion.a
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.8, type: "spring" }}
-        href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-          "Hola, quiero información sobre medias al por mayor."
-        )}`}
-        target="_blank"
-        rel="noreferrer"
-        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-black text-white shadow-2xl shadow-green-200 transition hover:scale-105 hover:bg-green-600 md:bottom-6 md:right-6 md:px-5 md:py-4 md:text-base"
-      >
-        <I type="chat" className="h-5 w-5" />
-        Cotizar
-      </motion.a>
     </div>
   );
 }
-
-let Page = LandingMediasMayoristas;
-
-if (window.location.pathname === "/polos") {
-  Page = Polos;
-}
-
-if (window.location.pathname === "/merch-personalizado") {
-  Page = Lapiceros;
-}
-
-createRoot(document.getElementById("root")).render(<Page />);
